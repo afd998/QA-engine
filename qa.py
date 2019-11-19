@@ -2,22 +2,29 @@ from qa_engine.base import QABase
 import spacy
 import nltk
 from nltk.corpus import stopwords
+from nltk.corpus import wordnet as wn
 import copy
 import pickle
+import sys
+import json
 
 nlp = spacy.load("en_core_web_lg")
-#test
+# test
 questions = 0
 
 stop = set(stopwords.words('english'))
 
 
-def token_filter(token, doc, take_out_capitals=False, use_spacy_stopwords=False):
+def token_filter(token,
+                 doc,
+                 take_out_capitals=False,
+                 use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
         keep_token = False
-    elif take_out_capitals and (token.text is not doc[0].text) and (token.text is not token.text.lower()):
-        keep_token == False
+    elif take_out_capitals and (token.text is not doc[0].text) and (
+            token.text is not token.text.lower()):
+        keep_token is False
     if token.text == "-PRON-":
         keep_token = False
     elif token.text.lower(
@@ -31,12 +38,7 @@ def token_filter(token, doc, take_out_capitals=False, use_spacy_stopwords=False)
 
 def expand_synsets(token):
     out_set = set()
-    pos_dict = {
-        "NOUN": wn.NOUN,
-        "VERB": wn.VERB,
-        "ADV": wn.ADV,
-        "ADJ": wn.ADJ
-    }
+    pos_dict = {"NOUN": wn.NOUN, "VERB": wn.VERB, "ADV": wn.ADV, "ADJ": wn.ADJ}
     if token.pos_ in pos_dict:
         synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
     else:
@@ -58,7 +60,12 @@ def expand_synsets(token):
     return out_set
 
 
-def normalize(text, output_type="set", take_out_caps=False, lemmatize=True, expand_synsets=True, loose_filter=False):
+def normalize(text,
+              output_type="set",
+              take_out_caps=False,
+              lemmatize=True,
+              expand_synsets=True,
+              loose_filter=False):
     if expand_synsets and not lemmatize:
         print("can't expand synsets without lemmatizing", file=sys.stderr)
         exit()
@@ -86,7 +93,8 @@ def normalize(text, output_type="set", take_out_caps=False, lemmatize=True, expa
                         for syn in wn.synsets(synonym)[0].lemma_names():
                             out_set.add(syn)
                             if len(wn.synsets(synonym)) > 1:
-                                for syn2 in wn.synsets(synonym)[1].lemma_names():
+                                for syn2 in wn.synsets(
+                                        synonym)[1].lemma_names():
                                     out_set.add(synonym)
                     if len(synset) > 1:
                         for synonym in synset[1].lemma_names():
@@ -94,8 +102,9 @@ def normalize(text, output_type="set", take_out_caps=False, lemmatize=True, expa
                 else:
                     out_set.add(token.lemma_)
             elif (lemmatize):
-                out_set.add((token.lemma_
-                             if token.lemma_ != "-PRON-" else token.text) + " ")
+                out_set.add((
+                    token.lemma_ if token.lemma_ != "-PRON-" else token.text) +
+                            " ")
             else:
                 out_set.add(token.text + " ")
     if output_type == "string":
@@ -106,41 +115,52 @@ def normalize(text, output_type="set", take_out_caps=False, lemmatize=True, expa
     return nlp(out)
 
 
-def coreferece_story(story, load):
+def coreference_story(story, load):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
     if not load:
-        print("question")
+        # print("question")
         sent = story[0]
         story_coref = sent['coref']
         localstory = copy.deepcopy(story)
         for i in range(0, len(story)):
             # print(story[i]["sentence"])
-            localstory[i]["sentence"] = nltk.word_tokenize(story[i]["sentence"])
+            localstory[i]["sentence"] = nltk.word_tokenize(
+                story[i]["sentence"])
             # print(localstory[i]["sentence"])
 
         for key in story_coref:
-            print("new anticident")
-            anticident = story_coref[key][0]["text"]
+            # print("new antecedent")
+            antecedent = story_coref[key][0]["text"]
             for z in range(1, len(story_coref[key])):
                 sentind = story_coref[key][z]["sentNum"]
                 example_text = story_coref[key][z]["text"]
-                anticident_tokens = nltk.word_tokenize(anticident)
-                print("anticident_tokens:", anticident_tokens)
+                antecedent_tokens = nltk.word_tokenize(antecedent)
+                # print("antecedent_tokens:", antecedent_tokens)
                 example_tokens = nltk.word_tokenize(example_text)
-                print("example_tokens:", example_tokens)
+                # print("example_tokens:", example_tokens)
                 if example_tokens[0] in localstory[sentind - 1]["sentence"]:
-                    example_start = localstory[sentind - 1]["sentence"].index(example_tokens[0])
-                    if localstory[sentind - 1]["sentence"][example_start - 1] != 'was':
-                        if localstory[sentind - 1]["sentence"][example_start - 1] != 'is':
-                            if localstory[sentind - 1]["sentence"][example_start - 2] != anticident_tokens[
-                                len(anticident_tokens) - 1]:
-                                print("Before:", localstory[sentind - 1]["sentence"])
+                    example_start = localstory[sentind - 1]["sentence"].index(
+                        example_tokens[0])
+                    if localstory[sentind - 1]["sentence"][example_start -
+                                                           1] != 'was':
+                        if localstory[sentind - 1]["sentence"][example_start -
+                                                               1] != 'is':
+                            if localstory[sentind - 1]["sentence"][
+                                    example_start - 2] != antecedent_tokens[
+                                        len(antecedent_tokens) - 1]:
+                                # print("Before:",
+                                #   localstory[sentind - 1]["sentence"])
                                 for i in range(0, len(example_tokens)):
-                                    del localstory[sentind - 1]["sentence"][example_start]
-                                print("During:", localstory[sentind - 1]["sentence"])
-                                for i in range(0, len(anticident_tokens)):
-                                    localstory[sentind - 1]["sentence"].insert(example_start + i, anticident_tokens[i])
-                                print("After:", localstory[sentind - 1]["sentence"])
+                                    del localstory[
+                                        sentind - 1]["sentence"][example_start]
+                                # print("During:",
+                                #   localstory[sentind - 1]["sentence"])
+                                for i in range(0, len(antecedent_tokens)):
+                                    localstory[sentind - 1]["sentence"].insert(
+                                        example_start + i,
+                                        antecedent_tokens[i])
+                                # print("After:",
+                                #   localstory[sentind - 1]["sentence"])
         coref_file = open(
             "data/coref_sents-{0}.pickle".format(story[0]["storyid"]), 'wb')
         pickle.dump(localstory, coref_file)
@@ -159,7 +179,7 @@ def person_in_the_question(question):
   ner_list=question[ner]
   for entry in ner_list:
     if (entry[ner] == 'PERSON') or (entry[ner] == 'TITLE'):
-      if(entry[text]!= ("he" or "He" or "she" or "She" or "his" or "hers" or "His" or"Hers"):
+      if(entry[text].lower() not in ["he", "she", "his", "hers"]:
         output = entry[text]
         break
   return output
@@ -169,6 +189,8 @@ def person_in_the_question(question):
     senetence_list= []
   for sentnce in coref_story:
  '''
+
+# print_story = True
 
 
 def get_answer(question, story):
@@ -196,18 +218,18 @@ def get_answer(question, story):
         coref -- Stanford CoreNLP version of coreference resolution of the entire story
 
     """
-
-    ###     Your Code Goes Here         ###
-    print("NEW QUESTION")
+    # global print_story
+    # if print_story:
+    #     print_story = False
+    #     print(json.dumps(story, indent=4))
     load = False
-    coref_story = coreferece_story(story, load)
+    coref_story = coreference_story(story, load)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
     answer = "whatever you think the answer is"
     answerid = "-"
 
-    ###     End of Your Code         ###
     return answerid, answer
 
 
