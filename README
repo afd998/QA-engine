@@ -1,0 +1,6 @@
+python3 -m spacy download en_core_web_lg
+pip3 install --user -U nltk
+import nltk
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('punkt')

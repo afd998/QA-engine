@@ -1,0 +1,406 @@
+question	questionid	storyid	ner
+When did they wake?	006536d7-2be3-49a4-a750-769684e952ed_Q0	006536d7-2be3-49a4-a750-769684e952ed	[]
+What did they hear?	006536d7-2be3-49a4-a750-769684e952ed_Q1	006536d7-2be3-49a4-a750-769684e952ed	[]
+Where was the sound coming from?	006536d7-2be3-49a4-a750-769684e952ed_Q2	006536d7-2be3-49a4-a750-769684e952ed	[]
+Who was in the closet?	006536d7-2be3-49a4-a750-769684e952ed_Q3	006536d7-2be3-49a4-a750-769684e952ed	[]
+Where did Larry work?	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Larry', 'characterOffsetBegin': 10, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Was Larry fond of this job?	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q1	04c164f6-da41-48a3-8aa3-eb7b650bb5f0	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Larry', 'characterOffsetBegin': 4, 'characterOffsetEnd': 9, 'ner': 'PERSON'}]"
+How old is Larry?	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q2	04c164f6-da41-48a3-8aa3-eb7b650bb5f0	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Larry', 'characterOffsetBegin': 11, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+What happened at the party?	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q3	04c164f6-da41-48a3-8aa3-eb7b650bb5f0	[]
+Who had a short temper?	0beabab2-fb49-460e-a6e6-f35a202e3348_Q0	0beabab2-fb49-460e-a6e6-f35a202e3348	[]
+Who made Tom angry?	0beabab2-fb49-460e-a6e6-f35a202e3348_Q1	0beabab2-fb49-460e-a6e6-f35a202e3348	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Tom', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+What happened when Tom got angry?	0beabab2-fb49-460e-a6e6-f35a202e3348_Q2	0beabab2-fb49-460e-a6e6-f35a202e3348	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Tom', 'characterOffsetBegin': 19, 'characterOffsetEnd': 22, 'ner': 'PERSON'}]"
+How did Tom feel after he scared his guest?	0beabab2-fb49-460e-a6e6-f35a202e3348_Q3	0beabab2-fb49-460e-a6e6-f35a202e3348	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Tom', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'he', 'characterOffsetBegin': 23, 'characterOffsetEnd': 25, 'ner': 'PERSON'}, {'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'his', 'characterOffsetBegin': 33, 'characterOffsetEnd': 36, 'ner': 'PERSON'}]"
+What had Jane gotten?	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q0	0dd3e2c3-3ea4-450a-97c4-42a54c426018	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jane', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What was Jane nervous about?	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q1	0dd3e2c3-3ea4-450a-97c4-42a54c426018	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+When did Jane arrive at work?	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q2	0dd3e2c3-3ea4-450a-97c4-42a54c426018	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jane', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+How was Jane's first day at work?	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q3	0dd3e2c3-3ea4-450a-97c4-42a54c426018	"[{'docTokenBegin': 3, 'docTokenEnd': 5, 'tokenBegin': 3, 'tokenEnd': 5, 'text': 'first day', 'characterOffsetBegin': 12, 'characterOffsetEnd': 21, 'ner': 'DATE', 'normalizedNER': 'P1D-#1', 'timex': {'tid': 't1', 'type': 'DATE', 'altValue': 'P1D-#1'}}, {'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'her', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+When did I get Charlie horse?	110fafd1-2bb7-4ffe-aac7-475706165d41_Q0	110fafd1-2bb7-4ffe-aac7-475706165d41	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Charlie', 'characterOffsetBegin': 15, 'characterOffsetEnd': 22, 'ner': 'PERSON'}]"
+How old am I now?	110fafd1-2bb7-4ffe-aac7-475706165d41_Q1	110fafd1-2bb7-4ffe-aac7-475706165d41	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'now', 'characterOffsetBegin': 13, 'characterOffsetEnd': 16, 'ner': 'DATE', 'normalizedNER': 'PRESENT_REF', 'timex': {'tid': 't1', 'type': 'DATE', 'value': 'PRESENT_REF'}}]"
+What color is Charlie horse?	110fafd1-2bb7-4ffe-aac7-475706165d41_Q2	110fafd1-2bb7-4ffe-aac7-475706165d41	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Charlie', 'characterOffsetBegin': 14, 'characterOffsetEnd': 21, 'ner': 'PERSON'}]"
+What did I like to do as I fell asleep cuddling Charlie Horse?	110fafd1-2bb7-4ffe-aac7-475706165d41_Q3	110fafd1-2bb7-4ffe-aac7-475706165d41	"[{'docTokenBegin': 11, 'docTokenEnd': 12, 'tokenBegin': 11, 'tokenEnd': 12, 'text': 'him', 'characterOffsetBegin': 48, 'characterOffsetEnd': 51, 'ner': 'PERSON'}]"
+What did Laura decide to grow?	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q0	13573c2e-5eed-40eb-bbe5-ed259b5c76a6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Laura', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Where did Laura decide to grow corn?	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q1	13573c2e-5eed-40eb-bbe5-ed259b5c76a6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Laura', 'characterOffsetBegin': 10, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+What did Laura realize?	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q2	13573c2e-5eed-40eb-bbe5-ed259b5c76a6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Laura', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What idea did Laura decide to abandon?	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q3	13573c2e-5eed-40eb-bbe5-ed259b5c76a6	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Laura', 'characterOffsetBegin': 14, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+What did Julie order?	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q0	1cc75245-93bd-44cc-b076-8d1b249e1ee5	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Julie', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+How did Julie order food?	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q1	1cc75245-93bd-44cc-b076-8d1b249e1ee5	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Julie', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What did Julie give the driver?	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	1cc75245-93bd-44cc-b076-8d1b249e1ee5	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'driver', 'characterOffsetBegin': 22, 'characterOffsetEnd': 28, 'ner': 'TITLE'}, {'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+How was the pizza?	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q3	1cc75245-93bd-44cc-b076-8d1b249e1ee5	[]
+What did jody buy?	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q0	1e379d2b-69e8-485e-92ac-4c3daa41e364	[]
+Where did Jody buy the goldfish?	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q1	1e379d2b-69e8-485e-92ac-4c3daa41e364	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jody', 'characterOffsetBegin': 10, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Why did the goldfish look fat?	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q2	1e379d2b-69e8-485e-92ac-4c3daa41e364	[]
+What happened to the goldfish?	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q3	1e379d2b-69e8-485e-92ac-4c3daa41e364	[]
+What happened to David?	210d56ce-a940-4766-9b7b-d086b2c5682d_Q0	210d56ce-a940-4766-9b7b-d086b2c5682d	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'David', 'characterOffsetBegin': 17, 'characterOffsetEnd': 22, 'ner': 'PERSON'}]"
+Did David get hurt?	210d56ce-a940-4766-9b7b-d086b2c5682d_Q1	210d56ce-a940-4766-9b7b-d086b2c5682d	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'he', 'characterOffsetBegin': 4, 'characterOffsetEnd': 6, 'ner': 'PERSON'}]"
+How did David stop the bleeding?	210d56ce-a940-4766-9b7b-d086b2c5682d_Q2	210d56ce-a940-4766-9b7b-d086b2c5682d	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 8, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What did David buy at the pharmacy?	210d56ce-a940-4766-9b7b-d086b2c5682d_Q3	210d56ce-a940-4766-9b7b-d086b2c5682d	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 9, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+What was on the ground?	271616db-90c2-4303-9c2b-64f4061ceb56_Q0	271616db-90c2-4303-9c2b-64f4061ceb56	[]
+Where did James bring the wallet?	271616db-90c2-4303-9c2b-64f4061ceb56_Q1	271616db-90c2-4303-9c2b-64f4061ceb56	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 10, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+When did the phone ring?	271616db-90c2-4303-9c2b-64f4061ceb56_Q2	271616db-90c2-4303-9c2b-64f4061ceb56	[]
+Who called James?	271616db-90c2-4303-9c2b-64f4061ceb56_Q3	271616db-90c2-4303-9c2b-64f4061ceb56	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'James', 'characterOffsetBegin': 11, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+Who thought a truck would be better?	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q0	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	[]
+What did Bill buy in the end?	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q1	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Bill', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Who suggested Bill to buy a trailer?	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q2	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Bill', 'characterOffsetBegin': 14, 'characterOffsetEnd': 18, 'ner': 'PERSON'}]"
+How much was the truck?	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q3	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	[]
+Where did I go last year?	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q0	2ef3788f-6b2b-45c8-b6ba-71450d565e6a	"[{'docTokenBegin': 4, 'docTokenEnd': 6, 'tokenBegin': 4, 'tokenEnd': 6, 'text': 'last year', 'characterOffsetBegin': 15, 'characterOffsetEnd': 24, 'ner': 'DATE', 'normalizedNER': 'THIS P1Y OFFSET P-1Y', 'timex': {'tid': 't1', 'type': 'DATE', 'altValue': 'THIS P1Y OFFSET P-1Y'}}]"
+Where did we have lunch?	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q1	2ef3788f-6b2b-45c8-b6ba-71450d565e6a	[]
+How did I go to Maine?	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q2	2ef3788f-6b2b-45c8-b6ba-71450d565e6a	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Maine', 'characterOffsetBegin': 16, 'characterOffsetEnd': 21, 'ner': 'STATE_OR_PROVINCE'}]"
+Who drove me back to the train station?	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q3	2ef3788f-6b2b-45c8-b6ba-71450d565e6a	"[{'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'train', 'characterOffsetBegin': 25, 'characterOffsetEnd': 30, 'ner': 'CRIMINAL_CHARGE'}]"
+Why was Walter worried?	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q0	375c34c9-3d98-4b2f-9076-404f34ad4e66	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Walter', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Who did Walter consult with?	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q1	375c34c9-3d98-4b2f-9076-404f34ad4e66	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Walter', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What did the vet discover?	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q2	375c34c9-3d98-4b2f-9076-404f34ad4e66	[]
+What solved the issue?	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q3	375c34c9-3d98-4b2f-9076-404f34ad4e66	[]
+What happened to Robbie halfway through the competition?	3be3719a-ae77-4106-88ea-988afb19db99_Q0	3be3719a-ae77-4106-88ea-988afb19db99	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Robbie', 'characterOffsetBegin': 17, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+How long did Robbie stop for?	3be3719a-ae77-4106-88ea-988afb19db99_Q1	3be3719a-ae77-4106-88ea-988afb19db99	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Robbie', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+Did Robbie finish the race?	3be3719a-ae77-4106-88ea-988afb19db99_Q2	3be3719a-ae77-4106-88ea-988afb19db99	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Robbie', 'characterOffsetBegin': 4, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What was Robbie's rank in the race?	3be3719a-ae77-4106-88ea-988afb19db99_Q3	3be3719a-ae77-4106-88ea-988afb19db99	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Robbie', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Where did Melody's parents take her to?	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q0	4d7b022e-25d2-4300-a9b0-24ab35f4045b	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Melody', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'her', 'characterOffsetBegin': 32, 'characterOffsetEnd': 35, 'ner': 'PERSON'}]"
+How long was the car ride to the aquarium?	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q1	4d7b022e-25d2-4300-a9b0-24ab35f4045b	[]
+What did Melody see at the aquarium?	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q2	4d7b022e-25d2-4300-a9b0-24ab35f4045b	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Melody', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+How long did Melody stay at the aquarium?	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q3	4d7b022e-25d2-4300-a9b0-24ab35f4045b	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Melody', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+Where was the concert?	50357157-3765-40b5-8e32-f86961c98be0_Q0	50357157-3765-40b5-8e32-f86961c98be0	[]
+Who took Nicole to the concert?	50357157-3765-40b5-8e32-f86961c98be0_Q1	50357157-3765-40b5-8e32-f86961c98be0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'her', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Why did Nicole's cousin agree to drive?	50357157-3765-40b5-8e32-f86961c98be0_Q2	50357157-3765-40b5-8e32-f86961c98be0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+What happened in the end?	50357157-3765-40b5-8e32-f86961c98be0_Q3	50357157-3765-40b5-8e32-f86961c98be0	[]
+Where was the family going?	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q0	5e76713f-92b2-4a5d-8f8d-510fde45705c	[]
+Why was the family excited?	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q1	5e76713f-92b2-4a5d-8f8d-510fde45705c	[]
+What did the family see?	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q2	5e76713f-92b2-4a5d-8f8d-510fde45705c	[]
+How long was the family there?	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q3	5e76713f-92b2-4a5d-8f8d-510fde45705c	[]
+What did the woman want to start?	61550fe1-c17d-4b94-b225-941026bdb68e_Q0	61550fe1-c17d-4b94-b225-941026bdb68e	[]
+Where did the woman go?	61550fe1-c17d-4b94-b225-941026bdb68e_Q1	61550fe1-c17d-4b94-b225-941026bdb68e	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 10, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What did the woman create?	61550fe1-c17d-4b94-b225-941026bdb68e_Q2	61550fe1-c17d-4b94-b225-941026bdb68e	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Where did the woman put it?	61550fe1-c17d-4b94-b225-941026bdb68e_Q3	61550fe1-c17d-4b94-b225-941026bdb68e	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 10, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Where did the couple take a romantic trip?	6ebc8d48-029b-4f00-89b3-773ce802825e_Q0	6ebc8d48-029b-4f00-89b3-773ce802825e	[]
+Where did the couple stay?	6ebc8d48-029b-4f00-89b3-773ce802825e_Q1	6ebc8d48-029b-4f00-89b3-773ce802825e	[]
+What did the couple do?	6ebc8d48-029b-4f00-89b3-773ce802825e_Q2	6ebc8d48-029b-4f00-89b3-773ce802825e	[]
+What did the couple do when they returned home?	6ebc8d48-029b-4f00-89b3-773ce802825e_Q3	6ebc8d48-029b-4f00-89b3-773ce802825e	[]
+Where did I go?	712702cc-f042-4ca5-84dc-ada756cc8959_Q0	712702cc-f042-4ca5-84dc-ada756cc8959	[]
+What did I order?	712702cc-f042-4ca5-84dc-ada756cc8959_Q1	712702cc-f042-4ca5-84dc-ada756cc8959	[]
+What did they put on the fries?	712702cc-f042-4ca5-84dc-ada756cc8959_Q2	712702cc-f042-4ca5-84dc-ada756cc8959	[]
+Did I like ketchup?	712702cc-f042-4ca5-84dc-ada756cc8959_Q3	712702cc-f042-4ca5-84dc-ada756cc8959	[]
+Where did my first girlfriend live?	77338898-07d4-4143-8451-284540c8b082_Q0	77338898-07d4-4143-8451-284540c8b082	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'first', 'characterOffsetBegin': 13, 'characterOffsetEnd': 18, 'ner': 'ORDINAL', 'normalizedNER': '1.0'}]"
+How did I meet my first girlfriend?	77338898-07d4-4143-8451-284540c8b082_Q1	77338898-07d4-4143-8451-284540c8b082	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'first', 'characterOffsetBegin': 18, 'characterOffsetEnd': 23, 'ner': 'ORDINAL', 'normalizedNER': '1.0'}]"
+How long did my girlfriend stay with me?	77338898-07d4-4143-8451-284540c8b082_Q2	77338898-07d4-4143-8451-284540c8b082	[]
+Why did my girlfriend move in with me?	77338898-07d4-4143-8451-284540c8b082_Q3	77338898-07d4-4143-8451-284540c8b082	[]
+What was Tyler's favorite holiday?	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q0	790d9cb4-4832-49e8-8137-331e79a4b9e6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Tyler', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What did Tyler see?	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q1	790d9cb4-4832-49e8-8137-331e79a4b9e6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Tyler', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What did Tyler see downstairs?	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q2	790d9cb4-4832-49e8-8137-331e79a4b9e6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 9, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+How many presents did Tyler open?	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q3	790d9cb4-4832-49e8-8137-331e79a4b9e6	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Tyler', 'characterOffsetBegin': 22, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+Who announced a pop quiz?	8036c905-f23e-4976-83a1-85d679b5e0c2_Q0	8036c905-f23e-4976-83a1-85d679b5e0c2	[]
+When did I finish working on the exam?	8036c905-f23e-4976-83a1-85d679b5e0c2_Q1	8036c905-f23e-4976-83a1-85d679b5e0c2	[]
+Who complained about the pop quiz?	8036c905-f23e-4976-83a1-85d679b5e0c2_Q2	8036c905-f23e-4976-83a1-85d679b5e0c2	[]
+How did I feel after the quiz?	8036c905-f23e-4976-83a1-85d679b5e0c2_Q3	8036c905-f23e-4976-83a1-85d679b5e0c2	[]
+Where was Jill going?	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q0	865db3c4-a253-4d35-8766-25fc7e0a8cfb	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jill', 'characterOffsetBegin': 10, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What did Jill marvel at?	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q1	865db3c4-a253-4d35-8766-25fc7e0a8cfb	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Where did Jill come from?	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q2	865db3c4-a253-4d35-8766-25fc7e0a8cfb	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 10, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+How was Jane's trip?	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q3	865db3c4-a253-4d35-8766-25fc7e0a8cfb	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'her', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+Why did Marcus need clothing for a business casual event?	87da1a22-df0b-410c-b186-439700b70ba6_Q0	87da1a22-df0b-410c-b186-439700b70ba6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Marcus', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What color were Andy's khakis?	87da1a22-df0b-410c-b186-439700b70ba6_Q1	87da1a22-df0b-410c-b186-439700b70ba6	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Andy', 'characterOffsetBegin': 16, 'characterOffsetEnd': 20, 'ner': 'PERSON'}]"
+What did Marcus decide to buy?	87da1a22-df0b-410c-b186-439700b70ba6_Q2	87da1a22-df0b-410c-b186-439700b70ba6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Marcus', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Did the pair of khakis Marcus bought fit him?	87da1a22-df0b-410c-b186-439700b70ba6_Q3	87da1a22-df0b-410c-b186-439700b70ba6	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Marcus', 'characterOffsetBegin': 23, 'characterOffsetEnd': 29, 'ner': 'PERSON'}, {'docTokenBegin': 8, 'docTokenEnd': 9, 'tokenBegin': 8, 'tokenEnd': 9, 'text': 'him', 'characterOffsetBegin': 41, 'characterOffsetEnd': 44, 'ner': 'PERSON'}]"
+What is Chris?	88fba119-ccac-4b82-881f-e609e188bebc_Q0	88fba119-ccac-4b82-881f-e609e188bebc	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Chris', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Was the client guilty?	88fba119-ccac-4b82-881f-e609e188bebc_Q1	88fba119-ccac-4b82-881f-e609e188bebc	[]
+Does Chris win the case?	88fba119-ccac-4b82-881f-e609e188bebc_Q2	88fba119-ccac-4b82-881f-e609e188bebc	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Chris', 'characterOffsetBegin': 5, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What happens to the client?	88fba119-ccac-4b82-881f-e609e188bebc_Q3	88fba119-ccac-4b82-881f-e609e188bebc	[]
+Why did David put on a lot of weight recently?	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q0	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'David', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 9, 'docTokenEnd': 10, 'tokenBegin': 9, 'tokenEnd': 10, 'text': 'recently', 'characterOffsetBegin': 37, 'characterOffsetEnd': 45, 'ner': 'DATE', 'normalizedNER': 'PAST_REF', 'timex': {'tid': 't1', 'type': 'DATE', 'value': 'PAST_REF'}}]"
+What did David do instead of going to burger places?	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q1	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'David', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+When did David start to feel much better?	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q2	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'David', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Who was David married to?	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q3	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'David', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+How old was Ava?	8ca3cedb-510e-4454-ba08-93eaa605563b_Q0	8ca3cedb-510e-4454-ba08-93eaa605563b	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Ava', 'characterOffsetBegin': 12, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Who taught Ava the basics of swimming?	8ca3cedb-510e-4454-ba08-93eaa605563b_Q1	8ca3cedb-510e-4454-ba08-93eaa605563b	[]
+Was Ava able to paddle all by herself afterwards?	8ca3cedb-510e-4454-ba08-93eaa605563b_Q2	8ca3cedb-510e-4454-ba08-93eaa605563b	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Ava', 'characterOffsetBegin': 4, 'characterOffsetEnd': 7, 'ner': 'PERSON'}]"
+Where did Ava's mom take her to learn to swim?	8ca3cedb-510e-4454-ba08-93eaa605563b_Q3	8ca3cedb-510e-4454-ba08-93eaa605563b	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Ava', 'characterOffsetBegin': 10, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'her', 'characterOffsetBegin': 25, 'characterOffsetEnd': 28, 'ner': 'PERSON'}]"
+Who did Beth sent the letter to?	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q0	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Beth', 'characterOffsetBegin': 8, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+What did Beth receive back?	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q1	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Beth', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Did Beth think it sounded like the real Santa?	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q2	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Beth', 'characterOffsetBegin': 4, 'characterOffsetEnd': 8, 'ner': 'PERSON'}, {'docTokenBegin': 8, 'docTokenEnd': 9, 'tokenBegin': 8, 'tokenEnd': 9, 'text': 'Santa', 'characterOffsetBegin': 40, 'characterOffsetEnd': 45, 'ner': 'CITY'}]"
+What did Beth call that Santa?	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q3	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Beth', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Santa', 'characterOffsetBegin': 24, 'characterOffsetEnd': 29, 'ner': 'CITY'}]"
+What sports was Luke playing at school?	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q0	8fbef343-8806-4bcf-9326-08ca6ebf6cb9	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Luke', 'characterOffsetBegin': 16, 'characterOffsetEnd': 20, 'ner': 'PERSON'}]"
+Who made the winning shot?	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q1	8fbef343-8806-4bcf-9326-08ca6ebf6cb9	[]
+Who cheered for the winning shot?	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q2	8fbef343-8806-4bcf-9326-08ca6ebf6cb9	[]
+How did Luke feel after the winning shot?	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q3	8fbef343-8806-4bcf-9326-08ca6ebf6cb9	"[{'docTokenBegin': 0, 'docTokenEnd': 1, 'tokenBegin': 0, 'tokenEnd': 1, 'text': 'Hopw', 'characterOffsetBegin': 0, 'characterOffsetEnd': 4, 'ner': 'PERSON'}, {'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Luke', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What did Heather and her family want for dinner?	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q0	9a66b66d-034d-495e-a60e-e22c25e0e0fa	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Heather', 'characterOffsetBegin': 9, 'characterOffsetEnd': 16, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'her', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}]"
+Who prepared the tacos?	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q1	9a66b66d-034d-495e-a60e-e22c25e0e0fa	[]
+How many kids did Stacy want originally?	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q0	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Stacy', 'characterOffsetBegin': 18, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+How many kids did Bob and Stacy have?	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q1	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Bob', 'characterOffsetBegin': 18, 'characterOffsetEnd': 21, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'Stacy', 'characterOffsetBegin': 26, 'characterOffsetEnd': 31, 'ner': 'PERSON'}]"
+What is Stacy doing with all her maternity and baby clothes?	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q2	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Stacy', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'her', 'characterOffsetBegin': 29, 'characterOffsetEnd': 32, 'ner': 'PERSON'}]"
+Does Stacy still want five kids?	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q3	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Stacy', 'characterOffsetBegin': 5, 'characterOffsetEnd': 10, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'five', 'characterOffsetBegin': 22, 'characterOffsetEnd': 26, 'ner': 'NUMBER', 'normalizedNER': '5.0'}]"
+What did Ken put in the freezer?	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q0	a111d580-1fb2-4ab1-848a-0856982dfcd5	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Ken', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+What did Ken hear?	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q1	a111d580-1fb2-4ab1-848a-0856982dfcd5	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 9, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+what happened to the bottle?	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q2	a111d580-1fb2-4ab1-848a-0856982dfcd5	[]
+What did Ken drink?	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q3	a111d580-1fb2-4ab1-848a-0856982dfcd5	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 9, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+Who was graduating from college?	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q0	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	[]
+Where was the graduation ceremony?	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q1	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	[]
+Did Jude get to the graduation ceremony in time?	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q2	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Jude', 'characterOffsetBegin': 4, 'characterOffsetEnd': 8, 'ner': 'PERSON'}]"
+What did Jude decide to grow in his backyard?	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q3	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jude', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'his', 'characterOffsetBegin': 32, 'characterOffsetEnd': 35, 'ner': 'PERSON'}]"
+What was the name of Anna's dog?	aab4ee80-fc00-4d9c-a127-a63b54dfd193_Q0	aab4ee80-fc00-4d9c-a127-a63b54dfd193	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Anna', 'characterOffsetBegin': 21, 'characterOffsetEnd': 25, 'ner': 'PERSON'}]"
+What is my dog terrified of?	ae7e744e-fd27-46c2-befb-7e8427cb679c_Q0	ae7e744e-fd27-46c2-befb-7e8427cb679c	[]
+Where did my dog hide?	ae7e744e-fd27-46c2-befb-7e8427cb679c_Q1	ae7e744e-fd27-46c2-befb-7e8427cb679c	[]
+Who jumped on people?	b93f956f-2256-4c6d-91d2-7675dff455f0_Q0	b93f956f-2256-4c6d-91d2-7675dff455f0	[]
+Who did Chad hire?	b93f956f-2256-4c6d-91d2-7675dff455f0_Q1	b93f956f-2256-4c6d-91d2-7675dff455f0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Chad', 'characterOffsetBegin': 8, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+What did the trainer teach the dog?	b93f956f-2256-4c6d-91d2-7675dff455f0_Q2	b93f956f-2256-4c6d-91d2-7675dff455f0	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'trainer', 'characterOffsetBegin': 13, 'characterOffsetEnd': 20, 'ner': 'TITLE'}]"
+Why was Chad proud?	b93f956f-2256-4c6d-91d2-7675dff455f0_Q3	b93f956f-2256-4c6d-91d2-7675dff455f0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Chad', 'characterOffsetBegin': 8, 'characterOffsetEnd': 12, 'ner': 'COUNTRY'}]"
+How did Jake go to the store?	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q0	b94e1810-9869-4af6-bb74-b4a51c46f3d2	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jake', 'characterOffsetBegin': 8, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Who was working?	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q1	b94e1810-9869-4af6-bb74-b4a51c46f3d2	[]
+Who was watching a movie?	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q2	b94e1810-9869-4af6-bb74-b4a51c46f3d2	[]
+What did Jake need to buy from the store?	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q3	b94e1810-9869-4af6-bb74-b4a51c46f3d2	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Jake', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What was Justin terrified of?	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	bfa4ef8c-715d-4287-88a5-035611e34e40	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Justin', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Who had a dog?	bfa4ef8c-715d-4287-88a5-035611e34e40_Q1	bfa4ef8c-715d-4287-88a5-035611e34e40	[]
+How did Justin get over his fear?	bfa4ef8c-715d-4287-88a5-035611e34e40_Q2	bfa4ef8c-715d-4287-88a5-035611e34e40	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Justin', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'his', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+How long did it take Justin to get over his fear?	bfa4ef8c-715d-4287-88a5-035611e34e40_Q3	bfa4ef8c-715d-4287-88a5-035611e34e40	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'him', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}, {'docTokenBegin': 9, 'docTokenEnd': 10, 'tokenBegin': 9, 'tokenEnd': 10, 'text': 'his', 'characterOffsetBegin': 37, 'characterOffsetEnd': 40, 'ner': 'PERSON'}]"
+What color was Andy's costume?	c400d38a-54fc-45da-99ed-558fcfc81016_Q0	c400d38a-54fc-45da-99ed-558fcfc81016	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Andy', 'characterOffsetBegin': 15, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+What color did Andy get his hair done?	c400d38a-54fc-45da-99ed-558fcfc81016_Q1	c400d38a-54fc-45da-99ed-558fcfc81016	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Andy', 'characterOffsetBegin': 15, 'characterOffsetEnd': 19, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'his', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+Who colored Andy's hair?	c400d38a-54fc-45da-99ed-558fcfc81016_Q2	c400d38a-54fc-45da-99ed-558fcfc81016	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andy', 'characterOffsetBegin': 12, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+Did Andy like his new hair color?	c400d38a-54fc-45da-99ed-558fcfc81016_Q3	c400d38a-54fc-45da-99ed-558fcfc81016	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Andy', 'characterOffsetBegin': 4, 'characterOffsetEnd': 8, 'ner': 'PERSON'}, {'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'his', 'characterOffsetBegin': 14, 'characterOffsetEnd': 17, 'ner': 'PERSON'}]"
+What was John's job?	c71bb23b-7731-4233-8298-76ba6886cee1_Q0	c71bb23b-7731-4233-8298-76ba6886cee1	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'John', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+When did John sing his sermons?	c71bb23b-7731-4233-8298-76ba6886cee1_Q1	c71bb23b-7731-4233-8298-76ba6886cee1	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'John', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 19, 'characterOffsetEnd': 22, 'ner': 'PERSON'}]"
+Did John's congregation like the musical sermons?	c71bb23b-7731-4233-8298-76ba6886cee1_Q2	c71bb23b-7731-4233-8298-76ba6886cee1	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'John', 'characterOffsetBegin': 4, 'characterOffsetEnd': 8, 'ner': 'PERSON'}]"
+How many people were in John's congregation?	c71bb23b-7731-4233-8298-76ba6886cee1_Q3	c71bb23b-7731-4233-8298-76ba6886cee1	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'John', 'characterOffsetBegin': 24, 'characterOffsetEnd': 28, 'ner': 'PERSON'}]"
+When was Karl a good baseball player?	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q0	d869c6d9-4a06-4d94-bf97-dc37167a5520	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Karl', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 7, 'tokenBegin': 5, 'tokenEnd': 7, 'text': 'baseball player', 'characterOffsetBegin': 21, 'characterOffsetEnd': 36, 'ner': 'TITLE'}]"
+What did Karl join?	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q1	d869c6d9-4a06-4d94-bf97-dc37167a5520	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Karl', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What is Karl like?	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q2	d869c6d9-4a06-4d94-bf97-dc37167a5520	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Karl', 'characterOffsetBegin': 8, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+How did Karl hurt his knee?	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q3	d869c6d9-4a06-4d94-bf97-dc37167a5520	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 8, 'characterOffsetEnd': 10, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 16, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+Where did Wendy work?	e663b977-2af7-4b1d-bd33-352d932f851b_Q0	e663b977-2af7-4b1d-bd33-352d932f851b	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Wendy', 'characterOffsetBegin': 10, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Did Wendy like her job?	e663b977-2af7-4b1d-bd33-352d932f851b_Q1	e663b977-2af7-4b1d-bd33-352d932f851b	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'she', 'characterOffsetBegin': 4, 'characterOffsetEnd': 7, 'ner': 'PERSON'}, {'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'her', 'characterOffsetBegin': 13, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+Who was annoying Wendy?	e663b977-2af7-4b1d-bd33-352d932f851b_Q2	e663b977-2af7-4b1d-bd33-352d932f851b	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'her', 'characterOffsetBegin': 17, 'characterOffsetEnd': 20, 'ner': 'PERSON'}]"
+Who did Wendy fire?	e663b977-2af7-4b1d-bd33-352d932f851b_Q3	e663b977-2af7-4b1d-bd33-352d932f851b	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+What happened to Meg's mom?	f3643541-c339-4377-851d-144ea400d551_Q0	f3643541-c339-4377-851d-144ea400d551	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Meg', 'characterOffsetBegin': 17, 'characterOffsetEnd': 20, 'ner': 'PERSON'}]"
+Who was Meg's dad?	f3643541-c339-4377-851d-144ea400d551_Q1	f3643541-c339-4377-851d-144ea400d551	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Meg', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+How long after his wife died did Eric marry?	f3643541-c339-4377-851d-144ea400d551_Q2	f3643541-c339-4377-851d-144ea400d551	"[{'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'Eric', 'characterOffsetBegin': 33, 'characterOffsetEnd': 37, 'ner': 'PERSON'}, {'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'his', 'characterOffsetBegin': 15, 'characterOffsetEnd': 18, 'ner': 'PERSON'}]"
+Who were very sad?	f3643541-c339-4377-851d-144ea400d551_Q3	f3643541-c339-4377-851d-144ea400d551	[]
+What was Nick trying to buy?	f7559f25-0358-4f57-b079-dec2199b4ec3_Q0	f7559f25-0358-4f57-b079-dec2199b4ec3	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Nick', 'characterOffsetBegin': 9, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Who couldn't Nick trust?	f7559f25-0358-4f57-b079-dec2199b4ec3_Q1	f7559f25-0358-4f57-b079-dec2199b4ec3	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Nick', 'characterOffsetBegin': 13, 'characterOffsetEnd': 17, 'ner': 'PERSON'}]"
+Why did Nick decide to move out?	f7559f25-0358-4f57-b079-dec2199b4ec3_Q2	f7559f25-0358-4f57-b079-dec2199b4ec3	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 8, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+How quickly did Nick move out?	f7559f25-0358-4f57-b079-dec2199b4ec3_Q3	f7559f25-0358-4f57-b079-dec2199b4ec3	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'he', 'characterOffsetBegin': 16, 'characterOffsetEnd': 18, 'ner': 'PERSON'}]"
+Where was the crow sitting?	fables-01_Q1	fables-01	[]
+Who set his wits to work?	fables-01_Q10	fables-01	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'his', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+Who tried to discover how to get the cheese?	fables-01_Q11	fables-01	[]
+What did the fox say about the bird's beauty?	fables-01_Q12	fables-01	[]
+How did the crow caw?	fables-01_Q13	fables-01	[]
+Who did the fox notice?	fables-01_Q14	fables-01	[]
+Who observed the corvine bird?	fables-01_Q15	fables-01	[]
+Who needed intelligence?	fables-01_Q16	fables-01	[]
+Who was perched on a branch?	fables-01_Q17	fables-01	[]
+Who felt buttered up?	fables-01_Q18	fables-01	[]
+What did the crow have in her beak?	fables-01_Q2	fables-01	"[{'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'her', 'characterOffsetBegin': 26, 'characterOffsetEnd': 29, 'ner': 'PERSON'}]"
+Who is the Story about?	fables-01_Q3	fables-01	[]
+What did the fox do to the cheese?	fables-01_Q4	fables-01	[]
+Where was the fox standing?	fables-01_Q5	fables-01	[]
+What did the crow feel?	fables-01_Q6	fables-01	[]
+Who flattered the crow?	fables-01_Q7	fables-01	[]
+What was the crow doing?	fables-01_Q8	fables-01	[]
+Where was the cheese?	fables-01_Q9	fables-01	[]
+Who was feeding in a meadow?	fables-02_Q1	fables-02	[]
+Why did not the lion attack the bull?	fables-02_Q10	fables-02	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'attack', 'characterOffsetBegin': 21, 'characterOffsetEnd': 27, 'ner': 'CAUSE_OF_DEATH'}]"
+What did the lion fear?	fables-02_Q11	fables-02	[]
+What is ugly?	fables-02_Q12	fables-02	[]
+Who salivated?	fables-02_Q13	fables-02	[]
+Why did the lion salivate?	fables-02_Q14	fables-02	[]
+What did the lion advise the bull?	fables-02_Q15	fables-02	[]
+Why did the lion advise the bull to remove its horns?	fables-02_Q16	fables-02	[]
+What did the lion decide?	fables-02_Q17	fables-02	[]
+Who has horns?	fables-02_Q18	fables-02	[]
+Who did the big cat witness?	fables-02_Q19	fables-02	[]
+Who was persuaded by this flattery?	fables-02_Q2	fables-02	[]
+Why did not the lion strike the bull?	fables-02_Q20	fables-02	[]
+What did the lion gobble?	fables-02_Q21	fables-02	[]
+What did the lion consume?	fables-02_Q22	fables-02	[]
+Who tried to kill the bull?	fables-02_Q23	fables-02	[]
+Where was the bull?	fables-02_Q3	fables-02	[]
+Who was grazing?	fables-02_Q4	fables-02	[]
+Who watched the bull?	fables-02_Q5	fables-02	[]
+What did the lion feign?	fables-02_Q6	fables-02	[]
+Who is the story about?	fables-02_Q7	fables-02	[]
+Who was foolish?	fables-02_Q8	fables-02	[]
+What did the lion want?	fables-02_Q9	fables-02	[]
+Who is the story about?	fables-03_Q1	fables-03	[]
+Where where the contents of the horn spilled?	fables-03_Q10	fables-03	[]
+What was heated?	fables-03_Q11	fables-03	[]
+What did the Serpent do in revenge?	fables-03_Q12	fables-03	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Serpent', 'characterOffsetBegin': 13, 'characterOffsetEnd': 20, 'ner': 'MISC'}]"
+Who seized it?	fables-03_Q13	fables-03	[]
+Who had its coils around him?	fables-03_Q14	fables-03	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'him', 'characterOffsetBegin': 25, 'characterOffsetEnd': 28, 'ner': 'PERSON'}]"
+Who was a witness of the encounter?	fables-03_Q15	fables-03	[]
+Who came to the assistance of the Eagle?	fables-03_Q16	fables-03	[]
+What did the countryman own?	fables-03_Q17	fables-03	[]
+Who succeeded in freeing him?	fables-03_Q18	fables-03	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'him', 'characterOffsetBegin': 25, 'characterOffsetEnd': 28, 'ner': 'PERSON'}]"
+What did the countryman free the eagle from?	fables-03_Q19	fables-03	[]
+Who swooped down upon a Serpant?	fables-03_Q2	fables-03	[]
+What did the Serpent spat?	fables-03_Q20	fables-03	[]
+Who spilled its contents?	fables-03_Q21	fables-03	[]
+Who swooped towards a snake?	fables-03_Q22	fables-03	[]
+Who spiraled around the eagle?	fables-03_Q23	fables-03	[]
+What did the bird of prey descend toward?	fables-03_Q24	fables-03	[]
+Who skirmished with the serpent?	fables-03_Q25	fables-03	[]
+Who tried to support the eagle?	fables-03_Q26	fables-03	[]
+Where did the serpent spat some toxin?	fables-03_Q27	fables-03	[]
+What did the Eagle seize it with?	fables-03_Q3	fables-03	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Eagle', 'characterOffsetBegin': 13, 'characterOffsetEnd': 18, 'ner': 'ORGANIZATION'}]"
+Who came to the assistance of the Eagle?	fables-03_Q4	fables-03	[]
+What did the Serpent spit?	fables-03_Q5	fables-03	[]
+Where did the Serpent spit some poison?	fables-03_Q6	fables-03	"[{'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'poison', 'characterOffsetBegin': 32, 'characterOffsetEnd': 38, 'ner': 'CAUSE_OF_DEATH'}]"
+What did the countryman decide?	fables-03_Q7	fables-03	[]
+Who spilled the drinking vessel?	fables-03_Q8	fables-03	[]
+What did the eagle spill?	fables-03_Q9	fables-03	[]
+Who did the Fox invite to dinner?	fables-04_Q1	fables-04	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Fox', 'characterOffsetBegin': 12, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Who failed to drink some broth?	fables-04_Q10	fables-04	[]
+What was the shape of the neck of the pitcher?	fables-04_Q11	fables-04	"[{'docTokenBegin': 9, 'docTokenEnd': 10, 'tokenBegin': 9, 'tokenEnd': 10, 'text': 'pitcher', 'characterOffsetBegin': 38, 'characterOffsetEnd': 45, 'ner': 'TITLE'}]"
+What was clever?	fables-04_Q12	fables-04	[]
+What was the soup served in?	fables-04_Q13	fables-04	[]
+Who tried to drink some savory broth and failed?	fables-04_Q14	fables-04	[]
+Who tried to drink some savory stock?	fables-04_Q15	fables-04	[]
+What did the canine serve?	fables-04_Q16	fables-04	[]
+Who attempted to drink some savory soup?	fables-04_Q17	fables-04	[]
+What was the only fare provided?	fables-04_Q2	fables-04	[]
+Where was some soup served?	fables-04_Q3	fables-04	[]
+Who is the story about?	fables-04_Q4	fables-04	[]
+What did the fox do to the soup?	fables-04_Q5	fables-04	[]
+Why did the fox begin to be hungry and begin to be helpless?	fables-04_Q6	fables-04	[]
+What did the stork easily fitted the long bill into?	fables-04_Q7	fables-04	[]
+Why did the Fox sit by hungry and helpless?	fables-04_Q8	fables-04	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Fox', 'characterOffsetBegin': 12, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+What was savoury?	fables-04_Q9	fables-04	[]
+Who was the Farmer greatly annoyed by?	fables-05_Q1	fables-05	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Farmer', 'characterOffsetBegin': 12, 'characterOffsetEnd': 18, 'ner': 'TITLE'}]"
+Who caught the fox?	fables-05_Q10	fables-05	[]
+Who freed the fox?	fables-05_Q11	fables-05	[]
+Why did the agriculturist begin to be unlucky?	fables-05_Q12	fables-05	[]
+What burned completely?	fables-05_Q13	fables-05	[]
+Who was stealing the chicken?	fables-05_Q14	fables-05	[]
+What did the agriculturist ignite?	fables-05_Q15	fables-05	[]
+Who did the agriculturist unloosen?	fables-05_Q16	fables-05	[]
+Where did the Fox make straight for?	fables-05_Q2	fables-05	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Fox', 'characterOffsetBegin': 14, 'characterOffsetEnd': 17, 'ner': 'PERSON'}]"
+Who lost all his harvest?	fables-05_Q3	fables-05	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'his', 'characterOffsetBegin': 13, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+Who set a trap?	fables-05_Q4	fables-05	[]
+Where did the agriculturist tie some fiber onto?	fables-05_Q5	fables-05	[]
+Who kindled the fiber?	fables-05_Q6	fables-05	[]
+What ignited and burned completely?	fables-05_Q7	fables-05	[]
+Who lost their crop?	fables-05_Q8	fables-05	[]
+What did the farmer lose?	fables-05_Q9	fables-05	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'farmer', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'TITLE'}]"
+Where was the lion sleeping?	fables-06_Q1	fables-06	[]
+What woke up the lion?	fables-06_Q10	fables-06	[]
+Why did the trapper spread some net?	fables-06_Q11	fables-06	[]
+Who entreated the lion?	fables-06_Q12	fables-06	[]
+Where did the mouse run?	fables-06_Q13	fables-06	[]
+What did the mouse recognise?	fables-06_Q14	fables-06	[]
+What were the ropes gnawed with?	fables-06_Q15	fables-06	[]
+Who expressed mirth?	fables-06_Q16	fables-06	[]
+Who gnawed the bungee?	fables-06_Q17	fables-06	[]
+Why was the mouse terrified?	fables-06_Q18	fables-06	[]
+Who entangled himself in the meshing?	fables-06_Q19	fables-06	[]
+Who is terrified?	fables-06_Q2	fables-06	[]
+What did the hunter spread?	fables-06_Q20	fables-06	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'hunter', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'TITLE'}]"
+What seized the mouse?	fables-06_Q21	fables-06	[]
+What did the Lion seize the mouse with?	fables-06_Q22	fables-06	[]
+What did it set to work to gnaw?	fables-06_Q23	fables-06	[]
+What did the mouse gnaw the ropes with?	fables-06_Q24	fables-06	[]
+Who would reward kindness?	fables-06_Q25	fables-06	[]
+What did the mouse know?	fables-06_Q26	fables-06	[]
+What did the lion take with its paw?	fables-06_Q27	fables-06	[]
+Why did the lion wake up?	fables-06_Q28	fables-06	[]
+What amused the Lion so much?	fables-06_Q3	fables-06	[]
+Where did the Lion get entangled in one day?	fables-06_Q4	fables-06	"[{'docTokenBegin': 7, 'docTokenEnd': 9, 'tokenBegin': 7, 'tokenEnd': 9, 'text': 'one day', 'characterOffsetBegin': 36, 'characterOffsetEnd': 43, 'ner': 'DURATION', 'normalizedNER': 'P1D', 'timex': {'tid': 't1', 'type': 'DURATION', 'value': 'P1D'}}]"
+Who heard and recognised his roars of anger and ran to the spot?	fables-06_Q5	fables-06	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 25, 'characterOffsetEnd': 28, 'ner': 'PERSON'}]"
+Why was the lion awaked?	fables-06_Q6	fables-06	[]
+Who spread some net in order to catch a big game?	fables-06_Q7	fables-06	[]
+Who entangled himself in the net?	fables-06_Q8	fables-06	[]
+What did the mouse immediately begin gnawing?	fables-06_Q9	fables-06	[]
+Why did Alyssa go to Miami?	mc500.train.0_Q0	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Miami', 'characterOffsetBegin': 21, 'characterOffsetEnd': 26, 'ner': 'CITY'}]"
+What did Ellen order?	mc500.train.0_Q1	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Ellen', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+"Where did Alyssa, Kristin, Rachel and Ellen go for dinner?"	mc500.train.0_Q10	mc500.train.0	[]
+Where did Alyssa meet her friends?	mc500.train.0_Q11	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'her', 'characterOffsetBegin': 22, 'characterOffsetEnd': 25, 'ner': 'PERSON'}]"
+What did Ellen and Alyssa have to drink?	mc500.train.0_Q12	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Ellen', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Alyssa', 'characterOffsetBegin': 19, 'characterOffsetEnd': 25, 'ner': 'PERSON'}]"
+What did the ladies do after dinner?	mc500.train.0_Q13	mc500.train.0	[]
+Did Alyssa and her friends have a lot of fun?	mc500.train.0_Q14	mc500.train.0	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Alyssa', 'characterOffsetBegin': 4, 'characterOffsetEnd': 10, 'ner': 'PERSON'}, {'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'her', 'characterOffsetBegin': 15, 'characterOffsetEnd': 18, 'ner': 'PERSON'}]"
+Did Alyssa go swimming?	mc500.train.0_Q15	mc500.train.0	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Alyssa', 'characterOffsetBegin': 4, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What did Alyssa do while at the beach?	mc500.train.0_Q16	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Did Alyssa take a long trip?	mc500.train.0_Q17	mc500.train.0	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Alyssa', 'characterOffsetBegin': 4, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What city is Alyssa in?	mc500.train.0_Q18	mc500.train.0	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Alyssa', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+What did Alyssa eat at the restaurant?	mc500.train.0_Q19	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+who had soup?	mc500.train.0_Q2	mc500.train.0	[]
+Who did Alyssa call?	mc500.train.0_Q20	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Why did the ladies go back to Ellen's house?	mc500.train.0_Q21	mc500.train.0	"[{'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'Ellen', 'characterOffsetBegin': 30, 'characterOffsetEnd': 35, 'ner': 'PERSON'}]"
+"In Miami, where did Alyssa go first?"	mc500.train.0_Q22	mc500.train.0	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Miami', 'characterOffsetBegin': 3, 'characterOffsetEnd': 8, 'ner': 'CITY'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'Alyssa', 'characterOffsetBegin': 20, 'characterOffsetEnd': 26, 'ner': 'PERSON'}, {'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'first', 'characterOffsetBegin': 30, 'characterOffsetEnd': 35, 'ner': 'ORDINAL', 'normalizedNER': '1.0'}]"
+Where did Alyssa go after the beach?	mc500.train.0_Q23	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+where did Alyssa travel from?	mc500.train.0_Q3	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+What makes Alyssa happy?	mc500.train.0_Q4	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Alyssa', 'characterOffsetBegin': 11, 'characterOffsetEnd': 17, 'ner': 'PERSON'}]"
+Why did everyone stay the night?	mc500.train.0_Q5	mc500.train.0	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'night', 'characterOffsetBegin': 22, 'characterOffsetEnd': 27, 'ner': 'TIME', 'normalizedNER': 'TNI', 'timex': {'tid': 't1', 'type': 'TIME', 'value': 'TNI'}}]"
+Who traded stories?	mc500.train.0_Q6	mc500.train.0	[]
+Who went to the beach?	mc500.train.0_Q7	mc500.train.0	[]
+What was the restaurant's special?	mc500.train.0_Q8	mc500.train.0	[]
+What did Kristin have to eat?	mc500.train.0_Q9	mc500.train.0	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kristin', 'characterOffsetBegin': 9, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+What did Will laugh at?	mc500.train.111_Q0	mc500.train.111	[]
+What did Will hear?	mc500.train.111_Q1	mc500.train.111	[]
+Who got a biscuit?	mc500.train.111_Q10	mc500.train.111	[]
+What did Will have with his biscuit?	mc500.train.111_Q11	mc500.train.111	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'his', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+What did Will not want with his biscuit?	mc500.train.111_Q12	mc500.train.111	"[{'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'his', 'characterOffsetBegin': 28, 'characterOffsetEnd': 31, 'ner': 'PERSON'}]"
+Why was Will happy?	mc500.train.111_Q13	mc500.train.111	[]
+What happened when Will was in the living room?	mc500.train.111_Q14	mc500.train.111	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Will', 'characterOffsetBegin': 19, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+How did Will get to the store?	mc500.train.111_Q2	mc500.train.111	[]
+Where did Will walk to?	mc500.train.111_Q3	mc500.train.111	[]
+Where did Will eat dinner?	mc500.train.111_Q4	mc500.train.111	[]
+What was put in the trashcan?	mc500.train.111_Q5	mc500.train.111	[]
+Where did Will put the napkin?	mc500.train.111_Q6	mc500.train.111	[]
+What was the song about?	mc500.train.111_Q7	mc500.train.111	[]
+What was Will playing?	mc500.train.111_Q8	mc500.train.111	[]
+Where was the star?	mc500.train.111_Q9	mc500.train.111	[]
+When did Kelly wake up?	mc500.train.18_Q0	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+what did Kelly do after she woke up?	mc500.train.18_Q1	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'she', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+what did Kelly hide?	mc500.train.18_Q10	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Which flower was mother's favorite?	mc500.train.18_Q11	mc500.train.18	[]
+What time did Kelly's mother wake up?	mc500.train.18_Q12	mc500.train.18	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Kelly', 'characterOffsetBegin': 14, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+What did Kelly use to tie the flowers together?	mc500.train.18_Q13	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+what did Kelly give her mom as a present?	mc500.train.18_Q14	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 8, 'docTokenEnd': 9, 'tokenBegin': 8, 'tokenEnd': 9, 'text': 'present', 'characterOffsetBegin': 33, 'characterOffsetEnd': 40, 'ner': 'DATE', 'normalizedNER': 'PRESENT_REF', 'timex': {'tid': 't1', 'type': 'DATE', 'value': 'PRESENT_REF'}}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'her', 'characterOffsetBegin': 20, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+What was Kelly's baby sister's name?	mc500.train.18_Q15	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'her', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Why did Kelly hide the flowers a second time?	mc500.train.18_Q16	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 8, 'tokenBegin': 6, 'tokenEnd': 8, 'text': 'a second', 'characterOffsetBegin': 31, 'characterOffsetEnd': 39, 'ner': 'DURATION', 'normalizedNER': 'PT1S', 'timex': {'tid': 't1', 'type': 'DURATION', 'value': 'PT1S'}}]"
+What did Kelly tie together with a string?	mc500.train.18_Q17	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+where did Kelly pick flowers?	mc500.train.18_Q18	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 10, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+Which flowers were big?	mc500.train.18_Q19	mc500.train.18	[]
+What is big and beautiful?	mc500.train.18_Q2	mc500.train.18	[]
+"After Kelly woke up, where did she go?"	mc500.train.18_Q20	mc500.train.18	"[{'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'Kelly', 'characterOffsetBegin': 29, 'characterOffsetEnd': 34, 'ner': 'PERSON'}, {'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'she', 'characterOffsetBegin': 6, 'characterOffsetEnd': 9, 'ner': 'PERSON'}]"
+What did Kelly do after she had collected the flowers?	mc500.train.18_Q21	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'she', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+what did Kelly get?	mc500.train.18_Q3	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+What did Kelly collect as a present?	mc500.train.18_Q4	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 6, 'docTokenEnd': 7, 'tokenBegin': 6, 'tokenEnd': 7, 'text': 'present', 'characterOffsetBegin': 28, 'characterOffsetEnd': 35, 'ner': 'DATE', 'normalizedNER': 'PRESENT_REF', 'timex': {'tid': 't1', 'type': 'DATE', 'value': 'PRESENT_REF'}}]"
+Where were the best flowers?	mc500.train.18_Q5	mc500.train.18	[]
+Where did Kelly finally hide the flowers?	mc500.train.18_Q6	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 10, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Why was Kelly in a hurry?	mc500.train.18_Q7	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+How did Kelly feel when her mother woke up?	mc500.train.18_Q8	mc500.train.18	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Kelly', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'her', 'characterOffsetBegin': 24, 'characterOffsetEnd': 27, 'ner': 'PERSON'}]"
+what size were the orange ones?	mc500.train.18_Q9	mc500.train.18	[]
+When was Andrew bored?	mc500.train.23_Q0	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+What day was it?	mc500.train.23_Q1	mc500.train.23	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'day', 'characterOffsetBegin': 5, 'characterOffsetEnd': 8, 'ner': 'DURATION', 'normalizedNER': 'P1D', 'timex': {'tid': 't1', 'type': 'DURATION', 'value': 'P1D'}}]"
+Who did lots of tricks?	mc500.train.23_Q10	mc500.train.23	[]
+What did Andrew and his dad eat?	mc500.train.23_Q11	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 20, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+Where did Andrew and his dad have fun?	mc500.train.23_Q12	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}]"
+Where did Andrew and his dad go?	mc500.train.23_Q13	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}]"
+Where was the newspaper?	mc500.train.23_Q14	mc500.train.23	[]
+Who went down the slide?	mc500.train.23_Q15	mc500.train.23	[]
+What were the animals at the circus doing?	mc500.train.23_Q16	mc500.train.23	[]
+What did Andrew bring to his dad?	mc500.train.23_Q17	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'he', 'characterOffsetBegin': 9, 'characterOffsetEnd': 11, 'ner': 'PERSON'}, {'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'his', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}]"
+What did Andrew need to do before he could go to the circus?	mc500.train.23_Q18	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}, {'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'he', 'characterOffsetBegin': 34, 'characterOffsetEnd': 36, 'ner': 'PERSON'}]"
+Who ate the peanuts?	mc500.train.23_Q19	mc500.train.23	[]
+Where did Andrew look?	mc500.train.23_Q2	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+What was on the front page of the newspaper?	mc500.train.23_Q20	mc500.train.23	[]
+what did Andrew see by the door?	mc500.train.23_Q3	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Where was the picture of the elephant?	mc500.train.23_Q4	mc500.train.23	[]
+How long had Andrew been watching TV?	mc500.train.23_Q5	mc500.train.23	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Andrew', 'characterOffsetBegin': 13, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+What did Andrew and his dad read?	mc500.train.23_Q6	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}, {'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'his', 'characterOffsetBegin': 20, 'characterOffsetEnd': 23, 'ner': 'PERSON'}]"
+Where was the circus?	mc500.train.23_Q7	mc500.train.23	[]
+Had Andrew ever been to the circus?	mc500.train.23_Q8	mc500.train.23	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Andrew', 'characterOffsetBegin': 4, 'characterOffsetEnd': 10, 'ner': 'PERSON'}]"
+What did Andrew feed the goldfish?	mc500.train.23_Q9	mc500.train.23	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Andrew', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Where is the beautiful pond?	mc500.train.25_Q0	mc500.train.25	[]
+Where did Maxine live?	mc500.train.25_Q1	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Maxine', 'characterOffsetBegin': 10, 'characterOffsetEnd': 16, 'ner': 'PERSON'}]"
+What did Maxine's dad see?	mc500.train.25_Q10	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Maxine', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+Who was mad?	mc500.train.25_Q11	mc500.train.25	[]
+Who yelled at Cindy?	mc500.train.25_Q12	mc500.train.25	"[{'docTokenBegin': 3, 'docTokenEnd': 4, 'tokenBegin': 3, 'tokenEnd': 4, 'text': 'Cindy', 'characterOffsetBegin': 14, 'characterOffsetEnd': 19, 'ner': 'PERSON'}]"
+Who did something mean?	mc500.train.25_Q13	mc500.train.25	[]
+When did Cindy do something mean?	mc500.train.25_Q14	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Cindy', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Who didn't like Thomas?	mc500.train.25_Q15	mc500.train.25	"[{'docTokenBegin': 4, 'docTokenEnd': 5, 'tokenBegin': 4, 'tokenEnd': 5, 'text': 'Thomas', 'characterOffsetBegin': 16, 'characterOffsetEnd': 22, 'ner': 'PERSON'}]"
+What Thomas love to do?	mc500.train.25_Q16	mc500.train.25	"[{'docTokenBegin': 1, 'docTokenEnd': 2, 'tokenBegin': 1, 'tokenEnd': 2, 'text': 'Thomas', 'characterOffsetBegin': 5, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
+What did Cindy's dad do to her?	mc500.train.25_Q17	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Cindy', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}, {'docTokenBegin': 7, 'docTokenEnd': 8, 'tokenBegin': 7, 'tokenEnd': 8, 'text': 'her', 'characterOffsetBegin': 27, 'characterOffsetEnd': 30, 'ner': 'PERSON'}]"
+What was the name of Maxine's new friend?	mc500.train.25_Q18	mc500.train.25	"[{'docTokenBegin': 5, 'docTokenEnd': 6, 'tokenBegin': 5, 'tokenEnd': 6, 'text': 'her', 'characterOffsetBegin': 21, 'characterOffsetEnd': 24, 'ner': 'PERSON'}]"
+Who did Cindy meet?	mc500.train.25_Q19	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Cindy', 'characterOffsetBegin': 8, 'characterOffsetEnd': 13, 'ner': 'PERSON'}]"
+What did Cindy throw?	mc500.train.25_Q2	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Cindy', 'characterOffsetBegin': 9, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+Who was happy?	mc500.train.25_Q20	mc500.train.25	[]
+Who did Maxine meet?	mc500.train.25_Q3	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Maxine', 'characterOffsetBegin': 8, 'characterOffsetEnd': 14, 'ner': 'PERSON'}]"
+When did Maxine take a bath?	mc500.train.25_Q4	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'Maxine', 'characterOffsetBegin': 9, 'characterOffsetEnd': 15, 'ner': 'PERSON'}]"
+What did Maxine love to do?	mc500.train.25_Q5	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 9, 'characterOffsetEnd': 12, 'ner': 'PERSON'}]"
+Where did they play?	mc500.train.25_Q6	mc500.train.25	[]
+Why were Maxine and Thomas happy?	mc500.train.25_Q7	mc500.train.25	[]
+Who threw rocks?	mc500.train.25_Q8	mc500.train.25	[]
+Who did Cindy throw rocks at?	mc500.train.25_Q9	mc500.train.25	"[{'docTokenBegin': 2, 'docTokenEnd': 3, 'tokenBegin': 2, 'tokenEnd': 3, 'text': 'she', 'characterOffsetBegin': 8, 'characterOffsetEnd': 11, 'ner': 'PERSON'}]"
