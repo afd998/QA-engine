@@ -237,7 +237,7 @@ def get_answer(question, story):
 question_classes = {}
 def question_class(question):
     tokens = nltk.word_tokenize(question["question"])
-    if tokens[0].lower() in ["is", "was", "does", "did", "had", "in"]:
+    if tokens[0].lower() in ["is", "was", "does", "did", "had"]:
         print(question["question"])
         tokens[0] = "yn"
     if tokens[0].lower() in question_classes.keys():
