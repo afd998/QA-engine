@@ -146,6 +146,8 @@ def coreferece_story(story):
                                 for i in range(0, len(anticident_tokens)):
                                     localstory[sentind - 1]["sentence"].insert(example_start + i, anticident_tokens[i])
                                 print("After:", localstory[sentind - 1]["sentence"])
+        for i in range(0, len(localstory)):
+            localstory[i]["sentence"]=" ".join(localstory[i]["sentence"])
         SAVED_COREF= (story[0]["storyid"],localstory )
         return localstory
 
