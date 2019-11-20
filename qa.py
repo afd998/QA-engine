@@ -16,19 +16,46 @@ questions = 0
 
 stop = set(stopwords.words('english'))
 
+def  A6_sentence_selection(question, story):
+    q_lemmas = normalize_set(question["question"], expand_synsets=True)
+    answers = {
 
-def token_filter(token,
-                 doc,
-                 take_out_capitals=False,
-                 use_spacy_stopwords=False):
+        sent["sentenceid"]: normalize_set(sent["sentence"], expand_synsets=True)
+        for sent in story
+
+    }
+    for sent in story:
+        print(normalize_set(sent["sentence"], expand_synsets=True))
+    score_dict = {}
+    for ans in answers.keys():
+        ans_lemmas = answers[ans]
+        score_dict[ans] = len([lem for lem in q_lemmas if lem in ans_lemmas])
+    sent_id = max(score_dict, key=score_dict.get)
+
+    threshold = 0
+    if score_dict[sent_id] < threshold:
+        q_vector = doc_vector(question["question"])
+        for sent in story:
+            sent_vector = doc_vector(sent["sentence"])
+            score_dict[sent["sentenceid"]] = scipy.spatial.distance.cosine(
+                q_vector, sent_vector)
+
+        sent_id = min(score_dict, key=score_dict.get)
+        threshold2 = 0.5
+        if score_dict[sent_id] > threshold2:
+            sent_id = "-"
+
+    global questions
+    questions += 1
+    sys.stdout.write("\r" + str(questions) + " questions  answered...")
+
+    return sent_id, ""
+def token_filter(token, use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
-        keep_token = False
-    elif take_out_capitals and (token.text is not doc[0].text) and (
-            token.text is not token.text.lower()):
-        keep_token is False
+        keep_token = True
     if token.text == "-PRON-":
-        keep_token = False
+        keep_token = True
     elif token.text.lower(
     ) in stop if not use_spacy_stopwords else token.is_stop:
         keep_token = False
@@ -36,47 +63,54 @@ def token_filter(token,
     elif token.is_punct:
         keep_token = False
     return keep_token
-
-
-def expand_synsets(token):
-    out_set = set()
-    pos_dict = {"NOUN": wn.NOUN, "VERB": wn.VERB, "ADV": wn.ADV, "ADJ": wn.ADJ}
-    if token.pos_ in pos_dict:
-        synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
-    else:
-        synset = wn.synsets(token.lemma_)
-
-    if synset != []:
-        for synonym in synset[0].lemma_names():
-            out_set.add(synonym)
-            for syn in wn.synsets(synonym)[0].lemma_names():
-                out_set.add(syn)
-                if len(wn.synsets(synonym)) > 1:
-                    for syn2 in wn.synsets(synonym)[1].lemma_names():
-                        out_set.add(synonym)
-        if len(synset) > 1:
-            for synonym in synset[1].lemma_names():
-                out_set.add(synonym)
-    else:
-        out_set.add(token.lemma_)
-    return out_set
-
-
-def normalize(text,
-              output_type="set",
-              take_out_caps=False,
-              lemmatize=True,
-              expand_synsets=True,
-              loose_filter=False):
+def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
+    doc = nlp(text)
+    out = ""
     if expand_synsets and not lemmatize:
         print("can't expand synsets without lemmatizing", file=sys.stderr)
         exit()
-
-    doc = nlp(text)
     for token in doc:
-        if token_filter(token, doc, take_out_capitals=take_out_caps):
-            if expand_synsets:
-                expand_synsets(token)
+            if token_filter(token):
+                if expand_synsets:
+                    pos_dict = {
+                        "NOUN": wn.NOUN,
+                        "VERB": wn.VERB,
+                        "ADV": wn.ADV,
+                        "ADJ": wn.ADJ
+                    }
+                    if token.pos_ in pos_dict:
+                        synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
+                    else:
+                        synset = wn.synsets(token.lemma_)
+
+                    if synset != []:
+                        for synonym in synset[0].lemma_names():
+                            out += (synonym + " ")
+                            for syn in wn.synsets(synonym)[0].lemma_names():
+                                out += (syn + " ")
+                                if len(wn.synsets(synonym)) > 1:
+                                    for syn2 in wn.synsets(synonym)[1].lemma_names():
+                                        out += (syn2 + " ")
+                        if len(synset) > 1:
+                            for synonym in synset[1].lemma_names():
+                                out += (synonym + " ")
+                    else:
+                        out += (token.lemma_ + " ")
+                elif (lemmatize):
+                    out += ((token.lemma_
+                             if token.lemma_ != "-PRON-" else token.text) + " ")
+                else:
+                    out += (token.text + " ")
+    return nlp(out)
+def normalize_set(text, lemmatize=True, expand_synsets=False, loose_filter=False):
+    doc = nlp(text)
+    out_set = set()
+
+    if expand_synsets and not lemmatize:
+        print("can't expand synsets without lemmatizing", file=sys.stderr)
+        exit()
+    for token in doc:
+        if token_filter(token):
             if expand_synsets:
                 pos_dict = {
                     "NOUN": wn.NOUN,
@@ -95,26 +129,29 @@ def normalize(text,
                         for syn in wn.synsets(synonym)[0].lemma_names():
                             out_set.add(syn)
                             if len(wn.synsets(synonym)) > 1:
-                                for syn2 in wn.synsets(
-                                        synonym)[1].lemma_names():
+                                for syn2 in wn.synsets(synonym)[1].lemma_names():
                                     out_set.add(synonym)
                     if len(synset) > 1:
                         for synonym in synset[1].lemma_names():
                             out_set.add(synonym)
+
+
                 else:
                     out_set.add(token.lemma_)
             elif (lemmatize):
-                out_set.add((
-                    token.lemma_ if token.lemma_ != "-PRON-" else token.text) +
-                            " ")
+                out_set.add(token.lemma_)
             else:
-                out_set.add(token.text + " ")
-    if output_type == "string":
-        list1 = list(out_set)
-        out = ''.join(list1)
-    else:
-        out = out_set
-    return nlp(out)
+                out_set.add(token.lemma_)
+    return out_set
+def doc_vector(text):
+    doc = normalize(text)
+    docvec = numpy.zeros((300,), dtype="float32")
+    for token in doc:
+        if token.has_vector:
+            docvec = numpy.add(docvec, token.vector)
+    # print(docvec.dtype)
+    return docvec
+
 
 
 SAVED_COREF = ("a", dict())
