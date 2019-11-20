@@ -7,8 +7,11 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet as wn
 import sys
 import time
-from json import dumps
 import numpy, scipy
+from nltk.util import ngrams
+import json
+import re
+
 nlp = spacy.load("en_core_web_lg")
 #test
 questions = 0
