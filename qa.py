@@ -113,12 +113,25 @@ def normalize(text,
     else:
         out = out_set
     return nlp(out)
+SAVED_COREF=("a",dict())
 
+<<<<<<< HEAD
 
 def coreference_story(story, load):
     ### coreference is incomplete due to coreference overlap give in JSON ###
     if not load:
         # print("question")
+=======
+def coreferece_story(story):
+    ### coreference is incomplete due to cofreference overlap give in JSON ###
+    global SAVED_COREF
+    if story[0]["storyid"] == SAVED_COREF[0]:
+        print("same story")
+        return SAVED_COREF[1]
+    else:
+        print("new story")
+        print("question")
+>>>>>>> origin/atticus_branch
         sent = story[0]
         story_coref = sent['coref']
         localstory = copy.deepcopy(story)
@@ -151,6 +164,7 @@ def coreference_story(story, load):
                                 # print("Before:",
                                 #   localstory[sentind - 1]["sentence"])
                                 for i in range(0, len(example_tokens)):
+<<<<<<< HEAD
                                     del localstory[
                                         sentind - 1]["sentence"][example_start]
                                 # print("During:",
@@ -171,6 +185,14 @@ def coreference_story(story, load):
             "data/coref_sents-{0}.pickle".format(story[0]["storyid"]), 'rb')
         localstory = pickle.load(coref_file)
         coref_file.close()
+=======
+                                    del localstory[sentind - 1]["sentence"][example_start]
+                                print("During:", localstory[sentind - 1]["sentence"])
+                                for i in range(0, len(anticident_tokens)):
+                                    localstory[sentind - 1]["sentence"].insert(example_start + i, anticident_tokens[i])
+                                print("After:", localstory[sentind - 1]["sentence"])
+        SAVED_COREF= (story[0]["storyid"],localstory )
+>>>>>>> origin/atticus_branch
         return localstory
 
 
@@ -217,6 +239,7 @@ def get_answer(question, story):
         coref -- Stanford CoreNLP version of coreference resolution of the entire story
 
     """
+<<<<<<< HEAD
     # global print_story
     # if print_story:
     #     print_story = False
@@ -225,6 +248,12 @@ def get_answer(question, story):
     coref_story = coreference_story(story, load)
     question_class(question)
 
+=======
+
+    ###     Your Code Goes Here         ###
+    print("NEW QUESTION")
+    coref_story = coreferece_story(story)
+>>>>>>> origin/atticus_branch
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
