@@ -1,12 +1,14 @@
 from qa_engine.base import QABase
 import spacy
 import nltk
+from nltk.util import ngrams
 from nltk.corpus import stopwords
 from nltk.corpus import wordnet as wn
 import copy
 import pickle
 import sys
 import json
+import re
 
 nlp = spacy.load("en_core_web_lg")
 # test
@@ -222,6 +224,9 @@ def get_answer(question, story):
     # print("NEW QUESTION")
     coref_story = coreference_story(story)
     q_class = question_class(question)
+    print(q_class)
+    possible = possible_answers(story)
+    print(possible)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
@@ -231,8 +236,38 @@ def get_answer(question, story):
     return answerid, answer
 
 
-# def possible_answers(story):
-question_classes = {}
+
+# Code from https://stackoverflow.com/questions/39100652/python-chunking-others-than-noun-phrases-e-g-prepositional-using-spacy-etc
+def get_pps(doc):
+    "Function to get PPs from a parsed document."
+    pps = []
+    for token in doc:
+        # Try this with other parts of speech for different subtrees.
+        if token.pos_ == 'ADP':
+            pp = ' '.join([tok.orth_ for tok in token.subtree])
+            pps.append(pp)
+    return pps
+
+def possible_answers(story, n=3):
+    ans = {}
+    text = ""
+    sentences = []
+    for sent in story:
+        sentences.append(sent["sentence"])
+        text += sent["sentence"] + " "
+    doc = nlp(text)
+    ans["tokens"] = [token.text for token in doc]
+    ans["chunks"] = [chunk.text for chunk in doc.noun_chunks]
+    ans["ents"] = {ent.text:ent.label_ for ent in doc.ents}
+    for label in set(ans["ents"].values()):
+        ans[label] = [key for key in ans["ents"] if ans["ents"][key] == label]
+    ans["prep_phrases"] = get_pps(doc)
+    ans["ngrams"] = []
+    for sentence in sentences:
+        ans["ngrams"] += ngrams(nltk.word_tokenize(sentence), n)
+    return ans
+    
+
 
 
 def question_class(question):
@@ -247,10 +282,10 @@ def question_class(question):
     if tokens[0] in ["is", "was", "does", "did", "had"]:
         print(question["question"])
         tokens[0] = "yn"
-    if tokens[0] in question_classes.keys():
-        question_classes[tokens[0]] += 1
-    else:
-        question_classes[tokens[0]] = 1
+    # if tokens[0] in question_classes.keys():
+    #     question_classes[tokens[0]] += 1
+    # else:
+    #     question_classes[tokens[0]] = 1
     return tokens[0]
 
 
@@ -268,7 +303,6 @@ def run_qa():
     QA = QAEngine()
     QA.run()
     QA.save_answers()
-    print(question_classes)
 
 
 #############################################################
