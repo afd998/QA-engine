@@ -104,11 +104,16 @@ def normalize(text, output_type="set", take_out_caps=False, lemmatize=True, expa
     else:
         out = out_set
     return nlp(out)
+SAVED_COREF=("a",dict())
 
-
-def coreferece_story(story, load):
+def coreferece_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
-    if not load:
+    global SAVED_COREF
+    if story[0]["storyid"] == SAVED_COREF[0]:
+        print("same story")
+        return SAVED_COREF[1]
+    else:
+        print("new story")
         print("question")
         sent = story[0]
         story_coref = sent['coref']
@@ -141,16 +146,7 @@ def coreferece_story(story, load):
                                 for i in range(0, len(anticident_tokens)):
                                     localstory[sentind - 1]["sentence"].insert(example_start + i, anticident_tokens[i])
                                 print("After:", localstory[sentind - 1]["sentence"])
-        coref_file = open(
-            "data/coref_sents-{0}.pickle".format(story[0]["storyid"]), 'wb')
-        pickle.dump(localstory, coref_file)
-        coref_file.close()
-        return localstory
-    else:
-        coref_file = open(
-            "data/coref_sents-{0}.pickle".format(story[0]["storyid"]), 'rb')
-        localstory = pickle.load(coref_file)
-        coref_file.close()
+        SAVED_COREF= (story[0]["storyid"],localstory )
         return localstory
 
 
@@ -199,8 +195,7 @@ def get_answer(question, story):
 
     ###     Your Code Goes Here         ###
     print("NEW QUESTION")
-    load = False
-    coref_story = coreferece_story(story, load)
+    coref_story = coreferece_story(story)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 

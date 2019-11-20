@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="" />
+    <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-006536d7-2be3-49a4-a750-769684e952ed.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-04c164f6-da41-48a3-8aa3-eb7b650bb5f0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-0beabab2-fb49-460e-a6e6-f35a202e3348.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-0dd3e2c3-3ea4-450a-97c4-42a54c426018.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-110fafd1-2bb7-4ffe-aac7-475706165d41.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-13573c2e-5eed-40eb-bbe5-ed259b5c76a6.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-1cc75245-93bd-44cc-b076-8d1b249e1ee5.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-1e379d2b-69e8-485e-92ac-4c3daa41e364.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-210d56ce-a940-4766-9b7b-d086b2c5682d.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-271616db-90c2-4303-9c2b-64f4061ceb56.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-2ef3788f-6b2b-45c8-b6ba-71450d565e6a.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-375c34c9-3d98-4b2f-9076-404f34ad4e66.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-3be3719a-ae77-4106-88ea-988afb19db99.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-4d7b022e-25d2-4300-a9b0-24ab35f4045b.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-50357157-3765-40b5-8e32-f86961c98be0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-5e76713f-92b2-4a5d-8f8d-510fde45705c.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-61550fe1-c17d-4b94-b225-941026bdb68e.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-6ebc8d48-029b-4f00-89b3-773ce802825e.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-712702cc-f042-4ca5-84dc-ada756cc8959.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-77338898-07d4-4143-8451-284540c8b082.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-790d9cb4-4832-49e8-8137-331e79a4b9e6.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-8036c905-f23e-4976-83a1-85d679b5e0c2.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-865db3c4-a253-4d35-8766-25fc7e0a8cfb.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-87da1a22-df0b-410c-b186-439700b70ba6.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-88fba119-ccac-4b82-881f-e609e188bebc.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-8ca3cedb-510e-4454-ba08-93eaa605563b.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-8fbef343-8806-4bcf-9326-08ca6ebf6cb9.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-9a66b66d-034d-495e-a60e-e22c25e0e0fa.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-a107d361-e8a4-4cb6-8ffb-623a4c49ee1e.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-a111d580-1fb2-4ab1-848a-0856982dfcd5.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-a8d6e66b-da81-4dc7-a470-67f2ab32b9e6.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-aab4ee80-fc00-4d9c-a127-a63b54dfd193.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-ae7e744e-fd27-46c2-befb-7e8427cb679c.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-b93f956f-2256-4c6d-91d2-7675dff455f0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-b94e1810-9869-4af6-bb74-b4a51c46f3d2.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-bfa4ef8c-715d-4287-88a5-035611e34e40.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-c400d38a-54fc-45da-99ed-558fcfc81016.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-c71bb23b-7731-4233-8298-76ba6886cee1.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-d869c6d9-4a06-4d94-bf97-dc37167a5520.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-e663b977-2af7-4b1d-bd33-352d932f851b.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-f3643541-c339-4377-851d-144ea400d551.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-f7559f25-0358-4f57-b079-dec2199b4ec3.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-01.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-02.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-03.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-04.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-05.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-fables-06.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-mc500.train.0.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-mc500.train.111.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-mc500.train.18.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-mc500.train.23.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/coref_sents-mc500.train.25.pickle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,15 +88,16 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/assignment7" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1TiM0p7DpMewgMYiP7ciNhDOc0S" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -202,5 +263,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/assignment7" />
+    </ignored-roots>
   </component>
 </project>
