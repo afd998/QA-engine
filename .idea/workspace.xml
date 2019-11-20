@@ -230,6 +230,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.baseline-stub-word2vec-demo" />
+      <item itemvalue="Python.baseline-stub-word2vec" />
+      <item itemvalue="Python.baseline-stub" />
+      <item itemvalue="Python.chunk-demo" />
+      <item itemvalue="Python.qa" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.qa" />
