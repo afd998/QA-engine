@@ -210,6 +210,8 @@ def coreference_story(story):
                                         antecedent_tokens[i])
                                 # print("After:",
                                 #       localstory[sentind - 1]["sentence"])
+        for i in range(0, len(localstory)):
+            localstory[i]["sentence"]=" ".join(localstory[i]["sentence"])
         SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
 
@@ -264,7 +266,7 @@ def get_answer(question, story):
     coref_story = coreference_story(story)
     q_class = question_class(question)
     print(q_class)
-    possible = possible_answers(story)
+    possible = possible_answers(coref_story)
     print(possible)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
