@@ -116,7 +116,7 @@ def normalize(text,
 
 
 def coreference_story(story, load):
-    ### coreference is incomplete due to cofreference overlap give in JSON ###
+    ### coreference is incomplete due to coreference overlap give in JSON ###
     if not load:
         # print("question")
         sent = story[0]
@@ -192,7 +192,6 @@ def person_in_the_question(question):
 
 # print_story = True
 
-
 def get_answer(question, story):
     """
     :param question: dict
@@ -224,6 +223,8 @@ def get_answer(question, story):
     #     print(json.dumps(story, indent=4))
     load = False
     coref_story = coreference_story(story, load)
+    question_class(question)
+
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
@@ -232,6 +233,18 @@ def get_answer(question, story):
 
     return answerid, answer
 
+# def possible_answers(story):
+question_classes = {}
+def question_class(question):
+    tokens = nltk.word_tokenize(question["question"])
+    if tokens[0].lower() in ["is", "was", "does", "did", "had", "in"]:
+        print(question["question"])
+        tokens[0] = "yn"
+    if tokens[0].lower() in question_classes.keys():
+        question_classes[tokens[0].lower()] += 1
+    else:
+        question_classes[tokens[0].lower()] = 1
+    return tokens[0].lower()
 
 #############################################################
 ###     Dont change the code in this section
@@ -247,6 +260,7 @@ def run_qa():
     QA = QAEngine()
     QA.run()
     QA.save_answers()
+    print(question_classes)
 
 
 #############################################################
