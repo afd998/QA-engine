@@ -113,17 +113,20 @@ def normalize(text,
     else:
         out = out_set
     return nlp(out)
-SAVED_COREF=("a",dict())
 
-def coreferece_story(story):
+
+SAVED_COREF = ("a", dict())
+
+
+def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
     global SAVED_COREF
     if story[0]["storyid"] == SAVED_COREF[0]:
-        print("same story")
+        # print("same story")
         return SAVED_COREF[1]
     else:
-        print("new story")
-        print("question")
+        # print("new story")
+        # print("question")
         sent = story[0]
         story_coref = sent['coref']
         localstory = copy.deepcopy(story)
@@ -156,12 +159,17 @@ def coreferece_story(story):
                                 # print("Before:",
                                 #   localstory[sentind - 1]["sentence"])
                                 for i in range(0, len(example_tokens)):
-                                    del localstory[sentind - 1]["sentence"][example_start]
-                                print("During:", localstory[sentind - 1]["sentence"])
-                                for i in range(0, len(anticident_tokens)):
-                                    localstory[sentind - 1]["sentence"].insert(example_start + i, anticident_tokens[i])
-                                print("After:", localstory[sentind - 1]["sentence"])
-        SAVED_COREF= (story[0]["storyid"],localstory )
+                                    del localstory[
+                                        sentind - 1]["sentence"][example_start]
+                                # print("During:",
+                                #       localstory[sentind - 1]["sentence"])
+                                for i in range(0, len(antecedent_tokens)):
+                                    localstory[sentind - 1]["sentence"].insert(
+                                        example_start + i,
+                                        antecedent_tokens[i])
+                                # print("After:",
+                                #       localstory[sentind - 1]["sentence"])
+        SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
 
 
@@ -182,6 +190,7 @@ def person_in_the_question(question):
  '''
 
 # print_story = True
+
 
 def get_answer(question, story):
     """
@@ -210,8 +219,9 @@ def get_answer(question, story):
     """
 
     ###     Your Code Goes Here         ###
-    print("NEW QUESTION")
-    coref_story = coreferece_story(story)
+    # print("NEW QUESTION")
+    coref_story = coreference_story(story)
+    q_class = question_class(question)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
@@ -220,18 +230,29 @@ def get_answer(question, story):
 
     return answerid, answer
 
+
 # def possible_answers(story):
 question_classes = {}
+
+
 def question_class(question):
-    tokens = nltk.word_tokenize(question["question"])
-    if tokens[0].lower() in ["is", "was", "does", "did", "had"]:
+    tokens = nltk.word_tokenize(question["question"].lower())
+    question_words = ["is", "was", "does", "did", "had", "when", "what", "where", "who", "how", "why", "which"]
+    if tokens[0] not in question_words:
+        for token in tokens:
+            if token in question_words:
+                tokens[0] = token
+                break
+    
+    if tokens[0] in ["is", "was", "does", "did", "had"]:
         print(question["question"])
         tokens[0] = "yn"
-    if tokens[0].lower() in question_classes.keys():
-        question_classes[tokens[0].lower()] += 1
+    if tokens[0] in question_classes.keys():
+        question_classes[tokens[0]] += 1
     else:
-        question_classes[tokens[0].lower()] = 1
-    return tokens[0].lower()
+        question_classes[tokens[0]] = 1
+    return tokens[0]
+
 
 #############################################################
 ###     Dont change the code in this section
