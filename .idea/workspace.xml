@@ -108,8 +108,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.score_sentences" />
       <item itemvalue="Python.qa" />
+      <item itemvalue="Python.score_sentences" />
     </list>
     <recent_temporary>
       <list>
