@@ -15,13 +15,46 @@ questions = 0
 
 stop = set(stopwords.words('english'))
 
+def  A6_sentence_selection(question, story):
+    q_lemmas = normalize_set(question["question"], expand_synsets=True)
+    answers = {
 
+        sent["sentenceid"]: normalize_set(sent["sentence"], expand_synsets=True)
+        for sent in story
+
+    }
+    for sent in story:
+        print(normalize_set(sent["sentence"], expand_synsets=True))
+    score_dict = {}
+    for ans in answers.keys():
+        ans_lemmas = answers[ans]
+        score_dict[ans] = len([lem for lem in q_lemmas if lem in ans_lemmas])
+    sent_id = max(score_dict, key=score_dict.get)
+
+    threshold = 0
+    if score_dict[sent_id] < threshold:
+        q_vector = doc_vector(question["question"])
+        for sent in story:
+            sent_vector = doc_vector(sent["sentence"])
+            score_dict[sent["sentenceid"]] = scipy.spatial.distance.cosine(
+                q_vector, sent_vector)
+
+        sent_id = min(score_dict, key=score_dict.get)
+        threshold2 = 0.5
+        if score_dict[sent_id] > threshold2:
+            sent_id = "-"
+
+    global questions
+    questions += 1
+    sys.stdout.write("\r" + str(questions) + " questions  answered...")
+
+    return sent_id, ""
 def token_filter(token, use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
-        keep_token = False
+        keep_token = True
     if token.text == "-PRON-":
-        keep_token = False
+        keep_token = True
     elif token.text.lower(
     ) in stop if not use_spacy_stopwords else token.is_stop:
         keep_token = False
@@ -29,8 +62,6 @@ def token_filter(token, use_spacy_stopwords=False):
     elif token.is_punct:
         keep_token = False
     return keep_token
-
-
 def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
     doc = nlp(text)
     out = ""
@@ -53,12 +84,12 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
 
                     if synset != []:
                         for synonym in synset[0].lemma_names():
-                            out_set.add(synonym)
+                            out += (synonym + " ")
                             for syn in wn.synsets(synonym)[0].lemma_names():
                                 out += (syn + " ")
                                 if len(wn.synsets(synonym)) > 1:
                                     for syn2 in wn.synsets(synonym)[1].lemma_names():
-                                        out += (synonym + " ")
+                                        out += (syn2 + " ")
                         if len(synset) > 1:
                             for synonym in synset[1].lemma_names():
                                 out += (synonym + " ")
@@ -70,8 +101,6 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
                 else:
                     out += (token.text + " ")
     return nlp(out)
-
-
 def normalize_set(text, lemmatize=True, expand_synsets=False, loose_filter=False):
     doc = nlp(text)
     out_set = set()
@@ -113,8 +142,6 @@ def normalize_set(text, lemmatize=True, expand_synsets=False, loose_filter=False
             else:
                 out_set.add(token.lemma_)
     return out_set
-
-
 def doc_vector(text):
     doc = normalize(text)
     docvec = numpy.zeros((300,), dtype="float32")
@@ -123,6 +150,7 @@ def doc_vector(text):
             docvec = numpy.add(docvec, token.vector)
     # print(docvec.dtype)
     return docvec
+
 
 
 SAVED_COREF=("a",dict())
@@ -226,13 +254,11 @@ def get_answer(question, story):
     """
 
     ###     Your Code Goes Here         ###
-    print("NEW QUESTION")
-    coref_story = coreferece_story(story)
+    coref_story = coreference_story(story)
+    answerid, answer = A6_sentence_selection(question,coref_story)
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
-    answer = "whatever you think the answer is"
-    answerid = "-"
 
     ###     End of Your Code         ###
     return answerid, answer
