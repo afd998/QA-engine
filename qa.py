@@ -8,7 +8,6 @@ import copy
 import pickle
 import sys
 import json
-import re
 
 nlp = spacy.load("en_core_web_lg")
 # test
@@ -193,7 +192,7 @@ def person_in_the_question(question):
 
 # print_story = True
 
-
+last_story = ""
 def get_answer(question, story):
     """
     :param question: dict
@@ -224,9 +223,13 @@ def get_answer(question, story):
     # print("NEW QUESTION")
     coref_story = coreference_story(story)
     q_class = question_class(question)
-    print(q_class)
-    possible = possible_answers(story)
-    print(possible)
+    possible = possible_answers(coref_story)
+    global last_story
+    if(last_story != question["storyid"]):
+        last_story = question["storyid"]
+        print(q_class)
+        print(possible)
+        print()
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
 
@@ -280,7 +283,7 @@ def question_class(question):
                 break
     
     if tokens[0] in ["is", "was", "does", "did", "had"]:
-        print(question["question"])
+        # print(question["question"])
         tokens[0] = "yn"
     # if tokens[0] in question_classes.keys():
     #     question_classes[tokens[0]] += 1
