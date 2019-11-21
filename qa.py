@@ -258,10 +258,11 @@ def get_answer(question, story):
 
     ###     Your Code Goes Here         ###
     coref_story = coreference_story(story)
-    answerid, answer = A6_sentence_selection(question,coref_story)
+    get
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
-
+    answerid= "-"
+    answer = "-"
 
     ###     End of Your Code         ###
     return answerid, answer
