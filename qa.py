@@ -333,11 +333,11 @@ def head_of_question(question):
     doc = nlp(question["question"])
     if question_class(question) in ["who"]:
         print("QUESTION:", question["question"])
-        tok = doc[0]
+        tok = doc[len(doc)-1]
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.text in stop:
+        if tok.is_stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks)>1:
                 for chunk in reversed(chunks):
@@ -361,7 +361,7 @@ def head_of_question(question):
             print(tok.text)
             return tok
 
-    elif question_class(question) in ["what"]:
+    elif question_class(question) in ["what", "which"]:
         print("QUESTION:", question["question"])
         tok = doc[0]
         while (tok != tok.head):
@@ -398,12 +398,10 @@ def head_of_question(question):
             if " " in chunk.text:
                 print(chunk.text)
                 return chunk
-        if "ADJ" in [token.pos_ for token in doc]:
             for token in doc:
-                if token.pos_ == "ADJ":
+                if token.tag_ == "ADJ":
                     print(token.text)
                     return token
-        else:
             maxtoken = doc[0]
             for token in doc:
                 if len(token.text) >= len(maxtoken.text):
@@ -411,18 +409,18 @@ def head_of_question(question):
             print(maxtoken)
             return maxtoken
 
-    elif question_class(question) in ["why"]:
+    elif question_class(question) in ["why", "how"]:
         print("QUESTION:", question["question"])
         tok = doc[len(doc)-1]
         while (tok != tok.head):
             tok = tok.head
-        if tok.text in stop:
+        if tok in stop:
             for token in reversed(doc):
-                if token.pos_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
+                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
                     print(token.text)
                     return token
             for token in reversed(doc):
-                if token.pos_ == "ADJ":
+                if token.tag_ == "ADJ":
                     print(token.text)
                     return token
             maxtoken = doc[0]
@@ -441,11 +439,11 @@ def head_of_question(question):
             tok = tok.head
         if tok.text in stop:
             for token in reversed(doc):
-                if token.pos_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
+                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
                     print(token.text)
                     return token
             for token in reversed(doc):
-                if token.pos_ == "ADJ":
+                if token.tag_ == "ADJ":
                     print(token.text)
                     return token
             maxtoken = doc[0]
@@ -456,6 +454,14 @@ def head_of_question(question):
             return maxtoken
         print(tok.text)
         return tok
+
+    elif question_class(question) in ["yn"]:
+        print("QUESTION:", question["question"])
+        tok = doc[0]
+        print(tok.text)
+        return tok
+
+
 
 
 
