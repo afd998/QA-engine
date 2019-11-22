@@ -12,7 +12,7 @@ from nltk.util import ngrams
 import json
 import re
 
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 #test
 questions = 0
 
@@ -104,7 +104,7 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
                 else:
                     out += (token.text + " ")
     return nlp(out)
-def normalize_set(text, lemmatize=True, expand_synsets=False, loose_filter=False):
+def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False):
     doc = nlp(text)
     out_set = set()
 
@@ -258,9 +258,13 @@ def get_answer(question, story):
 
     ###     Your Code Goes Here         ###
     coref_story = coreference_story(story)
-    get
+    ans = possible_answers(coref_story)
+    #print(ans["ents"])
+   # print(ans["prep_phrases"])
+    #print(ans["chunks"])
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
+    head_of_question( question)
     answerid= "-"
     answer = "-"
 
@@ -310,13 +314,158 @@ def question_class(question):
                 break
 
     if tokens[0] in ["is", "was", "does", "did", "had"]:
-        print(question["question"])
         tokens[0] = "yn"
     # if tokens[0] in question_classes.keys():
     #     question_classes[tokens[0]] += 1
     # else:
     #     question_classes[tokens[0]] = 1
     return tokens[0]
+
+def WhoQuestion(story, question):
+    print("")
+    if question_class(question)== "who":
+        ans= possible_answers(story)
+        for key, value in ans["ents"].items():
+            if value==("PERSON" or "ORG" or "PRODUCT"):
+                print(key, "with a value of:                 ", value)
+
+def head_of_question(question):
+    doc = nlp(question["question"])
+    if question_class(question) in ["who"]:
+        print("QUESTION:", question["question"])
+        tok = doc[0]
+        while (tok != tok.head):
+            tok = tok.head
+
+        if tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks)>1:
+                for chunk in reversed(chunks):
+                    if chunk.text not in stop:
+                        print(chunk.text)
+                        return chunk
+            elif "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ":
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken=doc[0]
+                for token in doc:
+                    if len(token.text)>=len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
+
+    elif question_class(question) in ["what"]:
+        print("QUESTION:", question["question"])
+        tok = doc[0]
+        while (tok != tok.head):
+            tok = tok.head
+        if "ADJ" in [token.pos_ for token in doc]:
+            for token in doc:
+                if token.pos_ == "ADJ":
+                    print(token.text)
+                    return token
+        elif tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.text not in stop:
+                        print(chunk.text)
+                        return chunk
+
+
+            else:
+                maxtoken = doc[0]
+                for token in doc:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
+
+    elif question_class(question) in ["when"]:
+        print("QUESTION:", question["question"])
+        chunks = [chunk for chunk in doc.noun_chunks]
+        for chunk in chunks:
+            if " " in chunk.text:
+                print(chunk.text)
+                return chunk
+        if "ADJ" in [token.pos_ for token in doc]:
+            for token in doc:
+                if token.pos_ == "ADJ":
+                    print(token.text)
+                    return token
+        else:
+            maxtoken = doc[0]
+            for token in doc:
+                if len(token.text) >= len(maxtoken.text):
+                    maxtoken = token
+            print(maxtoken)
+            return maxtoken
+
+    elif question_class(question) in ["why"]:
+        print("QUESTION:", question["question"])
+        tok = doc[len(doc)-1]
+        while (tok != tok.head):
+            tok = tok.head
+        if tok.text in stop:
+            for token in reversed(doc):
+                if token.pos_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
+                    print(token.text)
+                    return token
+            for token in reversed(doc):
+                if token.pos_ == "ADJ":
+                    print(token.text)
+                    return token
+            maxtoken = doc[0]
+            for token in doc:
+                if len(token.text) >= len(maxtoken.text):
+                    maxtoken = token
+            print(maxtoken)
+            return maxtoken
+        print(tok.text)
+        return tok
+
+    elif question_class(question) in ["where"]:
+        print("QUESTION:", question["question"])
+        tok = doc[len(doc)-1]
+        while (tok != tok.head):
+            tok = tok.head
+        if tok.text in stop:
+            for token in reversed(doc):
+                if token.pos_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
+                    print(token.text)
+                    return token
+            for token in reversed(doc):
+                if token.pos_ == "ADJ":
+                    print(token.text)
+                    return token
+            maxtoken = doc[0]
+            for token in doc:
+                if len(token.text) >= len(maxtoken.text):
+                    maxtoken = token
+            print(maxtoken)
+            return maxtoken
+        print(tok.text)
+        return tok
+
+
+
+
+
+
+
+
+
+
 
 
 #############################################################
