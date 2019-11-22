@@ -1,198 +1,16 @@
 from qa_engine.base import QABase
 import spacy
 import nltk
-from nltk.util import ngrams
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet as wn
-import copy
-import pickle
-import sys
-import json
+from nltk.corpus import stopwords
 
-nlp = spacy.load("en_core_web_lg")
-# test
-questions = 0
+from json import dumps
 
+nlp = spacy.load("en_core_web_sm")
 stop = set(stopwords.words('english'))
 
-
-def token_filter(token,
-                 doc,
-                 take_out_capitals=False,
-                 use_spacy_stopwords=False):
-    keep_token = True
-    if token.pos_ == "PROPN":
-        keep_token = False
-    elif take_out_capitals and (token.text is not doc[0].text) and (
-            token.text is not token.text.lower()):
-        keep_token is False
-    if token.text == "-PRON-":
-        keep_token = False
-    elif token.text.lower(
-    ) in stop if not use_spacy_stopwords else token.is_stop:
-        keep_token = False
-
-    elif token.is_punct:
-        keep_token = False
-    return keep_token
-
-
-def expand_synsets(token):
-    out_set = set()
-    pos_dict = {"NOUN": wn.NOUN, "VERB": wn.VERB, "ADV": wn.ADV, "ADJ": wn.ADJ}
-    if token.pos_ in pos_dict:
-        synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
-    else:
-        synset = wn.synsets(token.lemma_)
-
-    if synset != []:
-        for synonym in synset[0].lemma_names():
-            out_set.add(synonym)
-            for syn in wn.synsets(synonym)[0].lemma_names():
-                out_set.add(syn)
-                if len(wn.synsets(synonym)) > 1:
-                    for syn2 in wn.synsets(synonym)[1].lemma_names():
-                        out_set.add(synonym)
-        if len(synset) > 1:
-            for synonym in synset[1].lemma_names():
-                out_set.add(synonym)
-    else:
-        out_set.add(token.lemma_)
-    return out_set
-
-
-def normalize(text,
-              output_type="set",
-              take_out_caps=False,
-              lemmatize=True,
-              expand_synsets=True,
-              loose_filter=False):
-    if expand_synsets and not lemmatize:
-        print("can't expand synsets without lemmatizing", file=sys.stderr)
-        exit()
-
-    doc = nlp(text)
-    for token in doc:
-        if token_filter(token, doc, take_out_capitals=take_out_caps):
-            if expand_synsets:
-                expand_synsets(token)
-            if expand_synsets:
-                pos_dict = {
-                    "NOUN": wn.NOUN,
-                    "VERB": wn.VERB,
-                    "ADV": wn.ADV,
-                    "ADJ": wn.ADJ
-                }
-                if token.pos_ in pos_dict:
-                    synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
-                else:
-                    synset = wn.synsets(token.lemma_)
-
-                if synset != []:
-                    for synonym in synset[0].lemma_names():
-                        out_set.add(synonym)
-                        for syn in wn.synsets(synonym)[0].lemma_names():
-                            out_set.add(syn)
-                            if len(wn.synsets(synonym)) > 1:
-                                for syn2 in wn.synsets(
-                                        synonym)[1].lemma_names():
-                                    out_set.add(synonym)
-                    if len(synset) > 1:
-                        for synonym in synset[1].lemma_names():
-                            out_set.add(synonym)
-                else:
-                    out_set.add(token.lemma_)
-            elif (lemmatize):
-                out_set.add((
-                    token.lemma_ if token.lemma_ != "-PRON-" else token.text) +
-                            " ")
-            else:
-                out_set.add(token.text + " ")
-    if output_type == "string":
-        list1 = list(out_set)
-        out = ''.join(list1)
-    else:
-        out = out_set
-    return nlp(out)
-
-
-SAVED_COREF = ("a", dict())
-
-
-def coreference_story(story):
-    ### coreference is incomplete due to cofreference overlap give in JSON ###
-    global SAVED_COREF
-    if story[0]["storyid"] == SAVED_COREF[0]:
-        # print("same story")
-        return SAVED_COREF[1]
-    else:
-        # print("new story")
-        # print("question")
-        sent = story[0]
-        story_coref = sent['coref']
-        localstory = copy.deepcopy(story)
-        for i in range(0, len(story)):
-            # print(story[i]["sentence"])
-            localstory[i]["sentence"] = nltk.word_tokenize(
-                story[i]["sentence"])
-            # print(localstory[i]["sentence"])
-
-        for key in story_coref:
-            # print("new antecedent")
-            antecedent = story_coref[key][0]["text"]
-            for z in range(1, len(story_coref[key])):
-                sentind = story_coref[key][z]["sentNum"]
-                example_text = story_coref[key][z]["text"]
-                antecedent_tokens = nltk.word_tokenize(antecedent)
-                # print("antecedent_tokens:", antecedent_tokens)
-                example_tokens = nltk.word_tokenize(example_text)
-                # print("example_tokens:", example_tokens)
-                if example_tokens[0] in localstory[sentind - 1]["sentence"]:
-                    example_start = localstory[sentind - 1]["sentence"].index(
-                        example_tokens[0])
-                    if localstory[sentind - 1]["sentence"][example_start -
-                                                           1] != 'was':
-                        if localstory[sentind - 1]["sentence"][example_start -
-                                                               1] != 'is':
-                            if localstory[sentind - 1]["sentence"][
-                                    example_start - 2] != antecedent_tokens[
-                                        len(antecedent_tokens) - 1]:
-                                # print("Before:",
-                                #   localstory[sentind - 1]["sentence"])
-                                for i in range(0, len(example_tokens)):
-                                    del localstory[
-                                        sentind - 1]["sentence"][example_start]
-                                # print("During:",
-                                #       localstory[sentind - 1]["sentence"])
-                                for i in range(0, len(antecedent_tokens)):
-                                    localstory[sentind - 1]["sentence"].insert(
-                                        example_start + i,
-                                        antecedent_tokens[i])
-                                # print("After:",
-                                #       localstory[sentind - 1]["sentence"])
-        SAVED_COREF = (story[0]["storyid"], localstory)
-        return localstory
-
-
-'''
-def person_in_the_question(question):
-  ner_list=question[ner]
-  for entry in ner_list:
-    if (entry[ner] == 'PERSON') or (entry[ner] == 'TITLE'):
-      if(entry[text].lower() not in ["he", "she", "his", "hers"]:
-        output = entry[text]
-        break
-  return output
-'''
-'''def narrow_sentences_by_Who_Where(coref_story, question)
-  if nltk.word_tokenize(question["question"])[0]== "Where":
-    senetence_list= []
-  for sentnce in coref_story:
- '''
-
-# print_story = True
-
-last_story = ""
 def get_answer(question, story):
     """
     :param question: dict
@@ -204,7 +22,6 @@ def get_answer(question, story):
         question -- The raw text of question.
         storyid --  The story id.
         questionid  --  The id of the question.
-        tokens -- Stanford CoreNLP version of word tokenization with POS
         ner -- Stanford CoreNLP version of NER
 
 
@@ -213,83 +30,108 @@ def get_answer(question, story):
         storyid --  the id of the story.
         sentence -- the raw text sentence version.
         sentenceid --  the id of the sentence
-        tokens -- Stanford CoreNLP version of word tokenization with POS
         ner -- Stanford CoreNLP version of NER
         coref -- Stanford CoreNLP version of coreference resolution of the entire story
 
     """
-
     ###     Your Code Goes Here         ###
-    # print("NEW QUESTION")
-    coref_story = coreference_story(story)
+    # global last_story
+    # if (last_story != question["storyid"]):
+    #     last_story = question["storyid"]
+    #     answer_possibilities.append(possible_answers(question, story))
     q_class = question_class(question)
-    possible = possible_answers(coref_story)
-    global last_story
-    if(last_story != question["storyid"]):
-        last_story = question["storyid"]
-        print(q_class)
-        print(possible)
-        print()
-    # person_in_the_question= person_in_the_question(question)
-    # sentences = narrow_sentences_by_Who(coref_story, question)
+    possibilities = possible_answers(question, story)
+    if q_class == "yn":
+        answer = "yes no"
+
 
     answer = "whatever you think the answer is"
     answerid = "-"
+    question_class(question)
 
+
+    ###     End of Your Code         ###
     return answerid, answer
 
+def possible_answers(question, story):
+    question = question["question"]
+    q_doc = nlp(question)
+    q_spans = set([chunk.text for chunk in q_doc.chunks] + [ent.text for ent in q_doc.ents] + [pp.text for pp in get_pps(q_doc)])
+    # question_nonstop_set = set([chunk.text for token in q_doc if token not in stop])
+    sentences = [sent["sentence"] for sent in story]
+    text = "\n".join(sentences)
+    ans = {}
+    doc = nlp(text)
+    ans["chunks"] = []
+    ans["ents"] = []
+    ans["pps"] = []
+    ents_set = set([])
+    for ent in doc.ents:
+        if ent not in q_spans:
+            ents_set.add(ent.text)
+            front_context, back_context = span_context(ent)
+            ans["ents"].append((front_context, ent, back_context))
+    for chunk in doc.noun_chunks:
+        if not any([chunk.text in s for s in [ents_set, q_spans] + chunk.text.lower() in stop]):
+            front_context, back_context = span_context(chunk)
+            ans["chunks"].append((front_context, chunk, back_context))
+    for pp in get_pps(doc):
+        if pp not in q_spans:
+            front_context, back_context = span_context(pp)
+            ans["pps"].append((front_context, pp, back_context))
+    return(ans)
 
 
-# Code from https://stackoverflow.com/questions/39100652/python-chunking-others-than-noun-phrases-e-g-prepositional-using-spacy-etc
 def get_pps(doc):
-    "Function to get PPs from a parsed document."
+    # adapted from stackoverflow, not entirely my code
     pps = []
     for token in doc:
-        # Try this with other parts of speech for different subtrees.
         if token.pos_ == 'ADP':
-            pp = ' '.join([tok.orth_ for tok in token.subtree])
-            pps.append(pp)
+            pp_starti = token.i
+            for tok in token.subtree:
+                pp_endi = tok.i
+            pps.append(doc[pp_starti:pp_endi])
     return pps
 
-def possible_answers(story, n=3):
-    ans = {}
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    doc = nlp(text)
-    ans["tokens"] = [token.text for token in doc]
-    ans["chunks"] = [chunk.text for chunk in doc.noun_chunks]
-    ans["ents"] = {ent.text:ent.label_ for ent in doc.ents}
-    for label in set(ans["ents"].values()):
-        ans[label] = [key for key in ans["ents"] if ans["ents"][key] == label]
-    ans["prep_phrases"] = get_pps(doc)
-    ans["ngrams"] = []
-    for sentence in sentences:
-        ans["ngrams"] += ngrams(nltk.word_tokenize(sentence), n)
-    return ans
-    
 
 
+def span_context(span, context_size = 5):
+    doc = span.doc
+    context_start = max(0, span.start-context_size)
+    context_end = min(span.end+context_size, len(doc))
+    front_context = doc[context_start:span.start]
+    end_context = doc[span.end:context_end]
+    return front_context, end_context
 
 def question_class(question):
     tokens = nltk.word_tokenize(question["question"].lower())
-    question_words = ["is", "was", "does", "did", "had", "when", "what", "where", "who", "how", "why", "which"]
+    question_words = [
+        "is", "was", "does", "did", "had", "when", "what", "where", "who",
+        "how", "why", "which"
+    ]
     if tokens[0] not in question_words:
         for token in tokens:
             if token in question_words:
                 tokens[0] = token
                 break
-    
     if tokens[0] in ["is", "was", "does", "did", "had"]:
-        # print(question["question"])
         tokens[0] = "yn"
     # if tokens[0] in question_classes.keys():
     #     question_classes[tokens[0]] += 1
     # else:
     #     question_classes[tokens[0]] = 1
+    # print(tokens[0])
     return tokens[0]
+
+def bag_words(doc, lemmatize=True):
+    bag = set([])
+    for token in doc:
+        if token.text.lower() not in stop:
+            bag.add(token.lemma_ if lemmatize else token.text.lower())
+    return bag
+# def expand_synsets(bag):
+#     syn_bag = set([]):
+
 
 
 #############################################################
@@ -298,6 +140,7 @@ def question_class(question):
 class QAEngine(QABase):
     @staticmethod
     def answer_question(question, story):
+
         answerid, answer = get_answer(question, story)
         return (answerid, answer)
 
@@ -307,13 +150,11 @@ def run_qa():
     QA.run()
     QA.save_answers()
 
-
 #############################################################
 
 
 def main():
     run_qa()
-
 
 if __name__ == "__main__":
     main()
