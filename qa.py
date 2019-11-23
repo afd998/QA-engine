@@ -2,10 +2,16 @@ from qa_engine.base import QABase
 import spacy
 import nltk
 from nltk.corpus import stopwords
+import copy
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet as wn
+import sys
+import time
+import numpy, scipy
+from nltk.util import ngrams
 
-from json import dumps
 
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_lg")
 stop = set(stopwords.words('english'))
 
 
@@ -41,43 +47,52 @@ def get_answer(question, story):
     ans = possible_answers(question, story)
     hq = head_of_question(question, story)
     # print(hq)
-    triples = triple_check(hq, story)
-    if triples is not None and triples != [] and q_class in ["who", "what"]:
-        print()
-        print(question["question"])
-        print([" ".join([str(word) for word in triple]) for triple in triples])
-    time_prepositions = ["after", "before", "during", "while"]
-    if q_class in ["yn", "why", "how"]:
-        answer = "yes no"
+    triple = triple_check(hq, story)
+    triple_answer = None
+    if q_class in ["who", "what"] and triple is not None and triple is not ():
+        if triple[2] != "" and triple[2] not in question["question"]:
+            triple_answer = triple[2]
+        elif triple[0] != "" and triple[0] not in question["question"]:
+            triple_answer = triple[0]
+        elif triple[1] != "" and triple[1] not in question["question"] and "do" in question["question"]:
+            triple_answer = triple[1]
+    if triple_answer is not None:
+        answer = triple_answer
+    elif q_class in ["how", "why"]:
+        a6ID, a6ans = A6_sentence_selection(question, story)
+        answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
     else:
-        if q_class == "who":
-            possible = [
-                ent for ent in ans["ents"]
-                if ent[1].label_ in ["PERSON", "ORG"]
-            ]
-        elif q_class == "what":
-            possible = ans["chunks"]
-        elif q_class == "when":
-            possible = []
-            possible = [
-                pp for pp in ans["pps"]
-                if pp[1][0].text.lower() in time_prepositions
-            ] + [
-                ent for ent in ans["ents"]
-                if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
-            ]
-        elif q_class == "where":
-            possible = [
-                pp for pp in ans["pps"]
-                if pp[1][0].text.lower() not in time_prepositions
-            ]
-        if len(possible) == 0:
-            possible = ans["chunks"]
-        answer = best_answer(question, possible, keyword = hq)
-    answerid = "-"
-    question_class(question)
-
+        time_prepositions = ["after", "before", "during", "while"]
+        if q_class == "yn":
+            answer = "yes no"
+        else:
+            if q_class == "who":
+                possible = [
+                    ent for ent in ans["ents"]
+                    if ent[1].label_ in ["PERSON", "ORG"]
+                ]
+            elif q_class == "what":
+                possible = ans["chunks"]
+            elif q_class == "when":
+                possible = []
+                possible = [
+                    pp for pp in ans["pps"]
+                    if pp[1][0].text.lower() in time_prepositions
+                ] + [
+                    ent for ent in ans["ents"]
+                    if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
+                ]
+            elif q_class == "where":
+                possible = [
+                    pp for pp in ans["pps"]
+                    if pp[1][0].text.lower() not in time_prepositions
+                ]
+            if len(possible) == 0:
+                possible = ans["chunks"]
+            answer = best_answer(question, possible, keyword = hq)
     ###     End of Your Code         ###
+    answerid = "-"
+    print(answer)
     return answerid, answer
 
 
@@ -188,21 +203,18 @@ def triple_check(keyword, story):
     else:
         return None
     headword = keyword.head
-    objects = []
+    obj = ""
     subject = ""
     for child in headword.children:
         if "subj" in child.dep_:
             subject = (child)
         if child.dep_ == "attr":
-            objects.append(" ".join([token.text for token in child.subtree]))
+            obj = " ".join([token.text for token in child.subtree])
         elif "obj" in child.dep_:
-            objects.append(" ".join([token.text for token in child.subtree]))
+            obj = " ".join([token.text for token in child.subtree])
         # elif "prep" in child.dep_:
         #     objects.append(" ".join([token.text for token in child.subtree]))
-    triples = []
-    for obj in objects:
-        triples.append((subject, headword, obj))
-    return triples
+    return((str(subject), str(headword), str(obj)))
 
 def check_if_in_story(token, story):
     text = ""
@@ -362,7 +374,145 @@ def head_of_question(question, story):
         #print(tok.text)
         return tok
 
+def A6_sentence_selection(question, story):
+    q_lemmas = normalize_set(question["question"], expand_synsets=True)
+    answers = {
 
+        sent["sentenceid"]: normalize_set(sent["sentence"], expand_synsets=True)
+        for sent in story
+
+    }
+    # for sent in story:
+        # print(normalize_set(sent["sentence"], expand_synsets=True))
+    score_dict = {}
+    for ans in answers.keys():
+        ans_lemmas = answers[ans]
+        score_dict[ans] = len([lem for lem in q_lemmas if lem in ans_lemmas])
+    sent_id = max(score_dict, key=score_dict.get)
+
+    threshold = 0
+    if score_dict[sent_id] < threshold:
+        q_vector = doc_vector(question["question"])
+        for sent in story:
+            sent_vector = doc_vector(sent["sentence"])
+            score_dict[sent["sentenceid"]] = scipy.spatial.distance.cosine(
+                q_vector, sent_vector)
+
+        sent_id = min(score_dict, key=score_dict.get)
+        threshold2 = 0.5
+        if score_dict[sent_id] > threshold2:
+            sent_id = "-"
+
+    return sent_id, ""
+
+
+def token_filter(token, use_spacy_stopwords=False):
+    keep_token = True
+    if token.pos_ == "PROPN":
+        keep_token = True
+    if token.text == "-PRON-":
+        keep_token = True
+    elif token.text.lower(
+    ) in stop if not use_spacy_stopwords else token.is_stop:
+        keep_token = False
+
+    elif token.is_punct:
+        keep_token = False
+    return keep_token
+
+
+def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
+    doc = nlp(text)
+    out = ""
+    if expand_synsets and not lemmatize:
+        print("can't expand synsets without lemmatizing", file=sys.stderr)
+        exit()
+    for token in doc:
+        if token_filter(token):
+            if expand_synsets:
+                pos_dict = {
+                    "NOUN": wn.NOUN,
+                    "VERB": wn.VERB,
+                    "ADV": wn.ADV,
+                    "ADJ": wn.ADJ
+                }
+                if token.pos_ in pos_dict:
+                    synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
+                else:
+                    synset = wn.synsets(token.lemma_)
+
+                if synset != []:
+                    for synonym in synset[0].lemma_names():
+                        out += (synonym + " ")
+                        for syn in wn.synsets(synonym)[0].lemma_names():
+                            out += (syn + " ")
+                            if len(wn.synsets(synonym)) > 1:
+                                for syn2 in wn.synsets(synonym)[1].lemma_names():
+                                    out += (syn2 + " ")
+                    if len(synset) > 1:
+                        for synonym in synset[1].lemma_names():
+                            out += (synonym + " ")
+                else:
+                    out += (token.lemma_ + " ")
+            elif (lemmatize):
+                out += ((token.lemma_
+                         if token.lemma_ != "-PRON-" else token.text) + " ")
+            else:
+                out += (token.text + " ")
+    return nlp(out)
+
+
+def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False):
+    doc = nlp(text)
+    out_set = set()
+
+    if expand_synsets and not lemmatize:
+        print("can't expand synsets without lemmatizing", file=sys.stderr)
+        exit()
+    for token in doc:
+        if token_filter(token):
+            if expand_synsets:
+                pos_dict = {
+                    "NOUN": wn.NOUN,
+                    "VERB": wn.VERB,
+                    "ADV": wn.ADV,
+                    "ADJ": wn.ADJ
+                }
+                if token.pos_ in pos_dict:
+                    synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
+                else:
+                    synset = wn.synsets(token.lemma_)
+
+                if synset != []:
+                    for synonym in synset[0].lemma_names():
+                        out_set.add(synonym)
+                        for syn in wn.synsets(synonym)[0].lemma_names():
+                            out_set.add(syn)
+                            if len(wn.synsets(synonym)) > 1:
+                                for syn2 in wn.synsets(synonym)[1].lemma_names():
+                                    out_set.add(synonym)
+                    if len(synset) > 1:
+                        for synonym in synset[1].lemma_names():
+                            out_set.add(synonym)
+
+
+                else:
+                    out_set.add(token.lemma_)
+            elif (lemmatize):
+                out_set.add(token.lemma_)
+            else:
+                out_set.add(token.lemma_)
+    return out_set
+
+
+def doc_vector(text):
+    doc = normalize(text)
+    docvec = numpy.zeros((300,), dtype="float32")
+    for token in doc:
+        if token.has_vector:
+            docvec = numpy.add(docvec, token.vector)
+    # print(docvec.dtype)
+    return docvec
 
 
 
