@@ -19,13 +19,13 @@ storyid	questionid	answer_sentenceid	answer
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q1	-	yes no
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q2	-	a brown stuffed horse
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q3	-	my radio
-13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q0	-	her backyard
+13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q0	-	corn
 13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q1	-	in her
 13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q2	-	corn
-13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q3	-	her corn garden idea
+13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q3	-	too much water
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q0	-	some Pizza
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q1	-	yes no
-1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	-	some Pizza
+1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	-	The pizza
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q3	-	yes no
 1e379d2b-69e8-485e-92ac-4c3daa41e364	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q0	-	a goldfish
 1e379d2b-69e8-485e-92ac-4c3daa41e364	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q1	-	from the pet
@@ -46,7 +46,7 @@ storyid	questionid	answer_sentenceid	answer
 2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q0	-	in
 2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q1	-	in
 2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q2	-	yes no
-2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q3	-	Amtrak
+2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q3	-	Gritty's
 375c34c9-3d98-4b2f-9076-404f34ad4e66	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q0	-	yes no
 375c34c9-3d98-4b2f-9076-404f34ad4e66	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q1	-	Walter
 375c34c9-3d98-4b2f-9076-404f34ad4e66	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q2	-	his veterinarian
@@ -74,7 +74,7 @@ storyid	questionid	answer_sentenceid	answer
 6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q0	-	to the
 6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q1	-	to the
 6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q2	-	a romantic trip
-6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q3	-	a romantic trip
+6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q3	-	a lake house
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q0	-	to a
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q1	-	a restaurant
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q2	-	ketchup
@@ -102,17 +102,17 @@ storyid	questionid	answer_sentenceid	answer
 88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q0	-	a defense attorney
 88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q1	-	yes no
 88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q2	-	yes no
-88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q3	-	court
+88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q3	-	a defense attorney
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q0	-	yes no
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q1	-	a vegetarian diet
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q2	-	a few weeks
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q3	-	David
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q0	-	yes no
-8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q1	-	Her mom
+8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q1	-	the pool
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q2	-	yes no
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q3	-	to the
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q0	-	Beth
-8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q1	-	the mail
+8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q1	-	a letter
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q2	-	yes no
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q3	-	a letter
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q0	-	hockey
@@ -120,7 +120,7 @@ storyid	questionid	answer_sentenceid	answer
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q2	-	Luke
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q3	-	yes no
 9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q0	-	tacos
-9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q1	-	great care
+9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q1	-	Heather
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q0	-	yes no
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q1	-	yes no
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q2	-	all her maternity
@@ -144,12 +144,12 @@ b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q0	-	y
 b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q1	-	Jake
 b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q2	-	Jake
 b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q3	-	a ride
-bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	-	dogs
+bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	-	His girlfriend
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q1	-	Justin
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q2	-	yes no
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q3	-	yes no
 c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q0	-	his hair
-c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q1	-	a Halloween party
+c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q1	-	dramatic effect
 c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q2	-	Andy
 c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q3	-	yes no
 c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q0	-	a pastor
@@ -164,7 +164,7 @@ e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q0	-	a
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q1	-	yes no
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q2	-	Wendy
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q3	-	Wendy
-f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q0	-	his wife
+f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q0	-	a daughter
 f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q1	-	Eric
 f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q2	-	yes no
 f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q3	-	Eric
@@ -174,7 +174,7 @@ f7559f25-0358-4f57-b079-dec2199b4ec3	f7559f25-0358-4f57-b079-dec2199b4ec3_Q2	-	y
 f7559f25-0358-4f57-b079-dec2199b4ec3	f7559f25-0358-4f57-b079-dec2199b4ec3_Q3	-	yes no
 fables-01	fables-01_Q1	-	on a branch of a
 fables-01	fables-01_Q10	-	Crow
-fables-01	fables-01_Q11	-	Crow
+fables-01	fables-01_Q11	-	Fox
 fables-01	fables-01_Q12	-	the tree
 fables-01	fables-01_Q13	-	yes no
 fables-01	fables-01_Q14	-	Crow
@@ -189,41 +189,41 @@ fables-01	fables-01_Q5	-	on a branch of a
 fables-01	fables-01_Q6	-	A Crow
 fables-01	fables-01_Q7	-	Crow
 fables-01	fables-01_Q8	-	A Crow
-fables-01	fables-01_Q9	-	of
+fables-01	fables-01_Q9	-	on a branch of a
 fables-02	fables-02_Q1	-	Lion
 fables-02	fables-02_Q10	-	yes no
-fables-02	fables-02_Q11	-	those ugly horns
+fables-02	fables-02_Q11	-	the world
 fables-02	fables-02_Q12	-	the world
 fables-02	fables-02_Q13	-	Lion
 fables-02	fables-02_Q14	-	yes no
 fables-02	fables-02_Q15	-	A Lion
 fables-02	fables-02_Q16	-	yes no
-fables-02	fables-02_Q17	-	those ugly horns
+fables-02	fables-02_Q17	-	the world
 fables-02	fables-02_Q18	-	Lion
 fables-02	fables-02_Q19	-	Lion
-fables-02	fables-02_Q2	-	Lion
+fables-02	fables-02_Q2	-	Bull
 fables-02	fables-02_Q20	-	yes no
-fables-02	fables-02_Q21	-	those ugly horns
-fables-02	fables-02_Q22	-	those ugly horns
+fables-02	fables-02_Q21	-	the world
+fables-02	fables-02_Q22	-	the world
 fables-02	fables-02_Q23	-	Lion
 fables-02	fables-02_Q3	-	in a
 fables-02	fables-02_Q4	-	Lion
 fables-02	fables-02_Q5	-	Lion
-fables-02	fables-02_Q6	-	those ugly horns
+fables-02	fables-02_Q6	-	the world
 fables-02	fables-02_Q7	-	Lion
 fables-02	fables-02_Q8	-	Bull
-fables-02	fables-02_Q9	-	those ugly horns
+fables-02	fables-02_Q9	-	the world
 fables-03	fables-03_Q1	-	Eagle
-fables-03	fables-03_Q10	-	from the
+fables-03	fables-03_Q10	-	of his
 fables-03	fables-03_Q11	-	An Eagle
-fables-03	fables-03_Q12	-	An Eagle
+fables-03	fables-03_Q12	-	his poison
 fables-03	fables-03_Q13	-	Eagle
 fables-03	fables-03_Q14	-	Eagle
 fables-03	fables-03_Q15	-	Eagle
 fables-03	fables-03_Q16	-	Eagle
-fables-03	fables-03_Q17	-	a witness
+fables-03	fables-03_Q17	-	a life-and-death struggle
 fables-03	fables-03_Q18	-	Eagle
-fables-03	fables-03_Q19	-	a witness
+fables-03	fables-03_Q19	-	a life-and-death struggle
 fables-03	fables-03_Q2	-	Eagle
 fables-03	fables-03_Q20	-	An Eagle
 fables-03	fables-03_Q21	-	Eagle
@@ -233,23 +233,23 @@ fables-03	fables-03_Q24	-	An Eagle
 fables-03	fables-03_Q25	-	Eagle
 fables-03	fables-03_Q26	-	Eagle
 fables-03	fables-03_Q27	-	In
-fables-03	fables-03_Q3	-	a Serpent
+fables-03	fables-03_Q3	-	An Eagle
 fables-03	fables-03_Q4	-	Eagle
 fables-03	fables-03_Q5	-	revenge
-fables-03	fables-03_Q6	-	In
-fables-03	fables-03_Q7	-	a witness
+fables-03	fables-03_Q6	-	into the man's drinking-
+fables-03	fables-03_Q7	-	a life-and-death struggle
 fables-03	fables-03_Q8	-	Eagle
 fables-03	fables-03_Q9	-	his hand
 fables-04	fables-04_Q1	-	Fox
 fables-04	fables-04_Q10	-	Fox
-fables-04	fables-04_Q11	-	a long and narrow neck
+fables-04	fables-04_Q11	-	turn
 fables-04	fables-04_Q12	-	A Fox
 fables-04	fables-04_Q13	-	a large flat dish
 fables-04	fables-04_Q14	-	Fox
 fables-04	fables-04_Q15	-	Fox
 fables-04	fables-04_Q16	-	A Fox
 fables-04	fables-04_Q17	-	Fox
-fables-04	fables-04_Q2	-	a large flat dish
+fables-04	fables-04_Q2	-	dinner
 fables-04	fables-04_Q3	-	of
 fables-04	fables-04_Q4	-	Fox
 fables-04	fables-04_Q5	-	a large flat dish
@@ -274,11 +274,11 @@ fables-05	fables-05_Q7	-	fire
 fables-05	fables-05_Q8	-	Farmer
 fables-05	fables-05_Q9	-	the Farmer
 fables-06	fables-06_Q1	-	in his
-fables-06	fables-06_Q10	-	his lair
+fables-06	fables-06_Q10	-	A Lion
 fables-06	fables-06_Q11	-	yes no
 fables-06	fables-06_Q12	-	Mouse
 fables-06	fables-06_Q13	-	over his
-fables-06	fables-06_Q14	-	his roars
+fables-06	fables-06_Q14	-	some hunters
 fables-06	fables-06_Q15	-	its teeth
 fables-06	fables-06_Q16	-	Mouse
 fables-06	fables-06_Q17	-	Mouse
@@ -286,13 +286,13 @@ fables-06	fables-06_Q18	-	yes no
 fables-06	fables-06_Q19	-	Mouse
 fables-06	fables-06_Q2	-	Mouse
 fables-06	fables-06_Q20	-	a net
-fables-06	fables-06_Q21	-	his temper
+fables-06	fables-06_Q21	-	his face
 fables-06	fables-06_Q22	-	his lair
-fables-06	fables-06_Q23	-	the ropes
+fables-06	fables-06_Q23	-	more ado
 fables-06	fables-06_Q24	-	its teeth
 fables-06	fables-06_Q25	-	Mouse
 fables-06	fables-06_Q26	-	a Lion
-fables-06	fables-06_Q27	-	A Lion
+fables-06	fables-06_Q27	-	his temper
 fables-06	fables-06_Q28	-	yes no
 fables-06	fables-06_Q3	-	anything
 fables-06	fables-06_Q4	-	in a net which had been spread for game by some
@@ -300,42 +300,42 @@ fables-06	fables-06_Q5	-	Mouse
 fables-06	fables-06_Q6	-	yes no
 fables-06	fables-06_Q7	-	Mouse
 fables-06	fables-06_Q8	-	Mouse
-fables-06	fables-06_Q9	-	the ropes
+fables-06	fables-06_Q9	-	more ado
 mc500.train.0	mc500.train.0_Q0	-	yes no
 mc500.train.0	mc500.train.0_Q1	-	the restaurant's special
 mc500.train.0	mc500.train.0_Q10	-	at the
-mc500.train.0	mc500.train.0_Q11	-	to the
+mc500.train.0	mc500.train.0_Q11	-	at Ellen's
 mc500.train.0	mc500.train.0_Q12	-	some lemonade
 mc500.train.0	mc500.train.0_Q13	-	Ellen's house
 mc500.train.0	mc500.train.0_Q14	-	yes no
 mc500.train.0	mc500.train.0_Q15	-	yes no
 mc500.train.0	mc500.train.0_Q16	-	a long trip
 mc500.train.0	mc500.train.0_Q17	-	yes no
-mc500.train.0	mc500.train.0_Q18	-	some lemonade
-mc500.train.0	mc500.train.0_Q19	-	some lemonade
+mc500.train.0	mc500.train.0_Q18	-	a long trip
+mc500.train.0	mc500.train.0_Q19	-	catfish
 mc500.train.0	mc500.train.0_Q2	-	Kristin
 mc500.train.0	mc500.train.0_Q20	-	Alyssa
 mc500.train.0	mc500.train.0_Q21	-	yes no
-mc500.train.0	mc500.train.0_Q22	-	in
+mc500.train.0	mc500.train.0_Q22	-	at the
 mc500.train.0	mc500.train.0_Q23	-	at the
 mc500.train.0	mc500.train.0_Q3	-	to the
-mc500.train.0	mc500.train.0_Q4	-	time
+mc500.train.0	mc500.train.0_Q4	-	her friends
 mc500.train.0	mc500.train.0_Q5	-	yes no
 mc500.train.0	mc500.train.0_Q6	-	Alyssa
 mc500.train.0	mc500.train.0_Q7	-	Ellen
-mc500.train.0	mc500.train.0_Q8	-	catfish
-mc500.train.0	mc500.train.0_Q9	-	a salad
-mc500.train.111	mc500.train.111_Q0	-	a very silly looking dog
+mc500.train.0	mc500.train.0_Q8	-	a salad
+mc500.train.0	mc500.train.0_Q9	-	Ellen's house
+mc500.train.111	mc500.train.111_Q0	-	the store
 mc500.train.111	mc500.train.111_Q1	-	a very silly looking dog
 mc500.train.111	mc500.train.111_Q10	-	gravy
-mc500.train.111	mc500.train.111_Q11	-	butter
-mc500.train.111	mc500.train.111_Q12	-	chicken
+mc500.train.111	mc500.train.111_Q11	-	jam
+mc500.train.111	mc500.train.111_Q12	-	jam
 mc500.train.111	mc500.train.111_Q13	-	yes no
 mc500.train.111	mc500.train.111_Q14	-	his way
 mc500.train.111	mc500.train.111_Q2	-	yes no
 mc500.train.111	mc500.train.111_Q3	-	to the living
 mc500.train.111	mc500.train.111_Q4	-	in the night
-mc500.train.111	mc500.train.111_Q5	-	his way
+mc500.train.111	mc500.train.111_Q5	-	the living room
 mc500.train.111	mc500.train.111_Q6	-	in the
 mc500.train.111	mc500.train.111_Q7	-	his favorite song
 mc500.train.111	mc500.train.111_Q8	-	his favorite song
@@ -343,17 +343,17 @@ mc500.train.111	mc500.train.111_Q9	-	in the night
 mc500.train.18	mc500.train.18_Q0	-	one morning
 mc500.train.18	mc500.train.18_Q1	-	her mom
 mc500.train.18	mc500.train.18_Q10	-	her mother
-mc500.train.18	mc500.train.18_Q11	-	the biggest, most beautiful bunch
-mc500.train.18	mc500.train.18_Q12	-	the flowers
+mc500.train.18	mc500.train.18_Q11	-	her mother
+mc500.train.18	mc500.train.18_Q12	-	her mother
 mc500.train.18	mc500.train.18_Q13	-	string
 mc500.train.18	mc500.train.18_Q14	-	the biggest, most beautiful bunch
-mc500.train.18	mc500.train.18_Q15	-	a hurry
+mc500.train.18	mc500.train.18_Q15	-	a secret spot
 mc500.train.18	mc500.train.18_Q16	-	yes no
 mc500.train.18	mc500.train.18_Q17	-	string
 mc500.train.18	mc500.train.18_Q18	-	in her
-mc500.train.18	mc500.train.18_Q19	-	her mom
-mc500.train.18	mc500.train.18_Q2	-	mom
-mc500.train.18	mc500.train.18_Q20	-	of the
+mc500.train.18	mc500.train.18_Q19	-	flowers
+mc500.train.18	mc500.train.18_Q2	-	flowers
+mc500.train.18	mc500.train.18_Q20	-	to her back
 mc500.train.18	mc500.train.18_Q21	-	her mom
 mc500.train.18	mc500.train.18_Q3	-	her mother
 mc500.train.18	mc500.train.18_Q4	-	the middle
@@ -361,7 +361,7 @@ mc500.train.18	mc500.train.18_Q5	-	in her
 mc500.train.18	mc500.train.18_Q6	-	in a secret
 mc500.train.18	mc500.train.18_Q7	-	yes no
 mc500.train.18	mc500.train.18_Q8	-	yes no
-mc500.train.18	mc500.train.18_Q9	-	different sized flowers
+mc500.train.18	mc500.train.18_Q9	-	The red ones
 mc500.train.23	mc500.train.23_Q0	-	Saturday
 mc500.train.23	mc500.train.23_Q1	-	TV
 mc500.train.23	mc500.train.23_Q10	-	Andrew
@@ -371,18 +371,18 @@ mc500.train.23	mc500.train.23_Q13	-	to his
 mc500.train.23	mc500.train.23_Q14	-	in the
 mc500.train.23	mc500.train.23_Q15	-	Andrew
 mc500.train.23	mc500.train.23_Q16	-	The people
-mc500.train.23	mc500.train.23_Q17	-	the story
-mc500.train.23	mc500.train.23_Q18	-	Saturday afternoon
+mc500.train.23	mc500.train.23_Q17	-	nothing
+mc500.train.23	mc500.train.23_Q18	-	The people
 mc500.train.23	mc500.train.23_Q19	-	Andrew
 mc500.train.23	mc500.train.23_Q2	-	in the
-mc500.train.23	mc500.train.23_Q20	-	an idea
-mc500.train.23	mc500.train.23_Q3	-	Saturday afternoon
+mc500.train.23	mc500.train.23_Q20	-	Andrew's dad
+mc500.train.23	mc500.train.23_Q3	-	the window
 mc500.train.23	mc500.train.23_Q4	-	On the
 mc500.train.23	mc500.train.23_Q5	-	yes no
 mc500.train.23	mc500.train.23_Q6	-	the story
 mc500.train.23	mc500.train.23_Q7	-	in
 mc500.train.23	mc500.train.23_Q8	-	yes no
-mc500.train.23	mc500.train.23_Q9	-	his goldfish
+mc500.train.23	mc500.train.23_Q9	-	your goldfish
 mc500.train.25	mc500.train.25_Q0	-	by the
 mc500.train.25	mc500.train.25_Q1	-	in a beautiful pond by the
 mc500.train.25	mc500.train.25_Q10	-	friends
@@ -390,17 +390,17 @@ mc500.train.25	mc500.train.25_Q11	-	Maxine
 mc500.train.25	mc500.train.25_Q12	-	Martin
 mc500.train.25	mc500.train.25_Q13	-	Maxine
 mc500.train.25	mc500.train.25_Q14	-	After
-mc500.train.25	mc500.train.25_Q15	-	Maxine
-mc500.train.25	mc500.train.25_Q16	-	the river
-mc500.train.25	mc500.train.25_Q17	-	something
-mc500.train.25	mc500.train.25_Q18	-	a new friend
+mc500.train.25	mc500.train.25_Q15	-	Edgar
+mc500.train.25	mc500.train.25_Q16	-	a new friend
+mc500.train.25	mc500.train.25_Q17	-	her friends
+mc500.train.25	mc500.train.25_Q18	-	a bath
 mc500.train.25	mc500.train.25_Q19	-	Martin
 mc500.train.25	mc500.train.25_Q2	-	any rocks
 mc500.train.25	mc500.train.25_Q20	-	Maxine
 mc500.train.25	mc500.train.25_Q3	-	Martin
 mc500.train.25	mc500.train.25_Q4	-	every day
-mc500.train.25	mc500.train.25_Q5	-	the river
-mc500.train.25	mc500.train.25_Q6	-	in the
+mc500.train.25	mc500.train.25_Q5	-	a beautiful pond
+mc500.train.25	mc500.train.25_Q6	-	in a beautiful pond by the
 mc500.train.25	mc500.train.25_Q7	-	yes no
 mc500.train.25	mc500.train.25_Q8	-	Maxine
 mc500.train.25	mc500.train.25_Q9	-	Maxine
