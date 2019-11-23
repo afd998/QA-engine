@@ -276,8 +276,8 @@ def get_answer(question, story):
     # print(ans["chunks"])
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
-    # extract_who_answer(story, question)
-    head_of_question(question, story)
+    extract_who_answer(story, question)
+    #head_of_question(question, story)
     answerid = "-"
     answer = "-"
 
@@ -351,8 +351,9 @@ def extract_who_answer(story, question):
         for word in doc:
             if word.lemma_ == token.lemma_:
                 best_choice = word
+                break
         if best_choice == doc[0]:
-            print("didnt find special word")
+            print("didnt  find special word")
         # for word in doc:
         #    print("speacial:", token.text, "word:", word.text, "distance",
         #         cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
