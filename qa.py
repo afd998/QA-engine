@@ -9,8 +9,10 @@ import sys
 import time
 import numpy, scipy
 from nltk.util import ngrams
-import json
-import re
+
+from word2vec_extractor import Word2vecExtractor
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 nlp = spacy.load("en_core_web_sm")
 #test
@@ -257,14 +259,15 @@ def get_answer(question, story):
     """
 
     ###     Your Code Goes Here         ###
-    coref_story = coreference_story(story)
-    ans = possible_answers(coref_story)
+    #coref_story = coreference_story(story)
+    #ßans = possible_answers(coref_story)
     #print(ans["ents"])
    # print(ans["prep_phrases"])
     #print(ans["chunks"])
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
-    head_of_question( question)
+    extract_who_answer(story, question)
+    #head_of_question(question)
     answerid= "-"
     answer = "-"
 
@@ -329,22 +332,92 @@ def WhoQuestion(story, question):
             if value==("PERSON" or "ORG" or "PRODUCT"):
                 print(key, "with a value of:                 ", value)
 
-def head_of_question(question):
+def extract_who_answer(story, question):
+    if question_class(question) in ["who"]:
+        glove_w2v_file = "data/glove-w2v.txt"
+        W2vecextractor = Word2vecExtractor(glove_w2v_file)
+        token = head_of_question(question, story)
+        text=""
+        sentences = []
+        for sent in story:
+            sentences.append(sent["sentence"])
+            text += sent["sentence"] + " "
+        doc = nlp(text)
+        best_choice = doc[0]
+        if " " in token.text:
+            print("Has a space")
+
+        else:
+            for word in doc:
+                if word.lemma_ == token.lemma_:
+                    best_choice = word
+            if best_choice == doc[0]:
+                print("didnt find special word")
+                for word in doc:
+                    print("speacial:", token.text, "word:", word.text, "distance",
+                          cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
+                              0])
+                    if cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
+                              0] > cosine_similarity([W2vecextractor.word2v(best_choice.text)], [W2vecextractor.word2v(token.text)])[0][
+                              0]:
+                            best_choice = word
+            print("best_choice:", best_choice)
+            if token.i == 1:
+                print("is second word")
+                for child in best_choice.children:
+
+                    print(child.text)
+                    if child.dep_ == "nsubj":
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        print("nsubj subtree string:", answer_string)
+                        return  answer_string
+            else:
+                print("not second word", best_choice.text)
+                for child in best_choice.children:
+
+                    print(child.text)
+                    if child.dep_ !="nsubj":
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        print("obj subtree string:", answer_string)
+                        return  answer_string
+                return best_choice
+    else:
+        return None
+
+
+
+
+
+
+def check_if_in_story(token, story):
+    text = ""
+    sentences = []
+    for sent in story:
+        sentences.append(sent["sentence"])
+        text += sent["sentence"] + " "
+    doc = nlp(text)
+    for word in doc:
+        if word.lemma_ == token.lemma_:
+            return True
+    return False
+
+def head_of_question(question, story):
     doc = nlp(question["question"])
     if question_class(question) in ["who"]:
         print("QUESTION:", question["question"])
-        tok = doc[len(doc)-1]
+        tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.is_stop:
+        if tok.is_stop or not check_if_in_story(tok, story):
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks)>1:
                 for chunk in reversed(chunks):
                     if chunk.text not in stop:
-                        print(chunk.text)
-                        return chunk
-            elif "ADJ" in [token.pos_ for token in doc]:
+                        if chunk.text[0].lower() == chunk.text[0]:
+                            print(chunk.text)
+                            return chunk
+            if "ADJ" in [token.pos_ for token in doc]:
                 for token in doc:
                     if token.pos_ == "ADJ":
                         print(token.text)
