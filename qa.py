@@ -391,8 +391,8 @@ def extract_who_answer(story, question):
                     return answer_string
             return best_choice
 
-else:
-return None
+    else:
+        return None
 
 
 def head_of_question(question, story):
