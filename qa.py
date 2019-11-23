@@ -335,15 +335,6 @@ def question_class(question):
     return tokens[0]
 
 
-def WhoQuestion(story, question):
-    print("")
-    if question_class(question) == "who":
-        ans = possible_answers(story)
-        for key, value in ans["ents"].items():
-            if value == ("PERSON" or "ORG" or "PRODUCT"):
-                print(key, "with a value of:                 ", value)
-
-
 def extract_who_answer(story, question):
     if question_class(question) in ["who"]:
         glove_w2v_file = "data/glove-w2v.txt"
@@ -425,14 +416,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -456,14 +447,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -487,14 +478,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken =list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -518,14 +509,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -549,14 +540,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -580,14 +571,14 @@ def head_of_question(question, story):
                     if chunk.root.text not in stop:
                         if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
                             return chunk.root
-            if "ADJ" in [token.pos_ for token in doc]:
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
