@@ -13,14 +13,14 @@ from nltk.util import ngrams
 from word2vec_extractor import Word2vecExtractor
 from sklearn.metrics.pairwise import cosine_similarity
 
-
 nlp = spacy.load("en_core_web_sm")
-#test
+# test
 questions = 0
 
 stop = set(stopwords.words('english'))
 
-def  A6_sentence_selection(question, story):
+
+def A6_sentence_selection(question, story):
     q_lemmas = normalize_set(question["question"], expand_synsets=True)
     answers = {
 
@@ -54,6 +54,8 @@ def  A6_sentence_selection(question, story):
     sys.stdout.write("\r" + str(questions) + " questions  answered...")
 
     return sent_id, ""
+
+
 def token_filter(token, use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
@@ -67,6 +69,8 @@ def token_filter(token, use_spacy_stopwords=False):
     elif token.is_punct:
         keep_token = False
     return keep_token
+
+
 def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
     doc = nlp(text)
     out = ""
@@ -74,38 +78,40 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
         print("can't expand synsets without lemmatizing", file=sys.stderr)
         exit()
     for token in doc:
-            if token_filter(token):
-                if expand_synsets:
-                    pos_dict = {
-                        "NOUN": wn.NOUN,
-                        "VERB": wn.VERB,
-                        "ADV": wn.ADV,
-                        "ADJ": wn.ADJ
-                    }
-                    if token.pos_ in pos_dict:
-                        synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
-                    else:
-                        synset = wn.synsets(token.lemma_)
-
-                    if synset != []:
-                        for synonym in synset[0].lemma_names():
-                            out += (synonym + " ")
-                            for syn in wn.synsets(synonym)[0].lemma_names():
-                                out += (syn + " ")
-                                if len(wn.synsets(synonym)) > 1:
-                                    for syn2 in wn.synsets(synonym)[1].lemma_names():
-                                        out += (syn2 + " ")
-                        if len(synset) > 1:
-                            for synonym in synset[1].lemma_names():
-                                out += (synonym + " ")
-                    else:
-                        out += (token.lemma_ + " ")
-                elif (lemmatize):
-                    out += ((token.lemma_
-                             if token.lemma_ != "-PRON-" else token.text) + " ")
+        if token_filter(token):
+            if expand_synsets:
+                pos_dict = {
+                    "NOUN": wn.NOUN,
+                    "VERB": wn.VERB,
+                    "ADV": wn.ADV,
+                    "ADJ": wn.ADJ
+                }
+                if token.pos_ in pos_dict:
+                    synset = wn.synsets(token.lemma_, pos=pos_dict[token.pos_])
                 else:
-                    out += (token.text + " ")
+                    synset = wn.synsets(token.lemma_)
+
+                if synset != []:
+                    for synonym in synset[0].lemma_names():
+                        out += (synonym + " ")
+                        for syn in wn.synsets(synonym)[0].lemma_names():
+                            out += (syn + " ")
+                            if len(wn.synsets(synonym)) > 1:
+                                for syn2 in wn.synsets(synonym)[1].lemma_names():
+                                    out += (syn2 + " ")
+                    if len(synset) > 1:
+                        for synonym in synset[1].lemma_names():
+                            out += (synonym + " ")
+                else:
+                    out += (token.lemma_ + " ")
+            elif (lemmatize):
+                out += ((token.lemma_
+                         if token.lemma_ != "-PRON-" else token.text) + " ")
+            else:
+                out += (token.text + " ")
     return nlp(out)
+
+
 def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False):
     doc = nlp(text)
     out_set = set()
@@ -147,6 +153,8 @@ def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False)
             else:
                 out_set.add(token.lemma_)
     return out_set
+
+
 def doc_vector(text):
     doc = normalize(text)
     docvec = numpy.zeros((300,), dtype="float32")
@@ -157,8 +165,9 @@ def doc_vector(text):
     return docvec
 
 
+SAVED_COREF = ("a", dict())
 
-SAVED_COREF=("a",dict())
+
 def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
     global SAVED_COREF
@@ -195,8 +204,8 @@ def coreference_story(story):
                         if localstory[sentind - 1]["sentence"][example_start -
                                                                1] != 'is':
                             if localstory[sentind - 1]["sentence"][
-                                    example_start - 2] != antecedent_tokens[
-                                        len(antecedent_tokens) - 1]:
+                                example_start - 2] != antecedent_tokens[
+                                len(antecedent_tokens) - 1]:
                                 # print("Before:",
                                 #   localstory[sentind - 1]["sentence"])
                                 for i in range(0, len(example_tokens)):
@@ -211,9 +220,10 @@ def coreference_story(story):
                                 # print("After:",
                                 #       localstory[sentind - 1]["sentence"])
         for i in range(0, len(localstory)):
-            localstory[i]["sentence"]=" ".join(localstory[i]["sentence"])
+            localstory[i]["sentence"] = " ".join(localstory[i]["sentence"])
         SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
+
 
 '''
 def person_in_the_question(question):
@@ -259,16 +269,16 @@ def get_answer(question, story):
     """
 
     ###     Your Code Goes Here         ###
-    #coref_story = coreference_story(story)
-    #ßans = possible_answers(coref_story)
-    #print(ans["ents"])
-   # print(ans["prep_phrases"])
-    #print(ans["chunks"])
+    # coref_story = coreference_story(story)
+    # ßans = possible_answers(coref_story)
+    # print(ans["ents"])
+    # print(ans["prep_phrases"])
+    # print(ans["chunks"])
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
-    extract_who_answer(story, question)
-    #head_of_question(question)
-    answerid= "-"
+    # extract_who_answer(story, question)
+    head_of_question(question, story)
+    answerid = "-"
     answer = "-"
 
     ###     End of Your Code         ###
@@ -324,109 +334,107 @@ def question_class(question):
     #     question_classes[tokens[0]] = 1
     return tokens[0]
 
+
 def WhoQuestion(story, question):
     print("")
-    if question_class(question)== "who":
-        ans= possible_answers(story)
+    if question_class(question) == "who":
+        ans = possible_answers(story)
         for key, value in ans["ents"].items():
-            if value==("PERSON" or "ORG" or "PRODUCT"):
+            if value == ("PERSON" or "ORG" or "PRODUCT"):
                 print(key, "with a value of:                 ", value)
+
 
 def extract_who_answer(story, question):
     if question_class(question) in ["who"]:
         glove_w2v_file = "data/glove-w2v.txt"
         W2vecextractor = Word2vecExtractor(glove_w2v_file)
         token = head_of_question(question, story)
-        text=""
+        text = ""
         sentences = []
         for sent in story:
             sentences.append(sent["sentence"])
             text += sent["sentence"] + " "
         doc = nlp(text)
         best_choice = doc[0]
-        if " " in token.text:
-            print("Has a space")
 
+        for word in doc:
+            if word.lemma_ == token.lemma_:
+                best_choice = word
+        if best_choice == doc[0]:
+            print("didnt find special word")
+        # for word in doc:
+        #    print("speacial:", token.text, "word:", word.text, "distance",
+        #         cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
+        #             0])
+        #    if cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
+        #             0] > cosine_similarity([W2vecextractor.word2v(best_choice.text)], [W2vecextractor.word2v(token.text)])[0][
+        #             0]:
+        #           best_choice = word
+        print("best_choice:", best_choice)
+        if token.i == 1:
+            print("is second word")
+            for child in best_choice.children:
+
+                print(child.text)
+                if child.dep_ == "nsubj":
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
         else:
-            for word in doc:
-                if word.lemma_ == token.lemma_:
-                    best_choice = word
-            if best_choice == doc[0]:
-                print("didnt find special word")
-                for word in doc:
-                    print("speacial:", token.text, "word:", word.text, "distance",
-                          cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
-                              0])
-                    if cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
-                              0] > cosine_similarity([W2vecextractor.word2v(best_choice.text)], [W2vecextractor.word2v(token.text)])[0][
-                              0]:
-                            best_choice = word
-            print("best_choice:", best_choice)
-            if token.i == 1:
-                print("is second word")
-                for child in best_choice.children:
+            print("not second word", best_choice.text)
+            for child in best_choice.children:
 
-                    print(child.text)
-                    if child.dep_ == "nsubj":
-                        answer_string = " ".join([token.text for token in list(child.subtree)])
-                        print("nsubj subtree string:", answer_string)
-                        return  answer_string
-            else:
-                print("not second word", best_choice.text)
-                for child in best_choice.children:
+                print(child.text)
+                if child.dep_ != "nsubj":
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    print("obj subtree string:", answer_string)
+                    return answer_string
+            return best_choice
 
-                    print(child.text)
-                    if child.dep_ !="nsubj":
-                        answer_string = " ".join([token.text for token in list(child.subtree)])
-                        print("obj subtree string:", answer_string)
-                        return  answer_string
-                return best_choice
-    else:
-        return None
+else:
+return None
 
 
+def head_of_question(question, story):
+    the_story_set = set()
+    doc = nlp(question["question"])
 
-
-
-
-def check_if_in_story(token, story):
     text = ""
     sentences = []
     for sent in story:
         sentences.append(sent["sentence"])
         text += sent["sentence"] + " "
-    doc = nlp(text)
-    for word in doc:
-        if word.lemma_ == token.lemma_:
-            return True
-    return False
+    sdoc = nlp(text)
 
-def head_of_question(question, story):
-    doc = nlp(question["question"])
-    if question_class(question) in ["who"]:
+    for qtoken in doc:
+        for stoken in sdoc:
+            if qtoken.lemma_ == stoken.lemma_:
+                the_story_set.add(qtoken)
+
+    if question_class(question) in ["who", "what"]:
         print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.is_stop or not check_if_in_story(tok, story):
+        if tok.is_stop or tok not in the_story_set:
             chunks = [chunk for chunk in doc.noun_chunks]
-            if len(chunks)>1:
+            if len(chunks) > 1:
                 for chunk in reversed(chunks):
-                    if chunk.text not in stop:
-                        if chunk.text[0].lower() == chunk.text[0]:
-                            print(chunk.text)
-                            return chunk
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
             if "ADJ" in [token.pos_ for token in doc]:
                 for token in doc:
-                    if token.pos_ == "ADJ":
+                    if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
 
             else:
-                maxtoken=doc[0]
-                for token in doc:
-                    if len(token.text)>=len(maxtoken.text):
+                maxtoken = doc[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
                 print(maxtoken)
                 return maxtoken
@@ -436,26 +444,27 @@ def head_of_question(question, story):
 
     elif question_class(question) in ["what", "which"]:
         print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if "ADJ" in [token.pos_ for token in doc]:
-            for token in doc:
-                if token.pos_ == "ADJ":
-                    print(token.text)
-                    return token
-        elif tok.text in stop:
+
+        if tok.is_stop or tok not in the_story_set:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
-                    if chunk.text not in stop:
-                        print(chunk.text)
-                        return chunk
-
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
 
             else:
                 maxtoken = doc[0]
-                for token in doc:
+                for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
                 print(maxtoken)
@@ -466,85 +475,127 @@ def head_of_question(question, story):
 
     elif question_class(question) in ["when"]:
         print("QUESTION:", question["question"])
-        chunks = [chunk for chunk in doc.noun_chunks]
-        for chunk in chunks:
-            if " " in chunk.text:
-                print(chunk.text)
-                return chunk
-            for token in doc:
-                if token.tag_ == "ADJ":
-                    print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            print(maxtoken)
-            return maxtoken
+        print(the_story_set)
+        tok = doc[0]
+        while (tok != tok.head):
+            tok = tok.head
+
+        if tok.is_stop or tok not in the_story_set:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = doc[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["why", "how"]:
         print("QUESTION:", question["question"])
-        tok = doc[len(doc)-1]
+        print(the_story_set)
+        tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if tok in stop:
-            for token in reversed(doc):
-                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    print(token.text)
-                    return token
-            for token in reversed(doc):
-                if token.tag_ == "ADJ":
-                    print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            print(maxtoken)
-            return maxtoken
-        print(tok.text)
-        return tok
+
+        if tok.is_stop or tok not in the_story_set:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = doc[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["where"]:
         print("QUESTION:", question["question"])
-        tok = doc[len(doc)-1]
+        print(the_story_set)
+        tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if tok.text in stop:
-            for token in reversed(doc):
-                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    print(token.text)
-                    return token
-            for token in reversed(doc):
-                if token.tag_ == "ADJ":
-                    print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            print(maxtoken)
-            return maxtoken
-        print(tok.text)
-        return tok
+
+        if tok.is_stop or tok not in the_story_set:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = doc[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["yn"]:
         print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
-        print(tok.text)
-        return tok
+        while (tok != tok.head):
+            tok = tok.head
 
+        if tok.is_stop or tok not in the_story_set:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in doc]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
 
-
-
-
-
-
-
-
-
-
-
+            else:
+                maxtoken = doc[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
 
 #############################################################
