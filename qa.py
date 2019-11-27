@@ -3,7 +3,6 @@ import spacy
 import nltk
 from nltk.corpus import stopwords
 import copy
-from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet as wn
 import sys
 import time
@@ -180,10 +179,10 @@ def coreference_story(story):
         sent = story[0]
         story_coref = sent['coref']
         localstory = copy.deepcopy(story)
-        for i in range(0, len(story)):
+        for i in range(0, len(localstory)):
             # print(story[i]["sentence"])
             localstory[i]["sentence"] = nltk.word_tokenize(
-                story[i]["sentence"])
+                localstory[i]["sentence"])
             # print(localstory[i]["sentence"])
 
         for key in story_coref:
@@ -193,9 +192,11 @@ def coreference_story(story):
                 sentind = story_coref[key][z]["sentNum"]
                 example_text = story_coref[key][z]["text"]
                 antecedent_tokens = nltk.word_tokenize(antecedent)
-                # print("antecedent_tokens:", antecedent_tokens)
+                #print("length of local story:", len(localstory), "title:", localstory[0]["storytitle"], "sentind:", sentind)
                 example_tokens = nltk.word_tokenize(example_text)
-                # print("example_tokens:", example_tokens)
+                 #print("example_tokens:", example_tokens)
+                if sentind>len(localstory):
+                    sentind = sentind-1
                 if example_tokens[0] in localstory[sentind - 1]["sentence"]:
                     example_start = localstory[sentind - 1]["sentence"].index(
                         example_tokens[0])
@@ -225,9 +226,6 @@ def coreference_story(story):
         return localstory
 
 
-
-
-
 def get_answer(question, story):
     """
     :param question: dict
@@ -255,17 +253,16 @@ def get_answer(question, story):
     """
 
     ###     Your Code Goes Here         ###
-    # coref_story = coreference_story(story)
+    coref_story = coreference_story(story)
     # ßans = possible_answers(coref_story)
     # print(ans["ents"])
     # print(ans["prep_phrases"])
     # print(ans["chunks"])
     # person_in_the_question= person_in_the_question(question)
     # sentences = narrow_sentences_by_Who(coref_story, question)
-    extract_who_answer(story, question)
-    #head_of_question(question, story)
+    # head_of_question(question, story)
     answerid = "-"
-    answer = "-"
+    answer = extract_who_answer(coref_story, question)
 
     ###     End of Your Code         ###
     return answerid, answer
@@ -323,8 +320,6 @@ def question_class(question):
 
 def extract_who_answer(story, question):
     if question_class(question) in ["who"]:
-        glove_w2v_file = "data/glove-w2v.txt"
-        W2vecextractor = Word2vecExtractor(glove_w2v_file)
         token = head_of_question(question, story)
         text = ""
         sentences = []
@@ -332,23 +327,19 @@ def extract_who_answer(story, question):
             sentences.append(sent["sentence"])
             text += sent["sentence"] + " "
         doc = nlp(text)
+        if token == None:
+            ent = [e for e in doc.ents][0]
+            token = [t for t in doc if t.text == ent.text][0]
+        if token == None:
+            return ""
         best_choice = doc[0]
+        docq = nlp(question["question"])
 
         for word in doc:
             if word.lemma_ == token.lemma_:
                 best_choice = word
                 break
                 break
-        if best_choice == doc[0]:
-            print("didnt  find special word")
-        # for word in doc:
-        #    print("speacial:", token.text, "word:", word.text, "distance",
-        #         cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
-        #             0])
-        #    if cosine_similarity([W2vecextractor.word2v(word.text)], [W2vecextractor.word2v(token.text)])[0][
-        #             0] > cosine_similarity([W2vecextractor.word2v(best_choice.text)], [W2vecextractor.word2v(token.text)])[0][
-        #             0]:
-        #           best_choice = word
         print("best_choice:", best_choice)
         if token.i == 1:
             print("is second word")
@@ -361,6 +352,24 @@ def extract_who_answer(story, question):
                     return answer_string
         else:
             print("not second word", best_choice.text)
+            question_people = [e.text for e in docq.ents]
+            print(question_people)
+            print([(e.text, e.label_) for e in doc.ents])
+            people = [e.text for e in doc.ents if (e.label_ == 'PERSON') or (e.label_ == 'ORG') or (e.label_ == 'GPE')]
+            other_people_ents = [person for person in people if person not in question_people]
+            if len(other_people_ents) > 0:
+                other_person_string = other_people_ents[0]
+                print("Other person returned", other_person_string)
+                return other_person_string
+            else:
+                chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
+                if len(chunks) > 0:
+                    chunk1 = chunks[0]
+                    print("Noun returned", chunk1)
+                    return chunk1
+                else:
+                    print("nothing")
+                    return " "
             for child in best_choice.children:
 
                 print(child.text)
@@ -377,7 +386,6 @@ def extract_who_answer(story, question):
 def head_of_question(question, story):
     the_story_set = set()
     doc = nlp(question["question"])
-
     text = ""
     sentences = []
     for sent in story:
@@ -389,6 +397,9 @@ def head_of_question(question, story):
         for stoken in sdoc:
             if qtoken.lemma_ == stoken.lemma_:
                 the_story_set.add(qtoken)
+
+    if (len(the_story_set) == 0):
+        return None
 
     if question_class(question) in ["who", "what"]:
         print("QUESTION:", question["question"])
@@ -473,7 +484,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken =list(the_story_set)[0]
+                maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
