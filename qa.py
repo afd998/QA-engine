@@ -225,21 +225,7 @@ def coreference_story(story):
         return localstory
 
 
-'''
-def person_in_the_question(question):
-  ner_list=question[ner]
-  for entry in ner_list:
-    if (entry[ner] == 'PERSON') or (entry[ner] == 'TITLE'):
-      if(entry[text]!= ("he" or "He" or "she" or "She" or "his" or "hers" or "His" or"Hers"):
-        output = entry[text]
-        break
-  return output
-'''
-'''def narrow_sentences_by_Who_Where(coref_story, question)
-  if nltk.word_tokenize(question["question"])[0]== "Where":
-    senetence_list= []
-  for sentnce in coref_story:
- '''
+
 
 
 def get_answer(question, story):
@@ -351,6 +337,7 @@ def extract_who_answer(story, question):
         for word in doc:
             if word.lemma_ == token.lemma_:
                 best_choice = word
+                break
                 break
         if best_choice == doc[0]:
             print("didnt  find special word")
