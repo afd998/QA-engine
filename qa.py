@@ -17,6 +17,7 @@ nlp = spacy.load("en_core_web_sm")
 questions = 0
 
 stop = set(stopwords.words('english'))
+stop.add("went")
 
 
 def A6_sentence_selection(question, story):
@@ -336,7 +337,7 @@ def extract_who_answer(story, question):
         docq = nlp(question["question"])
 
         for word in doc:
-            if word.lemma_ == token.lemma_:
+            if word.lemma_.lower() == token.lemma_.lower():
                 best_choice = word
                 break
                 break
@@ -352,11 +353,19 @@ def extract_who_answer(story, question):
                     return answer_string
         else:
             print("not second word", best_choice.text)
+            while (best_choice != best_choice.head):
+                best_choice= best_choice.head
+            for child in best_choice.children:
+                print(child.text)
+                if child.dep_ == "nobj":
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
             question_people = [e.text for e in docq.ents]
             print(question_people)
             print([(e.text, e.label_) for e in doc.ents])
             people = [e.text for e in doc.ents if (e.label_ == 'PERSON') or (e.label_ == 'ORG') or (e.label_ == 'GPE')]
-            other_people_ents = [person for person in people if person not in question_people]
+            other_people_ents = [person for person in people if person not in [token.text for token in docq]]
             if len(other_people_ents) > 0:
                 other_person_string = other_people_ents[0]
                 print("Other person returned", other_person_string)
@@ -395,7 +404,7 @@ def head_of_question(question, story):
 
     for qtoken in doc:
         for stoken in sdoc:
-            if qtoken.lemma_ == stoken.lemma_:
+            if qtoken.lemma_.lower() == stoken.lemma_.lower():
                 the_story_set.add(qtoken)
 
     if (len(the_story_set) == 0):
@@ -408,7 +417,7 @@ def head_of_question(question, story):
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.is_stop or tok not in the_story_set:
+        if tok.is_stop or tok not in the_story_set or tok.text in stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
