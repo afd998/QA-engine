@@ -30,8 +30,6 @@ def A6_sentence_selection(question, story):
         for sent in story
 
     }
-    for sent in story:
-        print(normalize_set(sent["sentence"], expand_synsets=True))
     score_dict = {}
     for ans in answers.keys():
         ans_lemmas = answers[ans]
@@ -268,10 +266,20 @@ def get_answer(question, story):
     answer = "a"
     if question_class(question) in ["who"]:
         answer= extract_who_answer(story, question, 0)
-    if question_class(question) in ["what"]:
+    elif question_class(question) in ["what"]:
         answer = extract_what_answer(story, question, 0)
-    #if question_class(question) in ["yn"]:
-    #    answer = extract_yn_answer(story, question, 0)
+    elif question_class(question) in ["yn"]:
+        answer = extract_yn_answer(story, question, 0)
+    else:
+        id, nothing = A6_sentence_selection(question,story)
+        for sent in story:
+            if sent["sentenceid"]==id:
+                answer= sent["sentence"]
+                break
+
+
+
+
 
 
     ###     End of Your Code         ###
@@ -350,9 +358,10 @@ def find_in_story(doc, token):
 
 def check_if_pronoun_and_resolve(answer, story, question):
     extracted_string= ""
-    if len([value for value in ["some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she",
-        "they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"] if value in nltk.word_tokenize(answer)]
-           )!=0:
+    #if len([value for value in ["some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she",
+     #   "they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"] if value in nltk.word_tokenize(answer)]
+    #       )!=0:
+    if answer in ["it", "It", "some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she","they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"]:
         if question_class(question)=="who":
             extracted_string=extract_who_answer(coreference_story(story), question, 1)
         if question_class(question) == "what":
@@ -466,17 +475,51 @@ def extract_what_answer(story, question, recur_count):
     docq = nlp(question["question"])
     best_choice = find_in_story(doc, token)
     print("best_choice:", best_choice)
+    if docq[1].text not in ["did"]:
+        print("not a did")
+        for dep in ["nsubj", "nsubjpass", "aux", "dsubj"]:
+            for child in best_choice.children:
+                print((child.text, child.dep_))
+                if child.dep_ == dep:
+                    print("Chosen dep_:", child.dep_)
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    if recur_count == 0:
+                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
+    elif len([noun for noun in docq if noun.pos_ in ['NOUN','PROPN']])>=2:
+        print("Two nouns in the question")
+        while(best_choice != best_choice.head):
+            best_choice = best_choice.head
+        print("HEAD:", best_choice.text)
+        for i in range(0,len(list(best_choice.rights))):
+            right =[token for token in best_choice.rights][i]
+            print("went right", right.text)
+            for dep in ["dobj", "pobj"]:
+                for child in right.children:
+                    print((child.text, child.dep_))
+                    if child.dep_ == dep:
+                        print("Chosen dep_:", child.dep_)
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        if recur_count == 0:
+                            answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                        print("nsubj subtree string:", answer_string)
+                        return answer_string
+    else:
+        while (best_choice != best_choice.head):
+            best_choice = best_choice.head
+            print("HEAD:", best_choice.text)
+        for dep in ["dobj", "pobj", "relcl", "xcomp", "ccomp", "conj", "advcl", "prep"]:
+            for child in best_choice.children:
+                print((child.text, child.dep_))
+                if child.dep_ == dep:
+                    print("Chosen dep_:", child.dep_)
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    if recur_count == 0:
+                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
 
-    while (best_choice != best_choice.head):
-        best_choice = best_choice.head
-    for child in best_choice.children:
-        if child.dep_ in ["xcomp", "ccomp", "conj", "dobj", "advcl", "prep"]:
-            if not (child.dep_ == "aux" and child.i > best_choice.i):
-                answer_string = " ".join([token.text for token in list(child.subtree)])
-                if recur_count == 0:
-                    answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
-                print("nsubj subtree string:", answer_string)
-                return answer_string
 
     chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
     if len(chunks) > 0:
@@ -493,7 +536,7 @@ def extract_yn_answer(story, question, recur_count):
     return "yes"
 
 def head_of_question(question, story):
-    the_story_set = set()
+    the_story_set = list()
     doc = nlp(question["question"])
     text = ""
     sentences = []
@@ -504,25 +547,25 @@ def head_of_question(question, story):
 
     for qtoken in doc:
         for stoken in sdoc:
-            if qtoken.lemma_.lower() == stoken.lemma_.lower():
-                the_story_set.add(qtoken)
-
+            if qtoken.lemma_.lower() == stoken.lemma_.lower() and qtoken not in the_story_set:
+                the_story_set.append(qtoken)
+    the_ss_l= [token.lemma_.lower() for token in the_story_set]
     if (len(the_story_set) == 0):
         return None
 
-    if question_class(question) in ["who", "what"]:
+    if question_class(question) in ["who"]:
         print("QUESTION:", question["question"])
         print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
 
-        if tok not in the_story_set or tok.text in stop:
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
                     if chunk.root.text not in stop:
-                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
                             return chunk.root
             if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
@@ -541,26 +584,26 @@ def head_of_question(question, story):
             print(tok.text)
             return tok
 
-    elif question_class(question) in ["which"]:
+    elif question_class(question) in ["what"]:
         print("QUESTION:", question["question"])
         print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-
-        if tok.is_stop or tok not in the_story_set:
-            chunks = [chunk for chunk in doc.noun_chunks]
-            if len(chunks) > 1:
-                for chunk in reversed(chunks):
-                    if chunk.root.text not in stop:
-                        if chunk.root.text[0].lower() == chunk.root.text[0] and chunk.root.text in the_story_set:
-                            return chunk.root
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            verbs = [token for token in the_story_set if token.pos_ == "VERB"]
+            nouns = [token for token in the_story_set if token.pos_ == "NOUN"]
+            if len(verbs)>0:
+                print("Chose a verb")
+                return verbs[len(verbs)-1]
+            if len(nouns)>0:
+                print("Chose a noun")
+                return nouns[len(nouns)-1]
             if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
                     if token.pos_ == "ADJ" and token in the_story_set:
                         print(token.text)
                         return token
-
             else:
                 maxtoken = list(the_story_set)[0]
                 for token in the_story_set:
