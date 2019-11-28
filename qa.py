@@ -20,6 +20,8 @@ stop = set(stopwords.words('english'))
 stop.add("went")
 
 
+
+
 def A6_sentence_selection(question, story):
     q_lemmas = normalize_set(question["question"], expand_synsets=True)
     answers = {
@@ -263,9 +265,13 @@ def get_answer(question, story):
     # sentences = narrow_sentences_by_Who(coref_story, question)
     # head_of_question(question, story)
     answerid = "-"
-    answer = "-"
+    answer = "a"
     if question_class(question) in ["who"]:
-       answer= extract_who_answer(coref_story, question)
+        answer= extract_who_answer(story, question, 0)
+    if question_class(question) in ["what"]:
+        answer = extract_what_answer(story, question, 0)
+    #if question_class(question) in ["yn"]:
+    #    answer = extract_yn_answer(story, question, 0)
 
 
     ###     End of Your Code         ###
@@ -331,13 +337,38 @@ def get_story_nlp(story):
 
 def find_in_story(doc, token):
     best_choice = doc[0]
+    matches=[]
     for word in doc:
         if word.lemma_.lower() == token.lemma_.lower():
+            matches.append(word)
+    best_choice=matches[0]
+    for word in doc:
+        if word.text.lower() == token.text.lower():
             best_choice = word
             break
     return best_choice
 
-def extract_who_answer(story, question):
+def check_if_pronoun_and_resolve(answer, story, question):
+    extracted_string= ""
+    if len([value for value in ["some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she",
+        "they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"] if value in nltk.word_tokenize(answer)]
+           )!=0:
+        if question_class(question)=="who":
+            extracted_string=extract_who_answer(coreference_story(story), question, 1)
+        if question_class(question) == "what":
+            extracted_string=extract_what_answer(coreference_story(story), question, 1)
+
+    else:
+        extracted_string = answer
+    return extracted_string
+
+def is_verb(token):
+    if token.pos_=="VERB":
+        return True
+    else:
+        return False
+
+def extract_who_answer(story, question, recur_count):
 
         token = head_of_question(question, story)
         doc = get_story_nlp(story)
@@ -349,20 +380,37 @@ def extract_who_answer(story, question):
         docq = nlp(question["question"])
         best_choice= find_in_story(doc, token)
         print("best_choice:", best_choice)
-
+        question_people = [e.text for e in docq.ents if
+                           (e.label_ == 'PERSON') or (e.label_ == 'ORG') or (e.label_ == 'GPE')]
+        print(question_people)
+        people = [e.text for e in doc.ents if (e.label_ == 'PERSON') or (e.label_ == 'ORG') or (e.label_ == 'GPE')]
+        print(people)
+        other_people = [person for person in people if person not in [token.text for token in docq]]
 
         if token.i == 1:
             print("is second word")
             for child in best_choice.children:
-                if child.dep_ in ["nsubj", "nsubjpass"]:
-                    answer_string = " ".join([token.text for token in list(child.subtree)])
-                    print("nsubj subtree string:", answer_string)
-                    return answer_string
+                if child.dep_ in ["nsubj", "nsubjpass", "aux"]:
+                    if not (child.dep_ =="aux" and child.i>best_choice.i):
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        if recur_count == 0:
+                            answer_string = check_if_pronoun_and_resolve(answer_string,story,question)
+                        print("nsubj subtree string:", answer_string)
+                        return answer_string
             if best_choice.dep_ == "conj":
                 for child in best_choice.head.children:
                         if child.dep_ in ["nsubj", "nsubjpass"]:
-                            print("Grandchild")
                             answer_string = " ".join([token.text for token in list(child.subtree)])
+                            if recur_count==0:
+                                answer_string=check_if_pronoun_and_resolve(answer_string,story, question)
+                            print("nsubj subtree string:", answer_string)
+                            return answer_string
+            if best_choice.dep_ == "xcomp":
+                for child in best_choice.head.children:
+                        if child.dep_ in ["nsubj", "nsubjpass"]:
+                            answer_string = " ".join([token.text for token in list(child.subtree)])
+                            if recur_count==0:
+                                answer_string=check_if_pronoun_and_resolve(answer_string,story,question)
                             print("nsubj subtree string:", answer_string)
                             return answer_string
 
@@ -370,39 +418,79 @@ def extract_who_answer(story, question):
             print("is not second word")
             while (best_choice != best_choice.head):
                 best_choice= best_choice.head
-            for child in best_choice.children:
-                print(child.text)
-                if child.dep_ == "nobj":
-                    answer_string = " ".join([token.text for token in list(child.subtree)])
-                    print("nsubj subtree string:", answer_string)
-                    return answer_string
-            question_people = [e.text for e in docq.ents]
-            print(question_people)
-            print([(e.text, e.label_) for e in doc.ents])
-            people = [e.text for e in doc.ents if (e.label_ == 'PERSON') or (e.label_ == 'ORG') or (e.label_ == 'GPE')]
-            other_people_ents = [person for person in people if person not in [token.text for token in docq]]
-            if len(other_people_ents) > 0:
-                other_person_string = other_people_ents[0]
-                print("Other person returned", other_person_string)
-                return other_person_string
+            if len(question_people)!=0:
+                if len(other_people) > 0:
+                    other_person_string = other_people[0]
+                    print("Other person returned", other_person_string)
+                    return other_person_string
             else:
-                chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
-                if len(chunks) > 0:
-                    chunk1 = chunks[0]
-                    print("Noun returned", chunk1)
-                    return chunk1
-                else:
-                    print("nothing")
-                    return " "
-            for child in best_choice.children:
+                for child in best_choice.children:
+                    if child.dep_ in ["nsubj", "nsubjpass", "aux"]:
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        if recur_count == 0:
+                            answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                        print("nsubj subtree string:", answer_string)
+                        return answer_string
+            #else:
+              #  for child in best_choice.children:
+               #     if child.dep_ in ["nobj", "pobj"]:
+               #         answer_string = " ".join([token.text for token in list(child.subtree)])
+               #         if recur_count == 0:
+               #             answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+               #         print("nobj/pobj subtree string:", answer_string)
+              #          return answer_string
 
-                print(child.text)
-                if child.dep_ != "nsubj":
-                    answer_string = " ".join([token.text for token in list(child.subtree)])
-                    print("obj subtree string:", answer_string)
-                    return answer_string
-            return best_choice
 
+
+
+            chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
+            if len(chunks) > 0:
+                chunk1 = chunks[0]
+                print("Noun returned", chunk1)
+                return chunk1
+            else:
+                print("nothing")
+                return " "
+
+        return "a"
+
+
+def extract_what_answer(story, question, recur_count):
+    token = head_of_question(question, story)
+    doc = get_story_nlp(story)
+    if token == None:
+        ent = [e for e in doc.ents][0]
+        token = [t for t in doc if t.text == ent.text][0]
+    if token == None:
+        return ""
+    docq = nlp(question["question"])
+    best_choice = find_in_story(doc, token)
+    print("best_choice:", best_choice)
+
+    while (best_choice != best_choice.head):
+        best_choice = best_choice.head
+    for child in best_choice.children:
+        if child.dep_ in ["xcomp", "ccomp", "conj", "dobj", "advcl", "prep"]:
+            if not (child.dep_ == "aux" and child.i > best_choice.i):
+                answer_string = " ".join([token.text for token in list(child.subtree)])
+                if recur_count == 0:
+                    answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                print("nsubj subtree string:", answer_string)
+                return answer_string
+
+    chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
+    if len(chunks) > 0:
+        chunk1 = chunks[0]
+        print("Noun returned", chunk1)
+        return chunk1
+    else:
+        print("nothing")
+        return " "
+
+    return "a"
+
+def extract_yn_answer(story, question, recur_count):
+    return "yes"
 
 def head_of_question(question, story):
     the_story_set = set()
@@ -429,7 +517,7 @@ def head_of_question(question, story):
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.is_stop or tok not in the_story_set or tok.text in stop:
+        if tok not in the_story_set or tok.text in stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
@@ -453,7 +541,7 @@ def head_of_question(question, story):
             print(tok.text)
             return tok
 
-    elif question_class(question) in ["what", "which"]:
+    elif question_class(question) in ["which"]:
         print("QUESTION:", question["question"])
         print(the_story_set)
         tok = doc[0]

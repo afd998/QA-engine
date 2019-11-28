@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="" />
+    <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw7-responses.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +187,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qa_engine/score_answers.py" />
-      <option name="PARAMETERS" value="-answer data/hw7-answers.tsv -response hw7-responses" />
+      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/hw8-answers.tsv -response $PROJECT_DIR$/hw8-responses.tsv" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -192,12 +196,12 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.score_answers" />
       <item itemvalue="Python.baseline-stub-word2vec-demo" />
       <item itemvalue="Python.baseline-stub-word2vec" />
       <item itemvalue="Python.baseline-stub" />
       <item itemvalue="Python.chunk-demo" />
       <item itemvalue="Python.qa" />
-      <item itemvalue="Python.score_answers" />
     </list>
     <recent_temporary>
       <list>
