@@ -263,7 +263,10 @@ def get_answer(question, story):
     # sentences = narrow_sentences_by_Who(coref_story, question)
     # head_of_question(question, story)
     answerid = "-"
-    answer = extract_who_answer(coref_story, question)
+    answer = "-"
+    if question_class(question) in ["who"]:
+       answer= extract_who_answer(coref_story, question)
+
 
     ###     End of Your Code         ###
     return answerid, answer
@@ -318,41 +321,53 @@ def question_class(question):
     #     question_classes[tokens[0]] = 1
     return tokens[0]
 
+def get_story_nlp(story):
+    text = ""
+    sentences = []
+    for sent in story:
+        sentences.append(sent["sentence"])
+        text += sent["sentence"] + " "
+    return nlp(text)
+
+def find_in_story(doc, token):
+    best_choice = doc[0]
+    for word in doc:
+        if word.lemma_.lower() == token.lemma_.lower():
+            best_choice = word
+            break
+    return best_choice
 
 def extract_who_answer(story, question):
-    if question_class(question) in ["who"]:
+
         token = head_of_question(question, story)
-        text = ""
-        sentences = []
-        for sent in story:
-            sentences.append(sent["sentence"])
-            text += sent["sentence"] + " "
-        doc = nlp(text)
+        doc = get_story_nlp(story)
         if token == None:
             ent = [e for e in doc.ents][0]
             token = [t for t in doc if t.text == ent.text][0]
         if token == None:
             return ""
-        best_choice = doc[0]
         docq = nlp(question["question"])
-
-        for word in doc:
-            if word.lemma_.lower() == token.lemma_.lower():
-                best_choice = word
-                break
-                break
+        best_choice= find_in_story(doc, token)
         print("best_choice:", best_choice)
+
+
         if token.i == 1:
             print("is second word")
             for child in best_choice.children:
-
-                print(child.text)
-                if child.dep_ == "nsubj":
+                if child.dep_ in ["nsubj", "nsubjpass"]:
                     answer_string = " ".join([token.text for token in list(child.subtree)])
                     print("nsubj subtree string:", answer_string)
                     return answer_string
+            if best_choice.dep_ == "conj":
+                for child in best_choice.head.children:
+                        if child.dep_ in ["nsubj", "nsubjpass"]:
+                            print("Grandchild")
+                            answer_string = " ".join([token.text for token in list(child.subtree)])
+                            print("nsubj subtree string:", answer_string)
+                            return answer_string
+
         else:
-            print("not second word", best_choice.text)
+            print("is not second word")
             while (best_choice != best_choice.head):
                 best_choice= best_choice.head
             for child in best_choice.children:
@@ -387,9 +402,6 @@ def extract_who_answer(story, question):
                     print("obj subtree string:", answer_string)
                     return answer_string
             return best_choice
-
-    else:
-        return None
 
 
 def head_of_question(question, story):

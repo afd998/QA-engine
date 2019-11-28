@@ -34,7 +34,7 @@ def run_scoring(gold, pred):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Assignment 7')
+    parser = argparse.ArgumentParser(description='Assignment 6')
     parser.add_argument('-answer', dest='answer_fname', help='The path to answer key file')
     parser.add_argument('-response', dest='response_fname', help='The path to your response file')
     args = parser.parse_args()
