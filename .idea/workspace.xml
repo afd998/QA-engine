@@ -61,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.score_answers">
+  <component name="RunManager" selected="Python.qa">
     <configuration name="baseline-stub-word2vec-demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled folder" />
       <option name="INTERPRETER_OPTIONS" value="" />
