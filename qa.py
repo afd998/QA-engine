@@ -10,7 +10,6 @@ import time
 import numpy, scipy
 from nltk.util import ngrams
 
-
 nlp = spacy.load("en_core_web_lg")
 stop = set(stopwords.words('english'))
 
@@ -74,14 +73,15 @@ def get_answer(question, story):
             elif q_class == "what":
                 possible = ans["chunks"]
             elif q_class == "when":
+
                 possible = []
                 possible = [
-                    pp for pp in ans["pps"]
-                    if pp[1][0].text.lower() in time_prepositions
-                ] + [
-                    ent for ent in ans["ents"]
-                    if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
-                ]
+                               pp for pp in ans["pps"]
+                               if pp[1][0].text.lower() in time_prepositions
+                           ] + [
+                               ent for ent in ans["ents"]
+                               if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
+                           ]
             elif q_class == "where":
                 possible = [
                     pp for pp in ans["pps"]
@@ -89,12 +89,13 @@ def get_answer(question, story):
                 ]
             if len(possible) == 0:
                 possible = ans["chunks"]
-            answer = best_answer(question, possible, keyword = hq)
+            answer = best_answer(question, possible, keyword=hq)
+
     ###     End of Your Code         ###
     answerid = "-"
     print(answer)
     return answerid, answer
-
+   
 
 def best_answer(question, answers, keyword=None):
     q_bag = bag_words(nlp(question["question"]))
@@ -191,12 +192,13 @@ def bag_words(doc, lemmatize=True):
             bag.add(token.lemma_ if lemmatize else token.text.lower())
     return bag
 
+
 def triple_check(keyword, story):
     sentences = [sent["sentence"].replace('"', "") for sent in story]
     doc = nlp("\n".join(sentences))
     if isinstance(keyword, spacy.tokens.span.Span):
         keyword = keyword.root
-    #print(keyword)
+    # print(keyword)
     if check_if_in_story(keyword, story):
         keyword = find_in_story(keyword, story)
         # print(keyword)
@@ -214,7 +216,8 @@ def triple_check(keyword, story):
             obj = " ".join([token.text for token in child.subtree])
         # elif "prep" in child.dep_:
         #     objects.append(" ".join([token.text for token in child.subtree]))
-    return((str(subject), str(headword), str(obj)))
+    return ((str(subject), str(headword), str(obj)))
+
 
 def check_if_in_story(token, story):
     text = ""
@@ -244,52 +247,52 @@ def find_in_story(token, story):
 def head_of_question(question, story):
     doc = nlp(question["question"])
     if question_class(question) in ["who"]:
-        #print("QUESTION:", question["question"])
+        # print("QUESTION:", question["question"])
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
 
         if tok.is_stop or not check_if_in_story(tok, story):
             chunks = [chunk for chunk in doc.noun_chunks]
-            if len(chunks)>1:
+            if len(chunks) > 1:
                 for chunk in reversed(chunks):
                     if chunk.text not in stop:
                         if chunk.text[0].lower() == chunk.text[0]:
-                            #print(chunk.text)
+                            # print(chunk.text)
                             return chunk
             if "ADJ" in [token.pos_ for token in doc]:
                 for token in doc:
                     if token.pos_ == "ADJ":
-                        #print(token.text)
+                        # print(token.text)
                         return token
 
             else:
-                maxtoken=doc[0]
+                maxtoken = doc[0]
                 for token in doc:
-                    if len(token.text)>=len(maxtoken.text):
+                    if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
-                #print(maxtoken)
+                # print(maxtoken)
                 return maxtoken
         else:
-            #print(tok.text)
+            # print(tok.text)
             return tok
 
     elif question_class(question) in ["what", "which"]:
-        #print("QUESTION:", question["question"])
+        # print("QUESTION:", question["question"])
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
         if "ADJ" in [token.pos_ for token in doc]:
             for token in doc:
                 if token.pos_ == "ADJ":
-                    #print(token.text)
+                    # print(token.text)
                     return token
         elif tok.text in stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
                     if chunk.text not in stop:
-                        #print(chunk.text)
+                        # print(chunk.text)
                         return chunk
 
 
@@ -298,81 +301,82 @@ def head_of_question(question, story):
                 for token in doc:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
-                #print(maxtoken)
+                # print(maxtoken)
                 return maxtoken
         else:
-            #print(tok.text)
+            # print(tok.text)
             return tok
 
     elif question_class(question) in ["when"]:
-        #print("QUESTION:", question["question"])
+        # print("QUESTION:", question["question"])
         chunks = [chunk for chunk in doc.noun_chunks]
         for chunk in chunks:
             if " " in chunk.text:
-                #print(chunk.text)
+                # print(chunk.text)
                 return chunk
             for token in doc:
                 if token.tag_ == "ADJ":
-                    #print(token.text)
+                    # print(token.text)
                     return token
             maxtoken = doc[0]
             for token in doc:
                 if len(token.text) >= len(maxtoken.text):
                     maxtoken = token
-            #print(maxtoken)
+            # print(maxtoken)
             return maxtoken
 
     elif question_class(question) in ["why", "how"]:
-        #print("QUESTION:", question["question"])
-        tok = doc[len(doc)-1]
+        # print("QUESTION:", question["question"])
+        tok = doc[len(doc) - 1]
         while (tok != tok.head):
             tok = tok.head
         if tok in stop:
             for token in reversed(doc):
                 if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    #print(token.text)
+                    # print(token.text)
                     return token
             for token in reversed(doc):
                 if token.tag_ == "ADJ":
-                    #print(token.text)
+                    # print(token.text)
                     return token
             maxtoken = doc[0]
             for token in doc:
                 if len(token.text) >= len(maxtoken.text):
                     maxtoken = token
-            #print(maxtoken)
+            # print(maxtoken)
             return maxtoken
-        #print(tok.text)
+        # print(tok.text)
         return tok
 
     elif question_class(question) in ["where"]:
-        #print("QUESTION:", question["question"])
-        tok = doc[len(doc)-1]
+        # print("QUESTION:", question["question"])
+        tok = doc[len(doc) - 1]
         while (tok != tok.head):
             tok = tok.head
         if tok.text in stop:
             for token in reversed(doc):
                 if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    #print(token.text)
+                    # print(token.text)
                     return token
             for token in reversed(doc):
                 if token.tag_ == "ADJ":
-                    #print(token.text)
+                    # print(token.text)
                     return token
             maxtoken = doc[0]
             for token in doc:
                 if len(token.text) >= len(maxtoken.text):
                     maxtoken = token
-            #print(maxtoken)
+            # print(maxtoken)
             return maxtoken
-        #print(tok.text)
+        # print(tok.text)
         return tok
 
     elif question_class(question) in ["yn"]:
-        #print("QUESTION:", question["question"])
+        # print("QUESTION:", question["question"])
         tok = doc[0]
-        #print(tok.text)
+        # print(tok.text)
         return tok
+
 
 def A6_sentence_selection(question, story):
     q_lemmas = normalize_set(question["question"], expand_synsets=True)
@@ -383,7 +387,7 @@ def A6_sentence_selection(question, story):
 
     }
     # for sent in story:
-        # print(normalize_set(sent["sentence"], expand_synsets=True))
+    # print(normalize_set(sent["sentence"], expand_synsets=True))
     score_dict = {}
     for ans in answers.keys():
         ans_lemmas = answers[ans]
@@ -515,14 +519,12 @@ def doc_vector(text):
     return docvec
 
 
-
 #############################################################
 ###     Dont change the code in this section
 #############################################################
 class QAEngine(QABase):
     @staticmethod
     def answer_question(question, story):
-
         answerid, answer = get_answer(question, story)
         return (answerid, answer)
 
