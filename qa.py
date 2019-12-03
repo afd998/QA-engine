@@ -264,18 +264,18 @@ def get_answer(question, story):
     # head_of_question(question, story)
     answerid = "-"
     answer = "a"
-    if question_class(question) in ["who"]:
-        answer= extract_who_answer(story, question, 0)
-    elif question_class(question) in ["what"]:
+    #if question_class(question) in ["who"]:
+      #  answer= extract_who_answer(story, question, 0)
+    if question_class(question) in ["what"]:
         answer = extract_what_answer(story, question, 0)
-    elif question_class(question) in ["yn"]:
-        answer = extract_yn_answer(story, question, 0)
-    else:
-        id, nothing = A6_sentence_selection(question,story)
-        for sent in story:
-            if sent["sentenceid"]==id:
-                answer= sent["sentence"]
-                break
+    #elif question_class(question) in ["yn"]:
+     #   answer = extract_yn_answer(story, question, 0)
+    #else:
+      #  id, nothing = A6_sentence_selection(question,story)
+       # for sent in story:
+          #  if sent["sentenceid"]==id:
+             #   answer= sent["sentence"]
+              #  break
 
 
 
