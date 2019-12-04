@@ -738,7 +738,7 @@ def head_of_question(question, story):
         else:
             print(tok.text)
             return tok
-
+ 
 
 #############################################################
 ###     Dont change the code in this section
