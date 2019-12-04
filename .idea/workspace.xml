@@ -282,7 +282,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/qa.py</url>
-          <line>687</line>
+          <line>688</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>

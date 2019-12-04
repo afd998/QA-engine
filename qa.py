@@ -450,6 +450,7 @@ def head_of_question(question, story):
             print(tok.text)
             return tok
 
+SAVED_COREF = ("a", dict())
 def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
     global SAVED_COREF
