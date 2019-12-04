@@ -15,8 +15,11 @@ DATA_DIR = "data/"
 #STORIES_FILE = "heldoutstories.tsv"
 #COREF_FILE = "heldoutstoriescoref.tsv"
 
-#RESPONSE_FILE = "hw7-responses.tsv"
-
+RESPONSE_FILE = "hw7-responses.tsv"
+QUESTION_FILE = "hw7-questions.tsv"
+ANSWER_FILE = "hw7-answers.tsv"
+STORIES_FILE = "hw7-stories.tsv"
+COREF_FILE = "hw7-stories-coref.tsv"
 
 # def prepare_deps(raw_deps):
 #

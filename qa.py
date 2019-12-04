@@ -48,6 +48,8 @@ def get_answer(question, story):
     # print(hq)
     triple = triple_check(hq, story)
     triple_answer = None
+    if q_class in ["who"]:
+        
     if q_class in ["who", "what"] and triple is not None and triple is not ():
         if triple[2] != "" and triple[2] not in question["question"]:
             triple_answer = triple[2]
@@ -245,137 +247,208 @@ def find_in_story(token, story):
 
 
 def head_of_question(question, story):
+    the_story_set = list()
     doc = nlp(question["question"])
+    text = ""
+    sentences = []
+    for sent in story:
+        sentences.append(sent["sentence"])
+        text += sent["sentence"] + " "
+    sdoc = nlp(text)
+
+    for qtoken in doc:
+        for stoken in sdoc:
+            if qtoken.lemma_.lower() == stoken.lemma_.lower() and qtoken not in the_story_set:
+                the_story_set.append(qtoken)
+    the_ss_l= [token.lemma_.lower() for token in the_story_set]
+    if (len(the_story_set) == 0):
+        return doc[0]
+
     if question_class(question) in ["who"]:
-        # print("QUESTION:", question["question"])
+        print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
 
-        if tok.is_stop or not check_if_in_story(tok, story):
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
             chunks = [chunk for chunk in doc.noun_chunks]
             if len(chunks) > 1:
                 for chunk in reversed(chunks):
-                    if chunk.text not in stop:
-                        if chunk.text[0].lower() == chunk.text[0]:
-                            # print(chunk.text)
-                            return chunk
-            if "ADJ" in [token.pos_ for token in doc]:
+                    if chunk.root.text not in stop:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
-                    if token.pos_ == "ADJ":
-                        # print(token.text)
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
                         return token
 
             else:
-                maxtoken = doc[0]
-                for token in doc:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
-                # print(maxtoken)
+                print(maxtoken)
                 return maxtoken
         else:
-            # print(tok.text)
+            print(tok.text)
             return tok
 
-    elif question_class(question) in ["what", "which"]:
-        # print("QUESTION:", question["question"])
+    elif question_class(question) in ["what"]:
+        print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if "ADJ" in [token.pos_ for token in doc]:
-            for token in doc:
-                if token.pos_ == "ADJ":
-                    # print(token.text)
-                    return token
-        elif tok.text in stop:
-            chunks = [chunk for chunk in doc.noun_chunks]
-            if len(chunks) > 1:
-                for chunk in reversed(chunks):
-                    if chunk.text not in stop:
-                        # print(chunk.text)
-                        return chunk
-
-
-            else:
-                maxtoken = doc[0]
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            verbs = [token for token in the_story_set if token.pos_ == "VERB"]
+            nouns = [token for token in the_story_set if token.pos_ == "NOUN"]
+            if len(verbs)>0:
+                print("Chose a verb")
+                return verbs[len(verbs)-1]
+            if len(nouns)>0:
+                print("Chose a noun")
+                return nouns[len(nouns)-1]
+            if "ADJ" in [token.pos_ for token in the_story_set]:
                 for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+            else:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
-                # print(maxtoken)
+                print(maxtoken)
                 return maxtoken
         else:
-            # print(tok.text)
+            print(tok.text)
             return tok
 
     elif question_class(question) in ["when"]:
-        # print("QUESTION:", question["question"])
-        chunks = [chunk for chunk in doc.noun_chunks]
-        for chunk in chunks:
-            if " " in chunk.text:
-                # print(chunk.text)
-                return chunk
-            for token in doc:
-                if token.tag_ == "ADJ":
-                    # print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            # print(maxtoken)
-            return maxtoken
+        print("QUESTION:", question["question"])
+        print(the_story_set)
+        tok = doc[0]
+        while (tok != tok.head):
+            tok = tok.head
+
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in the_story_set]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["why", "how"]:
-        # print("QUESTION:", question["question"])
-        tok = doc[len(doc) - 1]
+        print("QUESTION:", question["question"])
+        print(the_story_set)
+        tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if tok in stop:
-            for token in reversed(doc):
-                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    # print(token.text)
-                    return token
-            for token in reversed(doc):
-                if token.tag_ == "ADJ":
-                    # print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            # print(maxtoken)
-            return maxtoken
-        # print(tok.text)
-        return tok
+
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in the_story_set]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["where"]:
-        # print("QUESTION:", question["question"])
-        tok = doc[len(doc) - 1]
+        print("QUESTION:", question["question"])
+        print(the_story_set)
+        tok = doc[0]
         while (tok != tok.head):
             tok = tok.head
-        if tok.text in stop:
-            for token in reversed(doc):
-                if token.tag_ in ["VB", "VBG" "VBN", "VBP", "VBD", "VBZ"]:
-                    # print(token.text)
-                    return token
-            for token in reversed(doc):
-                if token.tag_ == "ADJ":
-                    # print(token.text)
-                    return token
-            maxtoken = doc[0]
-            for token in doc:
-                if len(token.text) >= len(maxtoken.text):
-                    maxtoken = token
-            # print(maxtoken)
-            return maxtoken
-        # print(tok.text)
-        return tok
+
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in the_story_set]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
     elif question_class(question) in ["yn"]:
-        # print("QUESTION:", question["question"])
+        print("QUESTION:", question["question"])
+        print(the_story_set)
         tok = doc[0]
-        # print(tok.text)
-        return tok
+        while (tok != tok.head):
+            tok = tok.head
+
+        if tok.lemma_ not in the_ss_l or tok.text in stop:
+            chunks = [chunk for chunk in doc.noun_chunks]
+            if len(chunks) > 1:
+                for chunk in reversed(chunks):
+                    if chunk.root.text not in stop:
+                        if chunk.root.text.lower() == chunk.root.text and chunk.root.text in the_ss_l:
+                            return chunk.root
+            if "ADJ" in [token.pos_ for token in the_story_set]:
+                for token in doc:
+                    if token.pos_ == "ADJ" and token in the_story_set:
+                        print(token.text)
+                        return token
+
+            else:
+                maxtoken = list(the_story_set)[0]
+                for token in the_story_set:
+                    if len(token.text) >= len(maxtoken.text):
+                        maxtoken = token
+                print(maxtoken)
+                return maxtoken
+        else:
+            print(tok.text)
+            return tok
 
 
 def A6_sentence_selection(question, story):

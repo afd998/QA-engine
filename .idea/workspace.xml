@@ -65,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.score_sentences">
+  <component name="RunManager" selected="Python.score_answers">
     <configuration name="baseline-stub-word2vec-demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled folder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -189,7 +189,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qa_engine/score_answers.py" />
-      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/heldoutanswers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
+      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/hw7-answers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -278,5 +278,16 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/assignment7" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/qa.py</url>
+          <line>501</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
