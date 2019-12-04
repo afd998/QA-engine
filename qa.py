@@ -48,8 +48,10 @@ def get_answer(question, story):
     # print(hq)
     triple = triple_check(hq, story)
     triple_answer = None
+    #ATTICUS' who
     if q_class in ["who"]:
         return "-" , extract_who_answer(story, question, 0)
+    #JAMES's everything else
     else:
         if q_class in ["who", "what"] and triple is not None and triple is not ():
             if triple[2] != "" and triple[2] not in question["question"]:
