@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hw7-answers.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hw7-questions.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hw7-stories-coref.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/hw7-stories.tsv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa_engine/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa_engine/base.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.qa">
+  <component name="RunManager" selected="Python.score_answers">
     <configuration name="baseline-stub-word2vec-demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled folder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,7 +192,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qa_engine/score_answers.py" />
-      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/hw7-answers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
+      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/hw8-answers.tsv -response $PROJECT_DIR$/hw8-responses.tsv" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -276,16 +281,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/assignment7" />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/qa.py</url>
-          <line>688</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

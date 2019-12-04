@@ -50,53 +50,54 @@ def get_answer(question, story):
     triple_answer = None
     if q_class in ["who"]:
         return "-" , extract_who_answer(story, question, 0)
-    if q_class in ["who", "what"] and triple is not None and triple is not ():
-        if triple[2] != "" and triple[2] not in question["question"]:
-            triple_answer = triple[2]
-        elif triple[0] != "" and triple[0] not in question["question"]:
-            triple_answer = triple[0]
-        elif triple[1] != "" and triple[1] not in question["question"] and "do" in question["question"]:
-            triple_answer = triple[1]
-    if triple_answer is not None:
-        answer = triple_answer
-    elif q_class in ["how", "why"]:
-        a6ID, a6ans = A6_sentence_selection(question, story)
-        answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
     else:
-        time_prepositions = ["after", "before", "during", "while"]
-        if q_class == "yn":
-            answer = "yes no"
+        if q_class in ["who", "what"] and triple is not None and triple is not ():
+            if triple[2] != "" and triple[2] not in question["question"]:
+                triple_answer = triple[2]
+            elif triple[0] != "" and triple[0] not in question["question"]:
+                triple_answer = triple[0]
+            elif triple[1] != "" and triple[1] not in question["question"] and "do" in question["question"]:
+                triple_answer = triple[1]
+        if triple_answer is not None:
+            answer = triple_answer
+        elif q_class in ["how", "why"]:
+            a6ID, a6ans = A6_sentence_selection(question, story)
+            answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
         else:
-            if q_class == "who":
-                possible = [
-                    ent for ent in ans["ents"]
-                    if ent[1].label_ in ["PERSON", "ORG"]
-                ]
-            elif q_class == "what":
-                possible = ans["chunks"]
-            elif q_class == "when":
+            time_prepositions = ["after", "before", "during", "while"]
+            if q_class == "yn":
+                answer = "yes no"
+            else:
+                if q_class == "who":
+                    possible = [
+                        ent for ent in ans["ents"]
+                        if ent[1].label_ in ["PERSON", "ORG"]
+                    ]
+                elif q_class == "what":
+                    possible = ans["chunks"]
+                elif q_class == "when":
 
-                possible = []
-                possible = [
-                               pp for pp in ans["pps"]
-                               if pp[1][0].text.lower() in time_prepositions
-                           ] + [
-                               ent for ent in ans["ents"]
-                               if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
-                           ]
-            elif q_class == "where":
-                possible = [
-                    pp for pp in ans["pps"]
-                    if pp[1][0].text.lower() not in time_prepositions
-                ]
-            if len(possible) == 0:
-                possible = ans["chunks"]
-            answer = best_answer(question, possible, keyword=hq)
+                    possible = []
+                    possible = [
+                                   pp for pp in ans["pps"]
+                                   if pp[1][0].text.lower() in time_prepositions
+                               ] + [
+                                   ent for ent in ans["ents"]
+                                   if ent[1].label_ in ["TIME", "CARDINAL", "DATE"]
+                               ]
+                elif q_class == "where":
+                    possible = [
+                        pp for pp in ans["pps"]
+                        if pp[1][0].text.lower() not in time_prepositions
+                    ]
+                if len(possible) == 0:
+                    possible = ans["chunks"]
+                answer = best_answer(question, possible, keyword=hq)
 
-    ###     End of Your Code         ###
-    answerid = "-"
-    print(answer)
-    return answerid, answer
+        ###     End of Your Code         ###
+        answerid = "-"
+        print(answer)
+        return answerid, answer
    
 
 def best_answer(question, answers, keyword=None):
@@ -285,7 +286,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -316,7 +317,7 @@ def head_of_question(question, story):
                         print(token.text)
                         return token
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -347,7 +348,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -378,7 +379,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -409,7 +410,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -440,7 +441,7 @@ def head_of_question(question, story):
                         return token
 
             else:
-                maxtoken = list(the_story_set)[0]
+                maxtoken = the_story_set[0]
                 for token in the_story_set:
                     if len(token.text) >= len(maxtoken.text):
                         maxtoken = token
@@ -524,7 +525,8 @@ def find_in_story2(doc, token):
     for word in doc:
         if word.lemma_.lower() == token.lemma_.lower():
             matches.append(word)
-    best_choice=matches[0]
+    if len(matches)>0:
+        best_choice=matches[0]
     for word in doc:
         if word.text.lower() == token.text.lower():
             best_choice = word
@@ -546,22 +548,18 @@ def check_if_pronoun_and_resolve(answer, story, question):
         extracted_string = answer
     return extracted_string
 
-def is_verb(token):
-    if token.pos_=="VERB":
-        return True
-    else:
-        return False
 
 def extract_who_answer(story, question, recur_count):
 
         token = head_of_question(question, story)
         doc = get_story_nlp(story)
-        if token == None:
+        docq = nlp(question["question"])
+        #IF THERE WERE NO WORDS FROM THE WHO-QUESTION IN THE STORY I RETURNED THE FIRST TOKEN OF THE QUESTION and
+        if token == docq[0]:
             ent = [e for e in doc.ents][0]
             token = [t for t in doc if t.text == ent.text][0]
-        if token == None:
-            return ""
-        docq = nlp(question["question"])
+        if token == docq[0]:
+           token= doc[0]
         best_choice= find_in_story2(doc, token)
         print("best_choice:", best_choice)
         question_people = [e.text for e in docq.ents if
