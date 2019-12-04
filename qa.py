@@ -450,6 +450,65 @@ def head_of_question(question, story):
             print(tok.text)
             return tok
 
+def coreference_story(story):
+    ### coreference is incomplete due to cofreference overlap give in JSON ###
+    global SAVED_COREF
+    if story[0]["storyid"] == SAVED_COREF[0]:
+        # print("same story")
+        return SAVED_COREF[1]
+    else:
+        # print("new story")
+        # print("question")
+        sent = story[0]
+        story_coref = sent['coref']
+        localstory = copy.deepcopy(story)
+        for i in range(0, len(localstory)):
+            # print(story[i]["sentence"])
+            localstory[i]["sentence"] = nltk.word_tokenize(
+                localstory[i]["sentence"])
+            # print(localstory[i]["sentence"])
+
+        for key in story_coref:
+            # print("new antecedent")
+            antecedent = story_coref[key][0]["text"]
+            for z in range(1, len(story_coref[key])):
+                sentind = story_coref[key][z]["sentNum"]
+                example_text = story_coref[key][z]["text"]
+                antecedent_tokens = nltk.word_tokenize(antecedent)
+                #print("length of local story:", len(localstory), "title:", localstory[0]["storytitle"], "sentind:", sentind)
+                example_tokens = nltk.word_tokenize(example_text)
+                 #print("example_tokens:", example_tokens)
+                if sentind>len(localstory):
+                    sentind = sentind-1
+                if example_tokens[0] in localstory[sentind - 1]["sentence"]:
+                    example_start = localstory[sentind - 1]["sentence"].index(
+                        example_tokens[0])
+                    if localstory[sentind - 1]["sentence"][example_start -
+                                                           1] != 'was':
+                        if localstory[sentind - 1]["sentence"][example_start -
+                                                               1] != 'is':
+                            if localstory[sentind - 1]["sentence"][
+                                example_start - 2] != antecedent_tokens[
+                                len(antecedent_tokens) - 1]:
+                                # print("Before:",
+                                #   localstory[sentind - 1]["sentence"])
+                                for i in range(0, len(example_tokens)):
+                                    del localstory[
+                                        sentind - 1]["sentence"][example_start]
+                                # print("During:",
+                                #       localstory[sentind - 1]["sentence"])
+                                for i in range(0, len(antecedent_tokens)):
+                                    localstory[sentind - 1]["sentence"].insert(
+                                        example_start + i,
+                                        antecedent_tokens[i])
+                                # print("After:",
+                                #       localstory[sentind - 1]["sentence"])
+        for i in range(0, len(localstory)):
+            localstory[i]["sentence"] = " ".join(localstory[i]["sentence"])
+        SAVED_COREF = (story[0]["storyid"], localstory)
+        return localstory
+
+
 def get_story_nlp(story):
     text = ""
     sentences = []
