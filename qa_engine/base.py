@@ -8,12 +8,14 @@ from collections import defaultdict
 # Storyid may also be referred to as sid in variable names
 
 DATA_DIR = "data/"
-QUESTION_FILE = "hw7-questions.tsv"
-ANSWER_FILE = "hw7-answers.tsv"
-STORIES_FILE = "hw7-stories.tsv"
-COREF_FILE = "hw7-stories-coref.tsv"
 
-RESPONSE_FILE = "hw7-responses.tsv"
+
+#QUESTION_FILE = "heldoutquestions.tsv"
+#ANSWER_FILE = "heldoutanswers.tsv"
+#STORIES_FILE = "heldoutstories.tsv"
+#COREF_FILE = "heldoutstoriescoref.tsv"
+
+#RESPONSE_FILE = "hw7-responses.tsv"
 
 
 # def prepare_deps(raw_deps):

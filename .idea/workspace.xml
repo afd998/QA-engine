@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hw7-responses.tsv" beforeDir="false" afterPath="$PROJECT_DIR$/hw7-responses.tsv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa_engine/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa_engine/base.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +38,7 @@
   <component name="ProjectId" id="1TiM0p7DpMewgMYiP7ciNhDOc0S" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -63,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.score_answers">
+  <component name="RunManager" selected="Python.score_sentences">
     <configuration name="baseline-stub-word2vec-demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="untitled folder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -187,7 +189,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qa_engine/score_answers.py" />
-      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/hw7-answers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
+      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/heldoutanswers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="score_sentences" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="untitled folder" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qa_engine" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qa_engine/score_sentences.py" />
+      <option name="PARAMETERS" value="-answer $PROJECT_DIR$/data/heldoutanswers.tsv -response $PROJECT_DIR$/hw7-responses.tsv" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -197,6 +220,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.score_answers" />
+      <item itemvalue="Python.score_sentences" />
       <item itemvalue="Python.baseline-stub-word2vec-demo" />
       <item itemvalue="Python.baseline-stub-word2vec" />
       <item itemvalue="Python.baseline-stub" />
