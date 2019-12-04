@@ -238,12 +238,7 @@ def check_if_in_story(token, story):
 
 
 def find_in_story(token, story):
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    doc = nlp(text)
+    doc = get_story_nlp(story)
     for word in doc:
         if word.lemma_ == token.lemma_:
             return word
@@ -550,7 +545,73 @@ def check_if_pronoun_and_resolve(answer, story, question):
         extracted_string = answer
     return extracted_string
 
+def extract_what_answer(story, question, recur_count):
+    token = head_of_question(question, story)
+    doc = get_story_nlp(story)
+    docq = nlp(question["question"])
+    if token == docq[0]:
+        ent = [e for e in doc.ents][0]
+        token = [t for t in doc if t.text == ent.text][0]
+    if token == docq[0]:
+        token = doc[0]
+    best_choice = find_in_story2(doc, token)
+    print("best_choice:", best_choice)
+    if docq[1].text not in ["did"]:
+        print("not a did")
+        for dep in ["nsubj", "nsubjpass", "aux", "dsubj"]:
+            for child in best_choice.children:
+                print((child.text, child.dep_))
+                if child.dep_ == dep:
+                    print("Chosen dep_:", child.dep_)
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    if recur_count == 0:
+                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
+    elif len([noun for noun in docq if noun.pos_ in ['NOUN','PROPN']])>=2:
+        print("Two nouns in the question")
+        while(best_choice != best_choice.head):
+            best_choice = best_choice.head
+        print("HEAD:", best_choice.text)
+        for i in range(0,len(list(best_choice.rights))):
+            right =[token for token in best_choice.rights][i]
+            print("went right", right.text)
+            for dep in ["dobj", "pobj"]:
+                for child in right.children:
+                    print((child.text, child.dep_))
+                    if child.dep_ == dep:
+                        print("Chosen dep_:", child.dep_)
+                        answer_string = " ".join([token.text for token in list(child.subtree)])
+                        if recur_count == 0:
+                            answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                        print("nsubj subtree string:", answer_string)
+                        return answer_string
+    else:
+        while (best_choice != best_choice.head):
+            best_choice = best_choice.head
+            print("HEAD:", best_choice.text)
+        for dep in ["dobj", "pobj", "relcl", "xcomp", "ccomp", "conj", "advcl", "prep"]:
+            for child in best_choice.children:
+                print((child.text, child.dep_))
+                if child.dep_ == dep:
+                    print("Chosen dep_:", child.dep_)
+                    answer_string = " ".join([token.text for token in list(child.subtree)])
+                    if recur_count == 0:
+                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
+                    print("nsubj subtree string:", answer_string)
+                    return answer_string
 
+
+    chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
+    if len(chunks) > 0:
+        chunk1 = chunks[0]
+        print("Noun returned", chunk1)
+        return chunk1
+    else:
+        print("nothing")
+        return " "
+
+    return "a"
 def extract_who_answer(story, question, recur_count):
 
         token = head_of_question(question, story)
