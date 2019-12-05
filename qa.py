@@ -268,12 +268,7 @@ def triple_check(keyword, story):
 
 
 def check_if_in_story(token, story):
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    doc = nlp(text)
+    doc = get_story_nlp(story)
     for word in doc:
         if word.lemma_ == token.lemma_:
             return True
@@ -290,13 +285,7 @@ def find_in_story(token, story):
 def head_of_question(question, story):
     the_story_set = list()
     doc = nlp(question["question"])
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    sdoc = nlp(text)
-
+    sdoc = get_story_nlp(story)
     for qtoken in doc:
         for stoken in sdoc:
             if qtoken.lemma_.lower() == stoken.lemma_.lower() and qtoken not in the_story_set:
@@ -895,42 +884,8 @@ def get_pps(doc):
     return pps
 
 
-def possible_answers(story, n=3):
-    ans = {}
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    doc = nlp(text)
-    ans["tokens"] = [token.text for token in doc]
-    ans["chunks"] = [chunk.text for chunk in doc.noun_chunks]
-    ans["ents"] = {ent.text: ent.label_ for ent in doc.ents}
-    for label in set(ans["ents"].values()):
-        ans[label] = [key for key in ans["ents"] if ans["ents"][key] == label]
-    ans["prep_phrases"] = get_pps(doc)
-    ans["ngrams"] = []
-    for sentence in sentences:
-        ans["ngrams"] += ngrams(nltk.word_tokenize(sentence), n)
-    return ans
 
 
-def question_class(question):
-    tokens = nltk.word_tokenize(question["question"].lower())
-    question_words = ["is", "was", "does", "did", "had", "when", "what", "where", "who", "how", "why", "which"]
-    if tokens[0] not in question_words:
-        for token in tokens:
-            if token in question_words:
-                tokens[0] = token
-                break
-
-    if tokens[0] in ["is", "was", "does", "did", "had"]:
-        tokens[0] = "yn"
-    # if tokens[0] in question_classes.keys():
-    #     question_classes[tokens[0]] += 1
-    # else:
-    #     question_classes[tokens[0]] = 1
-    return tokens[0]
 
 def get_story_nlp(story):
     text = ""
@@ -1135,13 +1090,7 @@ def extract_yn_answer(story, question, recur_count):
 def head_of_question(question, story):
     the_story_set = list()
     doc = nlp(question["question"])
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    sdoc = nlp(text)
-
+    sdoc = get_story_nlp(story)
     for qtoken in doc:
         for stoken in sdoc:
             if qtoken.lemma_.lower() == stoken.lemma_.lower() and qtoken not in the_story_set:
