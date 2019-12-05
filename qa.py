@@ -119,10 +119,6 @@ def get_answer(question, story):
         # print(answer)
         # print()
         return answerid, answer
-<<<<<<< HEAD
-
-=======
->>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
 
 def best_answer(question, answers, keyword=None):
     q_bag = bag_words(nlp(question["question"]))
@@ -519,7 +515,6 @@ def coreference_story(story):
         SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
 
-<<<<<<< HEAD
 def build_coref_dict(story):
     coref_dict = {}
     for sentence in story:
@@ -533,8 +528,7 @@ def build_coref_dict(story):
     return coref_dict
 
 
-=======
->>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
+
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -573,7 +567,6 @@ def check_if_pronoun_and_resolve(answer, story, question):
     return extracted_string
 
 def extract_what_answer(story, question, recur_count):
-<<<<<<< HEAD
     token = head_of_question(question, story)
     doc = get_story_nlp(story)
     docq = nlp(question["question"])
@@ -638,8 +631,6 @@ def extract_what_answer(story, question, recur_count):
     else:
         # print("nothing")
         return " "
-=======
->>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
 
 def extract_who_answer(story, question, recur_count):
 
