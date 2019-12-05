@@ -119,7 +119,10 @@ def get_answer(question, story):
         # print(answer)
         # print()
         return answerid, answer
+<<<<<<< HEAD
 
+=======
+>>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
 
 def best_answer(question, answers, keyword=None):
     q_bag = bag_words(nlp(question["question"]))
@@ -131,7 +134,6 @@ def best_answer(question, answers, keyword=None):
         back_score = len([x for x in q_bag if x in back_bag])
         score_dict[ans[1].text] = max(front_score, back_score)
     return max(score_dict, key=score_dict.get)
-
 
 def possible_answers(question, story):
     question = question["question"]
@@ -164,7 +166,6 @@ def possible_answers(question, story):
             ans["pps"].append((front_context, pp, back_context))
     return (ans)
 
-
 def get_pps(doc):
     # adapted from stackoverflow, not entirely my code
     pps = []
@@ -176,7 +177,6 @@ def get_pps(doc):
             pps.append(doc[pp_starti:pp_endi])
     return pps
 
-
 def span_context(span, context_size=7):
     doc = span.doc
     context_start = max(0, span.start - context_size)
@@ -184,7 +184,6 @@ def span_context(span, context_size=7):
     front_context = doc[context_start:span.start]
     end_context = doc[span.end:context_end]
     return front_context, end_context
-
 
 def question_class(question):
     tokens = nltk.word_tokenize(question["question"].lower())
@@ -208,14 +207,12 @@ def question_class(question):
     # #print(tokens[0])
     return tokens[0]
 
-
 def bag_words(doc, lemmatize=True):
     bag = set([])
     for token in doc:
         if token.text.lower() not in stop:
             bag.add(token.lemma_ if lemmatize else token.text.lower())
     return bag
-
 
 def triple_check(keyword, story):
     sentences = [sent["sentence"].replace('"', "") for sent in story]
@@ -242,7 +239,6 @@ def triple_check(keyword, story):
         #     objects.append(" ".join([token.text for token in child.subtree]))
     return ((str(subject), str(headword), str(obj)))
 
-
 def check_if_in_story(token, story):
     text = ""
     sentences = []
@@ -255,13 +251,11 @@ def check_if_in_story(token, story):
             return True
     return False
 
-
 def find_in_story(token, story):
     doc = get_story_nlp(story)
     for word in doc:
         if word.lemma_ == token.lemma_:
             return word
-
 
 def head_of_question(question, story):
     the_story_set = list()
@@ -466,7 +460,6 @@ def head_of_question(question, story):
         else:
             # print(tok.text)
             return tok
-
 SAVED_COREF = ("a", dict())
 def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
@@ -526,6 +519,7 @@ def coreference_story(story):
         SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
 
+<<<<<<< HEAD
 def build_coref_dict(story):
     coref_dict = {}
     for sentence in story:
@@ -539,6 +533,8 @@ def build_coref_dict(story):
     return coref_dict
 
 
+=======
+>>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -577,6 +573,7 @@ def check_if_pronoun_and_resolve(answer, story, question):
     return extracted_string
 
 def extract_what_answer(story, question, recur_count):
+<<<<<<< HEAD
     token = head_of_question(question, story)
     doc = get_story_nlp(story)
     docq = nlp(question["question"])
@@ -641,8 +638,9 @@ def extract_what_answer(story, question, recur_count):
     else:
         # print("nothing")
         return " "
+=======
+>>>>>>> a5a402e735337711fbd1b36a2015aed0429c7849
 
-    return "a"
 def extract_who_answer(story, question, recur_count):
 
     token = head_of_question(question, story)
@@ -761,7 +759,6 @@ def A6_sentence_selection(question, story):
 
     return sent_id, ""
 
-
 def token_filter(token, use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
@@ -775,7 +772,6 @@ def token_filter(token, use_spacy_stopwords=False):
     elif token.is_punct:
         keep_token = False
     return keep_token
-
 
 def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
     doc = nlp(text)
@@ -816,7 +812,6 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
             else:
                 out += (token.text + " ")
     return nlp(out)
-
 
 def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False):
     doc = nlp(text)
@@ -859,7 +854,6 @@ def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False)
             else:
                 out_set.add(token.lemma_)
     return out_set
-
 
 def doc_vector(text):
     doc = normalize(text)
