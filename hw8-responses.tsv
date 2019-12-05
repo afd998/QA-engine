@@ -1,6 +1,6 @@
 storyid	questionid	answer_sentenceid	answer
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q0	-	David noticed he had put on a lot of weight recently.
-8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q1	-	He
+8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q1	-	a vegetarian diet
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q2	-	a few weeks
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q3	-	he
 0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q0	-	Tom
@@ -12,7 +12,7 @@ storyid	questionid	answer_sentenceid	answer
 87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q2	-	a pair
 87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q3	-	yes
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q0	-	Bobby
-2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q1	-	Bobby
+2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q1	-	a trailer
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q2	-	Bobby
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q3	-	Bill thought a truck would be better for what he needed.
 c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q0	-	a pastor with a very bad memory
@@ -124,7 +124,7 @@ f7559f25-0358-4f57-b079-dec2199b4ec3	f7559f25-0358-4f57-b079-dec2199b4ec3_Q3	-	H
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q1	-	Julie order the food through an online website.
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	-	The pizza
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q3	-	She thought she would order some Pizza.
-bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	-	His girlfriend
+bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	-	dogs
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q1	-	His girlfriend
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q2	-	Justin went to therapy to help him get over his fear.
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q3	-	Justin went to therapy to help him get over his fear.
@@ -182,7 +182,7 @@ mc500.train.0	mc500.train.0_Q6	-	The girls
 mc500.train.0	mc500.train.0_Q7	-	Alyssa
 mc500.train.0	mc500.train.0_Q8	-	a restaurant for dinner
 mc500.train.0	mc500.train.0_Q9	-	Ellen's house
-mc500.train.0	mc500.train.0_Q10	-	for
+mc500.train.0	mc500.train.0_Q10	-	at Ellen's
 mc500.train.0	mc500.train.0_Q11	-	at Ellen's
 mc500.train.0	mc500.train.0_Q12	-	some lemonade
 mc500.train.0	mc500.train.0_Q13	-	Ellen's house
@@ -216,12 +216,12 @@ mc500.train.18	mc500.train.18_Q16	-	Kelly was worried, so she hid them in a new 
 mc500.train.18	mc500.train.18_Q17	-	string
 mc500.train.18	mc500.train.18_Q18	-	in her
 mc500.train.18	mc500.train.18_Q19	-	Mother's Day
-mc500.train.18	mc500.train.18_Q20	-	to her back
+mc500.train.18	mc500.train.18_Q20	-	at 8:30
 mc500.train.18	mc500.train.18_Q21	-	Mother's Day
 mc500.train.23	mc500.train.23_Q0	-	Saturday
 mc500.train.23	mc500.train.23_Q1	-	TV
 mc500.train.23	mc500.train.23_Q2	-	in the
-mc500.train.23	mc500.train.23_Q3	-	looked
+mc500.train.23	mc500.train.23_Q3	-	the window
 mc500.train.23	mc500.train.23_Q4	-	On the
 mc500.train.23	mc500.train.23_Q5	-	He had been watching TV all day.
 mc500.train.23	mc500.train.23_Q6	-	the story
@@ -233,10 +233,10 @@ mc500.train.23	mc500.train.23_Q11	-	lots of peanuts
 mc500.train.23	mc500.train.23_Q12	-	to his
 mc500.train.23	mc500.train.23_Q13	-	to his
 mc500.train.23	mc500.train.23_Q14	-	in the
-mc500.train.23	mc500.train.23_Q15	-	Andrew and his dad
+mc500.train.23	mc500.train.23_Q15	-	The elephant
 mc500.train.23	mc500.train.23_Q16	-	The people
 mc500.train.23	mc500.train.23_Q17	-	the newspaper
-mc500.train.23	mc500.train.23_Q18	-	The people
+mc500.train.23	mc500.train.23_Q18	-	Saturday afternoon
 mc500.train.23	mc500.train.23_Q19	-	Andrew and his dad
 mc500.train.23	mc500.train.23_Q20	-	Andrew's dad
 mc500.train.25	mc500.train.25_Q0	-	by the
@@ -342,7 +342,7 @@ fables-03	fables-03_Q5	-	some of his poison
 fables-03	fables-03_Q6	-	into the man's drinking-
 fables-03	fables-03_Q7	-	a life-and-death struggle
 fables-03	fables-03_Q8	-	the Eagle
-fables-03	fables-03_Q9	-	it
+fables-03	fables-03_Q9	-	An Eagle
 fables-04	fables-04_Q1	-	Stork
 fables-04	fables-04_Q10	-	The Fox
 fables-04	fables-04_Q11	-	a pitcher
@@ -377,7 +377,7 @@ fables-05	fables-05_Q7	-	fire
 fables-05	fables-05_Q8	-	the Farmer
 fables-05	fables-05_Q9	-	fire
 fables-06	fables-06_Q1	-	in his
-fables-06	fables-06_Q10	-	Lion
+fables-06	fables-06_Q10	-	A Lion
 fables-06	fables-06_Q11	-	One day the Lion got entangled in a net which had been spread for game by some hunters, and the Mouse heard and recognised his roars of anger and ran to the spot.
 fables-06	fables-06_Q12	-	The Mouse , terrified
 fables-06	fables-06_Q13	-	over his
