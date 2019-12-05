@@ -21,20 +21,20 @@ ANSWER_FILE = "hw8-answers.tsv"
 STORIES_FILE = "hw8-stories.tsv"
 COREF_FILE = "hw8-stories-coref.tsv"
 
-def prepare_deps(raw_deps):
+#def prepare_deps(raw_deps):
 
-    if isinstance(raw_deps, float) and math.isnan(raw_deps):
-        return []
-    return [DependencyGraph(dep, top_relation_label="root") for dep in raw_deps.split("\n\n")
-           if len(dep) > 2]
+#    if isinstance(raw_deps, float) and math.isnan(raw_deps):
+#        return []
+#    return [DependencyGraph(dep, top_relation_label="root") for dep in raw_deps.split("\n\n")
+#          if len(dep) > 2]
 #
 #
 # # TO BE USED IN HW 7 & 8
-def prepare_pars(raw_pars):
-    if isinstance(raw_pars, float) and math.isnan(raw_pars):
-       return []
-    return [Tree.fromstring(line.strip().rstrip(" \n\t"))
-           for line in raw_pars.split("\n") if len(line) > 2]
+#def prepare_pars(raw_pars):
+#    if isinstance(raw_pars, float) and math.isnan(raw_pars):
+#      return []
+#    return [Tree.fromstring(line.strip().rstrip(" \n\t"))
+#           for line in raw_pars.split("\n") if len(line) > 2]
 
 def prepare_story_data(df_story, df_coref):
     stories = defaultdict(list)
@@ -46,8 +46,6 @@ def prepare_story_data(df_story, df_coref):
             "storyid": row.storyid,
             "ner": ast.literal_eval(row.ner),
             "coref": json.loads(df_coref.loc[row.storyid, 'coref'],),
-            "const_parse": prepare_pars(row.const_parse),
-            "dep_parse": prepare_deps(row.dep_parse)
         }
         stories[row.storyid] += [this_story]
     return stories
@@ -61,8 +59,6 @@ def prepare_questions(df):
             "storyid": row.storyid,
             "question": row.question,
             "ner": ast.literal_eval(row.ner),
-            "const_parse": prepare_pars(row.const_parse),
-            "dep_parse": prepare_deps(row.dep_parse)
         }
         questions[row.questionid] = this_qstn
     return questions
