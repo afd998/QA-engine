@@ -5,19 +5,19 @@ storyid	questionid	answer_sentenceid	answer
 8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd	8bbe6d11-1e2e-413c-bf81-eaea05f4f1bd_Q3	-	he
 0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q0	-	Tom
 0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q1	-	a guest
-0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q2	-	guest
+0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q2	-	a very short temper
 0beabab2-fb49-460e-a6e6-f35a202e3348	0beabab2-fb49-460e-a6e6-f35a202e3348_Q3	-	Tom's guest became afraid and left quickly.
 87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q0	-	Marcus needed clothing for a business casual event.
 87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q1	-	a pair
-87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q2	-	He
-87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q3	-	yes no
+87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q2	-	a pair
+87da1a22-df0b-410c-b186-439700b70ba6	87da1a22-df0b-410c-b186-439700b70ba6_Q3	-	yes
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q0	-	Bobby
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q1	-	Bobby
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q2	-	Bobby
 2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9	2d16bcd6-692a-4fc0-8e7c-4a6f81d9efa9_Q3	-	Bill thought a truck would be better for what he needed.
 c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q0	-	a pastor with a very bad memory
 c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q1	-	Sundays
-c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q2	-	yes no
+c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q2	-	yes
 c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q3	-	John was a pastor with a very bad memory.
 4d7b022e-25d2-4300-a9b0-24ab35f4045b	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q0	-	with a trip to the big
 4d7b022e-25d2-4300-a9b0-24ab35f4045b	4d7b022e-25d2-4300-a9b0-24ab35f4045b_Q1	-	Melody took a nap during the two hour car ride to the aquarium.
@@ -34,30 +34,30 @@ c71bb23b-7731-4233-8298-76ba6886cee1	c71bb23b-7731-4233-8298-76ba6886cee1_Q3	-	J
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q0	-	four years old
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q1	-	I got Charlie Horse when I was four years old.
 110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q2	-	a brown stuffed horse
-110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q3	-	liked
-13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q0	-	she
+110fafd1-2bb7-4ffe-aac7-475706165d41	110fafd1-2bb7-4ffe-aac7-475706165d41_Q3	-	my radio
+13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q0	-	corn
 13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q1	-	in her
-13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q2	-	she
-13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q3	-	she
+13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q2	-	corn
+13573c2e-5eed-40eb-bbe5-ed259b5c76a6	13573c2e-5eed-40eb-bbe5-ed259b5c76a6_Q3	-	too much water
 c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q0	-	his hair
-c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q1	-	he
+c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q1	-	dramatic effect
 c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q2	-	Andy
-c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q3	-	yes no
+c400d38a-54fc-45da-99ed-558fcfc81016	c400d38a-54fc-45da-99ed-558fcfc81016_Q3	-	yes
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q0	-	hockey
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q1	-	Luke
 8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q2	-	Everybody
-8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q3	-	yes no
-3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q0	-	He
+8fbef343-8806-4bcf-9326-08ca6ebf6cb9	8fbef343-8806-4bcf-9326-08ca6ebf6cb9_Q3	-	yes
+3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q0	-	a cross country meet
 3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q1	-	He stopped for a minute and stretched his bad leg.
-3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q2	-	yes no
-3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q3	-	the race in second place
+3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q2	-	yes
+3be3719a-ae77-4106-88ea-988afb19db99	3be3719a-ae77-4106-88ea-988afb19db99_Q3	-	a cross country meet
 a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q0	-	Jude
 a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q1	-	On the way to the
-a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q2	-	yes no
+a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q2	-	yes
 a8d6e66b-da81-4dc7-a470-67f2ab32b9e6	a8d6e66b-da81-4dc7-a470-67f2ab32b9e6_Q3	-	his college graduation ceremony
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q0	-	Santa Claus
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q1	-	a letter
-8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q2	-	yes no
+8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q2	-	no
 8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba	8fba56f8-e9f8-45a9-a5b9-8adf1744e1ba_Q3	-	a letter
 b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q0	-	Jake needed a ride to the store.
 b94e1810-9869-4af6-bb74-b4a51c46f3d2	b94e1810-9869-4af6-bb74-b4a51c46f3d2_Q1	-	His girlfriend
@@ -74,27 +74,27 @@ f3643541-c339-4377-851d-144ea400d551	f3643541-c339-4377-851d-144ea400d551_Q3	-	E
 2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q2	-	Last year I took a day trip to see a friend in Maine.
 2ef3788f-6b2b-45c8-b6ba-71450d565e6a	2ef3788f-6b2b-45c8-b6ba-71450d565e6a_Q3	-	My friend
 9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q0	-	tacos
-9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q1	-	Heather
-aab4ee80-fc00-4d9c-a127-a63b54dfd193	aab4ee80-fc00-4d9c-a127-a63b54dfd193_Q0	-	rushed
+9a66b66d-034d-495e-a60e-e22c25e0e0fa	9a66b66d-034d-495e-a60e-e22c25e0e0fa_Q1	-	a
+aab4ee80-fc00-4d9c-a127-a63b54dfd193	aab4ee80-fc00-4d9c-a127-a63b54dfd193_Q0	-	her bird feeders
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q0	-	Stacy originally thought she wanted five kids.
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q1	-	Stacy originally thought she wanted five kids.
 a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q2	-	all her maternity and baby clothes
-a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q3	-	yes no
+a107d361-e8a4-4cb6-8ffb-623a4c49ee1e	a107d361-e8a4-4cb6-8ffb-623a4c49ee1e_Q3	-	yes
 04c164f6-da41-48a3-8aa3-eb7b650bb5f0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q0	-	at an accounting
-04c164f6-da41-48a3-8aa3-eb7b650bb5f0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q1	-	yes no
+04c164f6-da41-48a3-8aa3-eb7b650bb5f0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q1	-	yes
 04c164f6-da41-48a3-8aa3-eb7b650bb5f0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q2	-	Larry worked at an accounting firm.
 04c164f6-da41-48a3-8aa3-eb7b650bb5f0	04c164f6-da41-48a3-8aa3-eb7b650bb5f0_Q3	-	an office party
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q0	-	Ava was six years old.
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q1	-	Her mom
-8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q2	-	yes no
+8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q2	-	yes
 8ca3cedb-510e-4454-ba08-93eaa605563b	8ca3cedb-510e-4454-ba08-93eaa605563b_Q3	-	to the
 271616db-90c2-4303-9c2b-64f4061ceb56	271616db-90c2-4303-9c2b-64f4061ceb56_Q0	-	a wallet
 271616db-90c2-4303-9c2b-64f4061ceb56	271616db-90c2-4303-9c2b-64f4061ceb56_Q1	-	on the
-271616db-90c2-4303-9c2b-64f4061ceb56	271616db-90c2-4303-9c2b-64f4061ceb56_Q2	-	evening
+271616db-90c2-4303-9c2b-64f4061ceb56	271616db-90c2-4303-9c2b-64f4061ceb56_Q2	-	one afternoon
 271616db-90c2-4303-9c2b-64f4061ceb56	271616db-90c2-4303-9c2b-64f4061ceb56_Q3	-	The old man
 b93f956f-2256-4c6d-91d2-7675dff455f0	b93f956f-2256-4c6d-91d2-7675dff455f0_Q0	-	Chad 's dog
 b93f956f-2256-4c6d-91d2-7675dff455f0	b93f956f-2256-4c6d-91d2-7675dff455f0_Q1	-	Chad's dog
-b93f956f-2256-4c6d-91d2-7675dff455f0	b93f956f-2256-4c6d-91d2-7675dff455f0_Q2	-	taught
+b93f956f-2256-4c6d-91d2-7675dff455f0	b93f956f-2256-4c6d-91d2-7675dff455f0_Q2	-	a dog trainer
 b93f956f-2256-4c6d-91d2-7675dff455f0	b93f956f-2256-4c6d-91d2-7675dff455f0_Q3	-	Chad was proud to finally show off his dog to others.
 d869c6d9-4a06-4d94-bf97-dc37167a5520	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q0	-	One day
 d869c6d9-4a06-4d94-bf97-dc37167a5520	d869c6d9-4a06-4d94-bf97-dc37167a5520_Q1	-	an adult baseball team
@@ -109,7 +109,7 @@ f7559f25-0358-4f57-b079-dec2199b4ec3	f7559f25-0358-4f57-b079-dec2199b4ec3_Q3	-	H
 1e379d2b-69e8-485e-92ac-4c3daa41e364	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q2	-	She noticed that the goldfish looked quite fat.
 1e379d2b-69e8-485e-92ac-4c3daa41e364	1e379d2b-69e8-485e-92ac-4c3daa41e364_Q3	-	a goldfish
 0dd3e2c3-3ea4-450a-97c4-42a54c426018	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q0	-	a new job
-0dd3e2c3-3ea4-450a-97c4-42a54c426018	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q1	-	She
+0dd3e2c3-3ea4-450a-97c4-42a54c426018	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q1	-	a new job
 0dd3e2c3-3ea4-450a-97c4-42a54c426018	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q2	-	an hour
 0dd3e2c3-3ea4-450a-97c4-42a54c426018	0dd3e2c3-3ea4-450a-97c4-42a54c426018_Q3	-	She was nervous about her first day of work.
 865db3c4-a253-4d35-8766-25fc7e0a8cfb	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q0	-	on a trip to the
@@ -117,27 +117,27 @@ f7559f25-0358-4f57-b079-dec2199b4ec3	f7559f25-0358-4f57-b079-dec2199b4ec3_Q3	-	H
 865db3c4-a253-4d35-8766-25fc7e0a8cfb	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q2	-	on a trip to the
 865db3c4-a253-4d35-8766-25fc7e0a8cfb	865db3c4-a253-4d35-8766-25fc7e0a8cfb_Q3	-	Jill was going on a trip to the amazon.
 88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q0	-	a defense attorney
-88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q1	-	yes no
-88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q2	-	yes no
+88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q1	-	no
+88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q2	-	yes
 88fba119-ccac-4b82-881f-e609e188bebc	88fba119-ccac-4b82-881f-e609e188bebc_Q3	-	a client that he must defend in court
-1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q0	-	She
+1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q0	-	some Pizza
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q1	-	Julie order the food through an online website.
-1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	-	Julie
+1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q2	-	The pizza
 1cc75245-93bd-44cc-b076-8d1b249e1ee5	1cc75245-93bd-44cc-b076-8d1b249e1ee5_Q3	-	She thought she would order some Pizza.
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q0	-	His girlfriend
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q1	-	His girlfriend
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q2	-	Justin went to therapy to help him get over his fear.
 bfa4ef8c-715d-4287-88a5-035611e34e40	bfa4ef8c-715d-4287-88a5-035611e34e40_Q3	-	Justin went to therapy to help him get over his fear.
 210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q0	-	the street
-210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q1	-	yes no
+210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q1	-	yes
 210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q2	-	He stood up and saw that his knee was bleeding.
-210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q3	-	some peroxide and bandages
-50357157-3765-40b5-8e32-f86961c98be0	50357157-3765-40b5-8e32-f86961c98be0_Q0	-	in another
+210d56ce-a940-4766-9b7b-d086b2c5682d	210d56ce-a940-4766-9b7b-d086b2c5682d_Q3	-	some peroxide
+50357157-3765-40b5-8e32-f86961c98be0	50357157-3765-40b5-8e32-f86961c98be0_Q0	-	to a
 50357157-3765-40b5-8e32-f86961c98be0	50357157-3765-40b5-8e32-f86961c98be0_Q1	-	to
 50357157-3765-40b5-8e32-f86961c98be0	50357157-3765-40b5-8e32-f86961c98be0_Q2	-	Her cousin agreed to drive if Nicole bought the tickets.
 50357157-3765-40b5-8e32-f86961c98be0	50357157-3765-40b5-8e32-f86961c98be0_Q3	-	a concert
-006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q0	-	my sleep
-006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q1	-	I
+006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q0	-	three in the morning
+006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q1	-	the morning
 006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q2	-	from inside my
 006536d7-2be3-49a4-a750-769684e952ed	006536d7-2be3-49a4-a750-769684e952ed_Q3	-	I
 a111d580-1fb2-4ab1-848a-0856982dfcd5	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q0	-	a bottle of beer
@@ -149,7 +149,7 @@ a111d580-1fb2-4ab1-848a-0856982dfcd5	a111d580-1fb2-4ab1-848a-0856982dfcd5_Q3	-	a
 790d9cb4-4832-49e8-8137-331e79a4b9e6	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q2	-	so many presents
 790d9cb4-4832-49e8-8137-331e79a4b9e6	790d9cb4-4832-49e8-8137-331e79a4b9e6_Q3	-	Tyler saw so many presents and could not wait to open them.
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q0	-	at her local fast food
-e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q1	-	yes no
+e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q1	-	yes
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q2	-	Wendy
 e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q3	-	Wendy
 375c34c9-3d98-4b2f-9076-404f34ad4e66	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q0	-	Walter was worried because his dog was showing a lot of aggression.
@@ -158,8 +158,8 @@ e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q3	-	W
 375c34c9-3d98-4b2f-9076-404f34ad4e66	375c34c9-3d98-4b2f-9076-404f34ad4e66_Q3	-	his dog
 6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q0	-	to the
 6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q1	-	to the
-6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q2	-	They
-6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q3	-	decided
+6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q2	-	The couple
+6ebc8d48-029b-4f00-89b3-773ce802825e	6ebc8d48-029b-4f00-89b3-773ce802825e_Q3	-	a lake house
 5e76713f-92b2-4a5d-8f8d-510fde45705c	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q0	-	to Universal
 5e76713f-92b2-4a5d-8f8d-510fde45705c	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q1	-	They were excited to go on all the rides.
 5e76713f-92b2-4a5d-8f8d-510fde45705c	5e76713f-92b2-4a5d-8f8d-510fde45705c_Q2	-	a lot of the characters
@@ -167,10 +167,10 @@ e663b977-2af7-4b1d-bd33-352d932f851b	e663b977-2af7-4b1d-bd33-352d932f851b_Q3	-	W
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q0	-	to a
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q1	-	fries
 712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q2	-	ketchup
-712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q3	-	yes no
+712702cc-f042-4ca5-84dc-ada756cc8959	712702cc-f042-4ca5-84dc-ada756cc8959_Q3	-	yes
 61550fe1-c17d-4b94-b225-941026bdb68e	61550fe1-c17d-4b94-b225-941026bdb68e_Q0	-	a new hobby
 61550fe1-c17d-4b94-b225-941026bdb68e	61550fe1-c17d-4b94-b225-941026bdb68e_Q1	-	to the craft
-61550fe1-c17d-4b94-b225-941026bdb68e	61550fe1-c17d-4b94-b225-941026bdb68e_Q2	-	She
+61550fe1-c17d-4b94-b225-941026bdb68e	61550fe1-c17d-4b94-b225-941026bdb68e_Q2	-	some supplies
 61550fe1-c17d-4b94-b225-941026bdb68e	61550fe1-c17d-4b94-b225-941026bdb68e_Q3	-	to the craft
 mc500.train.0	mc500.train.0_Q0	-	After going swimming and laying out, she went to her friend Ellen's house.
 mc500.train.0	mc500.train.0_Q1	-	a salad
@@ -180,16 +180,16 @@ mc500.train.0	mc500.train.0_Q4	-	her friends
 mc500.train.0	mc500.train.0_Q5	-	They stayed the night because they were tired.
 mc500.train.0	mc500.train.0_Q6	-	The girls
 mc500.train.0	mc500.train.0_Q7	-	Alyssa
-mc500.train.0	mc500.train.0_Q8	-	a special on catfish
+mc500.train.0	mc500.train.0_Q8	-	a restaurant for dinner
 mc500.train.0	mc500.train.0_Q9	-	Ellen's house
-mc500.train.0	mc500.train.0_Q10	-	at Ellen's
+mc500.train.0	mc500.train.0_Q10	-	for
 mc500.train.0	mc500.train.0_Q11	-	at Ellen's
 mc500.train.0	mc500.train.0_Q12	-	some lemonade
-mc500.train.0	mc500.train.0_Q13	-	for
-mc500.train.0	mc500.train.0_Q14	-	yes no
-mc500.train.0	mc500.train.0_Q15	-	yes no
-mc500.train.0	mc500.train.0_Q16	-	to
-mc500.train.0	mc500.train.0_Q17	-	yes no
+mc500.train.0	mc500.train.0_Q13	-	Ellen's house
+mc500.train.0	mc500.train.0_Q14	-	yes
+mc500.train.0	mc500.train.0_Q15	-	yes
+mc500.train.0	mc500.train.0_Q16	-	a long trip
+mc500.train.0	mc500.train.0_Q17	-	yes
 mc500.train.0	mc500.train.0_Q18	-	a long trip
 mc500.train.0	mc500.train.0_Q19	-	catfish
 mc500.train.0	mc500.train.0_Q20	-	Charlotte
@@ -200,23 +200,23 @@ mc500.train.18	mc500.train.18_Q0	-	one morning
 mc500.train.18	mc500.train.18_Q1	-	a present
 mc500.train.18	mc500.train.18_Q2	-	flowers
 mc500.train.18	mc500.train.18_Q3	-	a lot of different sized flowers
-mc500.train.18	mc500.train.18_Q4	-	she
+mc500.train.18	mc500.train.18_Q4	-	the middle
 mc500.train.18	mc500.train.18_Q5	-	in her
 mc500.train.18	mc500.train.18_Q6	-	in a secret
 mc500.train.18	mc500.train.18_Q7	-	Kelly woke up one morning and went outside to her back yard.
 mc500.train.18	mc500.train.18_Q8	-	Finally, her mother woke up at 8:30 AM, and Kelly was excited!
 mc500.train.18	mc500.train.18_Q9	-	The red ones
-mc500.train.18	mc500.train.18_Q10	-	she
+mc500.train.18	mc500.train.18_Q10	-	her mother
 mc500.train.18	mc500.train.18_Q11	-	her mother
 mc500.train.18	mc500.train.18_Q12	-	her mother
-mc500.train.18	mc500.train.18_Q13	-	she
+mc500.train.18	mc500.train.18_Q13	-	string
 mc500.train.18	mc500.train.18_Q14	-	the biggest, most beautiful bunch
-mc500.train.18	mc500.train.18_Q15	-	She
+mc500.train.18	mc500.train.18_Q15	-	the flowers
 mc500.train.18	mc500.train.18_Q16	-	Kelly was worried, so she hid them in a new spot that was up higher.
 mc500.train.18	mc500.train.18_Q17	-	string
-mc500.train.18	mc500.train.18_Q18	-	of
+mc500.train.18	mc500.train.18_Q18	-	in her
 mc500.train.18	mc500.train.18_Q19	-	Mother's Day
-mc500.train.18	mc500.train.18_Q20	-	at 8:30
+mc500.train.18	mc500.train.18_Q20	-	to her back
 mc500.train.18	mc500.train.18_Q21	-	Mother's Day
 mc500.train.23	mc500.train.23_Q0	-	Saturday
 mc500.train.23	mc500.train.23_Q1	-	TV
@@ -226,25 +226,25 @@ mc500.train.23	mc500.train.23_Q4	-	On the
 mc500.train.23	mc500.train.23_Q5	-	He had been watching TV all day.
 mc500.train.23	mc500.train.23_Q6	-	the story
 mc500.train.23	mc500.train.23_Q7	-	in
-mc500.train.23	mc500.train.23_Q8	-	yes no
-mc500.train.23	mc500.train.23_Q9	-	you
+mc500.train.23	mc500.train.23_Q8	-	yes
+mc500.train.23	mc500.train.23_Q9	-	your goldfish
 mc500.train.23	mc500.train.23_Q10	-	The people and animals at the circus
 mc500.train.23	mc500.train.23_Q11	-	lots of peanuts
 mc500.train.23	mc500.train.23_Q12	-	to his
 mc500.train.23	mc500.train.23_Q13	-	to his
 mc500.train.23	mc500.train.23_Q14	-	in the
-mc500.train.23	mc500.train.23_Q15	-	The elephant
-mc500.train.23	mc500.train.23_Q16	-	nothing
+mc500.train.23	mc500.train.23_Q15	-	Andrew and his dad
+mc500.train.23	mc500.train.23_Q16	-	The people
 mc500.train.23	mc500.train.23_Q17	-	the newspaper
-mc500.train.23	mc500.train.23_Q18	-	we
+mc500.train.23	mc500.train.23_Q18	-	The people
 mc500.train.23	mc500.train.23_Q19	-	Andrew and his dad
 mc500.train.23	mc500.train.23_Q20	-	Andrew's dad
 mc500.train.25	mc500.train.25_Q0	-	by the
 mc500.train.25	mc500.train.25_Q1	-	in a beautiful pond by the
 mc500.train.25	mc500.train.25_Q2	-	rocks
-mc500.train.25	mc500.train.25_Q3	-	Maxine
+mc500.train.25	mc500.train.25_Q3	-	Martin
 mc500.train.25	mc500.train.25_Q4	-	every day
-mc500.train.25	mc500.train.25_Q5	-	She
+mc500.train.25	mc500.train.25_Q5	-	a beautiful pond
 mc500.train.25	mc500.train.25_Q6	-	in a beautiful pond by the
 mc500.train.25	mc500.train.25_Q7	-	Maxine was a happy frog that lived in a beautiful pond by the river.
 mc500.train.25	mc500.train.25_Q8	-	Maxine
@@ -255,13 +255,13 @@ mc500.train.25	mc500.train.25_Q12	-	Maxine 's dad
 mc500.train.25	mc500.train.25_Q13	-	Cindy
 mc500.train.25	mc500.train.25_Q14	-	every day
 mc500.train.25	mc500.train.25_Q15	-	Maxine
-mc500.train.25	mc500.train.25_Q16	-	She
-mc500.train.25	mc500.train.25_Q17	-	saw
-mc500.train.25	mc500.train.25_Q18	-	friends
+mc500.train.25	mc500.train.25_Q16	-	a new friend
+mc500.train.25	mc500.train.25_Q17	-	her friends
+mc500.train.25	mc500.train.25_Q18	-	a bath
 mc500.train.25	mc500.train.25_Q19	-	Maxine
 mc500.train.25	mc500.train.25_Q20	-	Maxine
 mc500.train.111	mc500.train.111_Q0	-	a good laugh
-mc500.train.111	mc500.train.111_Q1	-	his favorite song
+mc500.train.111	mc500.train.111_Q1	-	a very silly looking dog
 mc500.train.111	mc500.train.111_Q2	-	It stopped raining and Will walked all the way to the store.
 mc500.train.111	mc500.train.111_Q3	-	to the living
 mc500.train.111	mc500.train.111_Q4	-	about a
@@ -271,8 +271,8 @@ mc500.train.111	mc500.train.111_Q7	-	his favorite song
 mc500.train.111	mc500.train.111_Q8	-	his favorite song
 mc500.train.111	mc500.train.111_Q9	-	in the night
 mc500.train.111	mc500.train.111_Q10	-	Will
-mc500.train.111	mc500.train.111_Q11	-	a biscuit
-mc500.train.111	mc500.train.111_Q12	-	chicken , gravy , or butter
+mc500.train.111	mc500.train.111_Q11	-	jam
+mc500.train.111	mc500.train.111_Q12	-	chicken , gravy , or butter on his biscuit
 mc500.train.111	mc500.train.111_Q13	-	Will was happy he didn't have to get wet walking home.
 mc500.train.111	mc500.train.111_Q14	-	his way
 fables-01	fables-01_Q1	-	on a branch of a
@@ -287,7 +287,7 @@ fables-01	fables-01_Q17	-	A Crow
 fables-01	fables-01_Q18	-	A Crow
 fables-01	fables-01_Q2	-	a piece
 fables-01	fables-01_Q3	-	A Crow
-fables-01	fables-01_Q4	-	of
+fables-01	fables-01_Q4	-	a tree
 fables-01	fables-01_Q5	-	of getting the
 fables-01	fables-01_Q6	-	A Crow
 fables-01	fables-01_Q7	-	The Crow
@@ -299,7 +299,7 @@ fables-02	fables-02_Q11	-	the world
 fables-02	fables-02_Q12	-	the world
 fables-02	fables-02_Q13	-	what in the world
 fables-02	fables-02_Q14	-	A Lion watched a fat Bull feeding in a meadow, and his mouth watered when he thought of the royal feast he would make, but he did not dare to attack him, for he was afraid of his sharp horns.
-fables-02	fables-02_Q15	-	Bull
+fables-02	fables-02_Q15	-	the world
 fables-02	fables-02_Q16	-	A Lion watched a fat Bull feeding in a meadow, and his mouth watered when he thought of the royal feast he would make, but he did not dare to attack him, for he was afraid of his sharp horns.
 fables-02	fables-02_Q17	-	the world
 fables-02	fables-02_Q18	-	A Lion
@@ -318,17 +318,17 @@ fables-02	fables-02_Q8	-	The Bull
 fables-02	fables-02_Q9	-	the world
 fables-03	fables-03_Q1	-	the man
 fables-03	fables-03_Q10	-	of his
-fables-03	fables-03_Q11	-	Serpent
-fables-03	fables-03_Q12	-	In
+fables-03	fables-03_Q11	-	the man's drinking-horn
+fables-03	fables-03_Q12	-	his poison
 fables-03	fables-03_Q13	-	An Eagle
 fables-03	fables-03_Q14	-	the Serpent
 fables-03	fables-03_Q15	-	A countryman , who was a witness of the encounter
 fables-03	fables-03_Q16	-	A countryman , who was a witness of the encounter
 fables-03	fables-03_Q17	-	a life-and-death struggle
 fables-03	fables-03_Q18	-	A countryman , who was a witness of the encounter
-fables-03	fables-03_Q19	-	the Serpent
+fables-03	fables-03_Q19	-	a life-and-death struggle
 fables-03	fables-03_Q2	-	An Eagle
-fables-03	fables-03_Q20	-	revenge
+fables-03	fables-03_Q20	-	some of his poison
 fables-03	fables-03_Q21	-	the Eagle
 fables-03	fables-03_Q22	-	An Eagle
 fables-03	fables-03_Q23	-	An Eagle
@@ -338,15 +338,15 @@ fables-03	fables-03_Q26	-	An Eagle
 fables-03	fables-03_Q27	-	In
 fables-03	fables-03_Q3	-	An Eagle
 fables-03	fables-03_Q4	-	A countryman , who was a witness of the encounter
-fables-03	fables-03_Q5	-	revenge
-fables-03	fables-03_Q6	-	in his talons with the intention of carrying it off and devouring
+fables-03	fables-03_Q5	-	some of his poison
+fables-03	fables-03_Q6	-	into the man's drinking-
 fables-03	fables-03_Q7	-	a life-and-death struggle
 fables-03	fables-03_Q8	-	the Eagle
 fables-03	fables-03_Q9	-	it
 fables-04	fables-04_Q1	-	Stork
 fables-04	fables-04_Q10	-	The Fox
 fables-04	fables-04_Q11	-	a pitcher
-fables-04	fables-04_Q12	-	a Stork
+fables-04	fables-04_Q12	-	A Fox
 fables-04	fables-04_Q13	-	a large flat dish
 fables-04	fables-04_Q14	-	the Stork with her long bill
 fables-04	fables-04_Q15	-	the Stork with her long bill
@@ -355,11 +355,11 @@ fables-04	fables-04_Q17	-	A Fox
 fables-04	fables-04_Q2	-	dinner
 fables-04	fables-04_Q3	-	of
 fables-04	fables-04_Q4	-	A Fox
-fables-04	fables-04_Q5	-	of
+fables-04	fables-04_Q5	-	a large flat dish
 fables-04	fables-04_Q6	-	Thus, while she enjoyed her dinner, the Fox sat by hungry and helpless, for it was impossible for him to reach the tempting contents of the vessel.
 fables-04	fables-04_Q7	-	her long bill
 fables-04	fables-04_Q8	-	Thus, while she enjoyed her dinner, the Fox sat by hungry and helpless, for it was impossible for him to reach the tempting contents of the vessel.
-fables-04	fables-04_Q9	-	Her evident distress
+fables-04	fables-04_Q9	-	vain
 fables-05	fables-05_Q1	-	Fox
 fables-05	fables-05_Q10	-	A Farmer
 fables-05	fables-05_Q11	-	A Farmer
@@ -381,26 +381,26 @@ fables-06	fables-06_Q10	-	Lion
 fables-06	fables-06_Q11	-	One day the Lion got entangled in a net which had been spread for game by some hunters, and the Mouse heard and recognised his roars of anger and ran to the spot.
 fables-06	fables-06_Q12	-	The Mouse , terrified
 fables-06	fables-06_Q13	-	over his
-fables-06	fables-06_Q14	-	Mouse
+fables-06	fables-06_Q14	-	his lair
 fables-06	fables-06_Q15	-	its teeth
-fables-06	fables-06_Q16	-	A Lion asleep in his lair
+fables-06	fables-06_Q16	-	A Lion
 fables-06	fables-06_Q17	-	to
 fables-06	fables-06_Q18	-	The Mouse, terrified, piteously entreated him to spare its life.
 fables-06	fables-06_Q19	-	the Lion
 fables-06	fables-06_Q2	-	a
 fables-06	fables-06_Q20	-	a net
-fables-06	fables-06_Q21	-	it
+fables-06	fables-06_Q21	-	more ado
 fables-06	fables-06_Q22	-	his lair
-fables-06	fables-06_Q23	-	more ado
+fables-06	fables-06_Q23	-	the ropes
 fables-06	fables-06_Q24	-	its teeth
 fables-06	fables-06_Q25	-	a
-fables-06	fables-06_Q26	-	A Lion
+fables-06	fables-06_Q26	-	a Mouse running over his face
 fables-06	fables-06_Q27	-	his paw
 fables-06	fables-06_Q28	-	A Lion asleep in his lair was waked up by a Mouse running over his face.
-fables-06	fables-06_Q3	-	idea
+fables-06	fables-06_Q3	-	anything
 fables-06	fables-06_Q4	-	in a net which had been spread for game by some
 fables-06	fables-06_Q5	-	the Mouse
 fables-06	fables-06_Q6	-	A Lion asleep in his lair was waked up by a Mouse running over his face.
 fables-06	fables-06_Q7	-	which
 fables-06	fables-06_Q8	-	the Lion
-fables-06	fables-06_Q9	-	more ado
+fables-06	fables-06_Q9	-	his lair
