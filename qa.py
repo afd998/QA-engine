@@ -100,7 +100,6 @@ def get_answer(question, story):
         answerid = "-"
         print(answer)
         return answerid, answer
-   
 
 def best_answer(question, answers, keyword=None):
     q_bag = bag_words(nlp(question["question"]))
@@ -112,7 +111,6 @@ def best_answer(question, answers, keyword=None):
         back_score = len([x for x in q_bag if x in back_bag])
         score_dict[ans[1].text] = max(front_score, back_score)
     return max(score_dict, key=score_dict.get)
-
 
 def possible_answers(question, story):
     question = question["question"]
@@ -145,7 +143,6 @@ def possible_answers(question, story):
             ans["pps"].append((front_context, pp, back_context))
     return (ans)
 
-
 def get_pps(doc):
     # adapted from stackoverflow, not entirely my code
     pps = []
@@ -157,7 +154,6 @@ def get_pps(doc):
             pps.append(doc[pp_starti:pp_endi])
     return pps
 
-
 def span_context(span, context_size=7):
     doc = span.doc
     context_start = max(0, span.start - context_size)
@@ -165,7 +161,6 @@ def span_context(span, context_size=7):
     front_context = doc[context_start:span.start]
     end_context = doc[span.end:context_end]
     return front_context, end_context
-
 
 def question_class(question):
     tokens = nltk.word_tokenize(question["question"].lower())
@@ -189,14 +184,12 @@ def question_class(question):
     # #print(tokens[0])
     return tokens[0]
 
-
 def bag_words(doc, lemmatize=True):
     bag = set([])
     for token in doc:
         if token.text.lower() not in stop:
             bag.add(token.lemma_ if lemmatize else token.text.lower())
     return bag
-
 
 def triple_check(keyword, story):
     sentences = [sent["sentence"].replace('"', "") for sent in story]
@@ -223,7 +216,6 @@ def triple_check(keyword, story):
         #     objects.append(" ".join([token.text for token in child.subtree]))
     return ((str(subject), str(headword), str(obj)))
 
-
 def check_if_in_story(token, story):
     text = ""
     sentences = []
@@ -236,13 +228,11 @@ def check_if_in_story(token, story):
             return True
     return False
 
-
 def find_in_story(token, story):
     doc = get_story_nlp(story)
     for word in doc:
         if word.lemma_ == token.lemma_:
             return word
-
 
 def head_of_question(question, story):
     the_story_set = list()
@@ -447,7 +437,6 @@ def head_of_question(question, story):
         else:
             print(tok.text)
             return tok
-
 SAVED_COREF = ("a", dict())
 def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
@@ -507,7 +496,6 @@ def coreference_story(story):
         SAVED_COREF = (story[0]["storyid"], localstory)
         return localstory
 
-
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -546,72 +534,7 @@ def check_if_pronoun_and_resolve(answer, story, question):
     return extracted_string
 
 def extract_what_answer(story, question, recur_count):
-    token = head_of_question(question, story)
-    doc = get_story_nlp(story)
-    docq = nlp(question["question"])
-    if token == docq[0]:
-        ent = [e for e in doc.ents][0]
-        token = [t for t in doc if t.text == ent.text][0]
-    if token == docq[0]:
-        token = doc[0]
-    best_choice = find_in_story2(doc, token)
-    print("best_choice:", best_choice)
-    if docq[1].text not in ["did"]:
-        print("not a did")
-        for dep in ["nsubj", "nsubjpass", "aux", "dsubj"]:
-            for child in best_choice.children:
-                print((child.text, child.dep_))
-                if child.dep_ == dep:
-                    print("Chosen dep_:", child.dep_)
-                    answer_string = " ".join([token.text for token in list(child.subtree)])
-                    if recur_count == 0:
-                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
-                    print("nsubj subtree string:", answer_string)
-                    return answer_string
-    elif len([noun for noun in docq if noun.pos_ in ['NOUN','PROPN']])>=2:
-        print("Two nouns in the question")
-        while(best_choice != best_choice.head):
-            best_choice = best_choice.head
-        print("HEAD:", best_choice.text)
-        for i in range(0,len(list(best_choice.rights))):
-            right =[token for token in best_choice.rights][i]
-            print("went right", right.text)
-            for dep in ["dobj", "pobj"]:
-                for child in right.children:
-                    print((child.text, child.dep_))
-                    if child.dep_ == dep:
-                        print("Chosen dep_:", child.dep_)
-                        answer_string = " ".join([token.text for token in list(child.subtree)])
-                        if recur_count == 0:
-                            answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
-                        print("nsubj subtree string:", answer_string)
-                        return answer_string
-    else:
-        while (best_choice != best_choice.head):
-            best_choice = best_choice.head
-            print("HEAD:", best_choice.text)
-        for dep in ["dobj", "pobj", "relcl", "xcomp", "ccomp", "conj", "advcl", "prep"]:
-            for child in best_choice.children:
-                print((child.text, child.dep_))
-                if child.dep_ == dep:
-                    print("Chosen dep_:", child.dep_)
-                    answer_string = " ".join([token.text for token in list(child.subtree)])
-                    if recur_count == 0:
-                        answer_string = check_if_pronoun_and_resolve(answer_string, story, question)
-                    print("nsubj subtree string:", answer_string)
-                    return answer_string
 
-
-    chunks = [chunk.text for chunk in doc.noun_chunks if chunk.text not in [t.text for t in docq]]
-    if len(chunks) > 0:
-        chunk1 = chunks[0]
-        print("Noun returned", chunk1)
-        return chunk1
-    else:
-        print("nothing")
-        return " "
-
-    return "a"
 def extract_who_answer(story, question, recur_count):
 
         token = head_of_question(question, story)
@@ -730,7 +653,6 @@ def A6_sentence_selection(question, story):
 
     return sent_id, ""
 
-
 def token_filter(token, use_spacy_stopwords=False):
     keep_token = True
     if token.pos_ == "PROPN":
@@ -744,7 +666,6 @@ def token_filter(token, use_spacy_stopwords=False):
     elif token.is_punct:
         keep_token = False
     return keep_token
-
 
 def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
     doc = nlp(text)
@@ -785,7 +706,6 @@ def normalize(text, lemmatize=True, expand_synsets=False, loose_filter=False):
             else:
                 out += (token.text + " ")
     return nlp(out)
-
 
 def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False):
     doc = nlp(text)
@@ -828,7 +748,6 @@ def normalize_set(text, lemmatize=True, expand_synsets=True, loose_filter=False)
             else:
                 out_set.add(token.lemma_)
     return out_set
-
 
 def doc_vector(text):
     doc = normalize(text)
