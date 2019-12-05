@@ -217,13 +217,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.score_answers" />
-      <item itemvalue="Python.score_sentences" />
       <item itemvalue="Python.baseline-stub-word2vec-demo" />
       <item itemvalue="Python.baseline-stub-word2vec" />
       <item itemvalue="Python.baseline-stub" />
       <item itemvalue="Python.chunk-demo" />
       <item itemvalue="Python.qa" />
+      <item itemvalue="Python.score_answers" />
+      <item itemvalue="Python.score_sentences" />
     </list>
     <recent_temporary>
       <list>
