@@ -553,8 +553,6 @@ def build_coref_dict(story):
                     coref_dict.update({reference["text"].lower(): chain[0]["text"]})
     return coref_dict
 
-
-
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -880,9 +878,6 @@ def doc_vector(text):
             docvec = numpy.add(docvec, token.vector)
     # print(docvec.dtype)
     return docvec
-
-
-
 
 def extract_yn_answer(story, question, recur_count):
     return "yes"
