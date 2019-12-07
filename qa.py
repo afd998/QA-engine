@@ -7,10 +7,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet as wn
 import sys
 import time
+import re
 import numpy, scipy
 from nltk.util import ngrams
-
-import json
 
 nlp = spacy.load("en_core_web_md")
 stop = set(stopwords.words('english'))
@@ -104,11 +103,20 @@ def get_answer(question, story):
             # elif triple[1] != "" and triple[1] not in question["question"] and "do" in question["question"]:
             #     triple_answer = triple[1]
         if triple_answer is not None:
-            print(triple_answer)
+            # print(triple_answer)
             answer = triple_answer
         elif q_class in ["how", "why"]:
-            a6ID, a6ans = A6_sentence_selection(question, story)
-            answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
+            second_word_pos = nltk.pos_tag(nltk.word_tokenize(question["question"]))[1][1]
+            if q_class == "how" and second_word_pos in ["JJ","RB"]:
+                possible = [ent for ent in ans["ents"] if ent[1].label_ in ["TIME", "CARDINAL", "DATE", "PERCENT", "MONEY", "QUANTITY"]]
+                if len(possible)>0:
+                    answer = best_answer(question, possible, keyword=hq)
+                else:
+                    a6ID, a6ans = A6_sentence_selection(question, story)
+                    answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
+            else:
+                a6ID, a6ans = A6_sentence_selection(question, story)
+                answer = [sentence["sentence"] for sentence in story if sentence["sentenceid"] == a6ID][0]
         else:
             time_prepositions = ["after", "before", "during", "while"]
             if q_class == "yn":
@@ -152,9 +160,9 @@ def get_answer(question, story):
                 # print(answer)
         ###     End of Your Code         ###
         answerid = "-"
-        # print(question["question"])
-        # print(answer)
-        # print()
+        print(question["question"])
+        print(answer)
+        print()
         return answerid, answer
 
 def best_answer(question, answers, keyword=None):
@@ -482,6 +490,8 @@ def head_of_question(question, story):
         else:
             # print(tok.text)
             return tok
+
+
 SAVED_COREF = ("a", dict())
 def coreference_story(story):
     ### coreference is incomplete due to cofreference overlap give in JSON ###
@@ -553,6 +563,7 @@ def build_coref_dict(story):
                     coref_dict.update({reference["text"].lower(): chain[0]["text"]})
     return coref_dict
 
+
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -580,7 +591,8 @@ def check_if_pronoun_and_resolve(answer, story, question):
     #if len([value for value in ["some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she",
     #   "they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"] if value in nltk.word_tokenize(answer)]
     #       )!=0:
-    if answer in ["it", "It", "some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she","they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"]:
+    # if answer in ["it", "It", "some", "My", "Me", "my" "me", "I", "He", "She", "They", "he", "she","they", "hers", "her", "him", "his","Hers" "Her", "Him", "His"]:
+    if "PRP" in nltk.pos_tag([answer.strip().lower()])[0][1]:
         if question_class(question)=="who":
             extracted_string=extract_who_answer(coreference_story(story), question, 1)
         if question_class(question) == "what":
