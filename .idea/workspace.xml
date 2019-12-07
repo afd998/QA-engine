@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="">
+    <list default="true" id="46eb052a-a6a8-4112-a923-a6835683297b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
+>>>>>>> james_branch
+=======
+      <change beforePath="$PROJECT_DIR$/baseline-stub-word2vec.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/coref_check.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/possible_answers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/story.json" beforeDir="false" />
 >>>>>>> james_branch
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
