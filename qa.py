@@ -563,10 +563,7 @@ def build_coref_dict(story):
                     coref_dict.update({reference["text"].lower(): chain[0]["text"]})
     return coref_dict
 
-<<<<<<< HEAD
 
-=======
->>>>>>> atticus_branch
 def get_story_nlp(story):
     text = ""
     sentences = []
