@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b2849c6c-b2c1-4234-9ed0-c38807562746" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/qa.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -216,13 +217,13 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.score_answers" />
+      <item itemvalue="Python.score_sentences" />
       <item itemvalue="Python.baseline-stub-word2vec-demo" />
       <item itemvalue="Python.baseline-stub-word2vec" />
       <item itemvalue="Python.baseline-stub" />
       <item itemvalue="Python.chunk-demo" />
       <item itemvalue="Python.qa" />
-      <item itemvalue="Python.score_answers" />
-      <item itemvalue="Python.score_sentences" />
     </list>
     <recent_temporary>
       <list>

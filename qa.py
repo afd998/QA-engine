@@ -13,6 +13,43 @@ from nltk.util import ngrams
 
 nlp = spacy.load("en_core_web_md")
 stop = set(stopwords.words('english'))
+stop.add("went")
+
+
+
+
+def A6_sentence_selection(question, story):
+    q_lemmas = normalize_set(question["question"], expand_synsets=True)
+    answers = {
+
+        sent["sentenceid"]: normalize_set(sent["sentence"], expand_synsets=True)
+        for sent in story
+
+    }
+    score_dict = {}
+    for ans in answers.keys():
+        ans_lemmas = answers[ans]
+        score_dict[ans] = len([lem for lem in q_lemmas if lem in ans_lemmas])
+    sent_id = max(score_dict, key=score_dict.get)
+
+    threshold = 0
+    if score_dict[sent_id] < threshold:
+        q_vector = doc_vector(question["question"])
+        for sent in story:
+            sent_vector = doc_vector(sent["sentence"])
+            score_dict[sent["sentenceid"]] = scipy.spatial.distance.cosine(
+                q_vector, sent_vector)
+
+        sent_id = min(score_dict, key=score_dict.get)
+        threshold2 = 0.5
+        if score_dict[sent_id] > threshold2:
+            sent_id = "-"
+
+    global questions
+    questions += 1
+    sys.stdout.write("\r" + str(questions) + " questions  answered...")
+
+    return sent_id, ""
 
 
 def get_answer(question, story):
@@ -244,12 +281,7 @@ def triple_check(keyword, story):
     return ((str(subject), str(headword), str(obj)))
 
 def check_if_in_story(token, story):
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    doc = nlp(text)
+    doc = get_story_nlp(story)
     for word in doc:
         if word.lemma_ == token.lemma_:
             return True
@@ -264,13 +296,7 @@ def find_in_story(token, story):
 def head_of_question(question, story):
     the_story_set = list()
     doc = nlp(question["question"])
-    text = ""
-    sentences = []
-    for sent in story:
-        sentences.append(sent["sentence"])
-        text += sent["sentence"] + " "
-    sdoc = nlp(text)
-
+    sdoc = get_story_nlp(story)
     for qtoken in doc:
         for stoken in sdoc:
             if qtoken.lemma_.lower() == stoken.lemma_.lower() and qtoken not in the_story_set:
@@ -537,7 +563,10 @@ def build_coref_dict(story):
                     coref_dict.update({reference["text"].lower(): chain[0]["text"]})
     return coref_dict
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> atticus_branch
 def get_story_nlp(story):
     text = ""
     sentences = []
@@ -865,6 +894,8 @@ def doc_vector(text):
     # print(docvec.dtype)
     return docvec
 
+def extract_yn_answer(story, question, recur_count):
+    return "yes"
 
 #############################################################
 ###     Dont change the code in this section

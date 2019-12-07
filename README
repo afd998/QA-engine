@@ -1,4 +1,10 @@
-python3 -m spacy download en_core_web_lg
+Script designed to answer questions (written in the format of "hw8-questions.tsv") about stories (written in the format of "hw8-stories.tsv")
+and produce answers in a file "hw8-responses.tsv"
+
+
+
+Make sure your python enviorment has:
+python3 -m spacy download en_core_web_md
 pip3 install --user -U nltk
 import nltk
 nltk.download('stopwords')

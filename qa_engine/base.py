@@ -1,8 +1,8 @@
-import json, ast
+import json, ast, math
 import pandas as pd
 from nltk.parse import DependencyGraph
 from nltk.tree import Tree
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 # Questionid may also be referred to as qid in variable names
 # Storyid may also be referred to as sid in variable names
@@ -21,21 +21,20 @@ ANSWER_FILE = "hw8-answers.tsv"
 STORIES_FILE = "hw8-stories.tsv"
 COREF_FILE = "hw8-stories-coref.tsv"
 
-# def prepare_deps(raw_deps):
-#
+#def prepare_deps(raw_deps):
+
 #    if isinstance(raw_deps, float) and math.isnan(raw_deps):
 #        return []
 #    return [DependencyGraph(dep, top_relation_label="root") for dep in raw_deps.split("\n\n")
-#            if len(dep) > 2]
+#          if len(dep) > 2]
 #
 #
 # # TO BE USED IN HW 7 & 8
-# def prepare_pars(raw_pars):
+#def prepare_pars(raw_pars):
 #    if isinstance(raw_pars, float) and math.isnan(raw_pars):
-#        return []
-#
+#      return []
 #    return [Tree.fromstring(line.strip().rstrip(" \n\t"))
-#            for line in raw_pars.split("\n") if len(line) > 2]
+#           for line in raw_pars.split("\n") if len(line) > 2]
 
 def prepare_story_data(df_story, df_coref):
     stories = defaultdict(list)
@@ -46,7 +45,7 @@ def prepare_story_data(df_story, df_coref):
             "sentenceid": row.sentenceid,
             "storyid": row.storyid,
             "ner": ast.literal_eval(row.ner),
-            "coref": json.loads(df_coref.loc[row.storyid, 'coref'])
+            "coref": json.loads(df_coref.loc[row.storyid, 'coref'],),
         }
         stories[row.storyid] += [this_story]
     return stories
@@ -59,7 +58,7 @@ def prepare_questions(df):
             "questionid": row.questionid,
             "storyid": row.storyid,
             "question": row.question,
-            "ner": ast.literal_eval(row.ner)
+            "ner": ast.literal_eval(row.ner),
         }
         questions[row.questionid] = this_qstn
     return questions
@@ -97,10 +96,6 @@ class QABase(object):
             self._answers[qid] = {"storyid": q["storyid"], "questionid": qid, \
                                     "answer_sentenceid": output[0],"answer": output[1],}
 
-
     def save_answers(self, fname=RESPONSE_FILE):
         df = pd.DataFrame([a for a in self._answers.values()])
         df.to_csv(fname, sep="\t", index=False)
-
-
-
