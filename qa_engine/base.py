@@ -10,16 +10,17 @@ from collections import defaultdict, Counter
 DATA_DIR = "data/"
 
 
-#QUESTION_FILE = "heldoutquestions.tsv"
-#ANSWER_FILE = "heldoutanswers.tsv"
-#STORIES_FILE = "heldoutstories.tsv"
-#COREF_FILE = "heldoutstoriescoref.tsv"
+QUESTION_FILE = "heldoutquestions.tsv"
+ANSWER_FILE = "heldoutanswers.tsv"
+STORIES_FILE = "heldoutstories.tsv"
+COREF_FILE = "heldoutstoriescoref.tsv"
+RESPONSE_FILE = "heldout-response.tsv"
 
-RESPONSE_FILE = "hw8-responses.tsv"
-QUESTION_FILE = "hw8-questions.tsv"
-ANSWER_FILE = "hw8-answers.tsv"
-STORIES_FILE = "hw8-stories.tsv"
-COREF_FILE = "hw8-stories-coref.tsv"
+#RESPONSE_FILE = "hw8-responses.tsv"
+#QUESTION_FILE = "hw8-questions.tsv"
+#ANSWER_FILE = "hw8-answers.tsv"
+#STORIES_FILE = "hw8-stories.tsv"
+#COREF_FILE = "hw8-stories-coref.tsv"
 
 #def prepare_deps(raw_deps):
 

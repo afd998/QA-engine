@@ -1,7 +1,8 @@
 MUST DO THIS TO RUN PROGRAM:
 python3 -m spacy download en_core_web_md
 pip3 install --user -U nltk
-import nltk
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('punkt')
+python
+    import nltk
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    nltk.download('punkt')
